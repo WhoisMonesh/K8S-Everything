@@ -1,0 +1,27 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: myapp
+  labels:
+    release: kube-prometheus-stack
+spec:
+  selector:
+    matchLabels:
+      app: myapp
+  endpoints:
+  - port: http          # name of the Service port serving /metrics
+    path: /metrics
+    interval: 30s
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: myapp-blackbox
+  labels:
+    release: kube-prometheus-stack
+spec:
+  endpoints:
+  - port: blackbox      # a Service+Probe exposing the blackbox exporter
+    params:
+      module: [http_2xx]
+    interval: 30s

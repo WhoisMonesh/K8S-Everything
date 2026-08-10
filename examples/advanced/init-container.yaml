@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: init-demo
+spec:
+  initContainers:
+  - name: wait-for-db
+    image: busybox
+    command: ["sh", "-c", "until nc -z db:5432; do echo waiting; sleep 2; done"]
+  containers:
+  - name: app
+    image: myapp:1.0

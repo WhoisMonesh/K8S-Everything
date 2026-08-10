@@ -1,0 +1,15 @@
+apiVersion: snapshot.storage.k8s.io/v1
+kind: VolumeSnapshot
+metadata:
+  name: web-snapshot
+  namespace: my-app
+spec:
+  volumeSnapshotClassName: csi-snapshot
+  source:
+    persistentVolumeClaimName: web-pvc
+---
+apiVersion: snapshot.storage.k8s.io/v1
+kind: VolumeSnapshotClass
+driver: pd.csi.google.com
+deletionPolicy: Delete
+snapshotschedule: ""   # left as-is; the CSI driver supplies defaults

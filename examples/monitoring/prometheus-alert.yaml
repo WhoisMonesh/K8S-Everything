@@ -1,0 +1,22 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: high-error-rate
+  namespace: monitoring
+  labels:
+    prometheus: kube-prometheus-stack-prometheus
+    role: alert-rules
+spec:
+  groups:
+  - name: http-slo
+    rules:
+    - alert: High5xxRate
+      expr: |
+        sum(rate(http_requests_total{code=~"5.."}[5m]))
+        / sum(rate(http_requests_total[5m])) > 0.02
+      for: 2m
+      labels:
+        severity: critical
+      annotations:
+        summary: "5xx ratio too high for {{ $labels.job }}"
+        description: "{{ $value | humanizePercentage }} of requests are 5xx."

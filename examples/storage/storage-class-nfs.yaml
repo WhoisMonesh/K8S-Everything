@@ -1,0 +1,10 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: managed-nfs
+provisioner: k8s-sigs.io/nfs-subdir-external-provisioner
+reclaimPolicy: Retain
+volumeBindingMode: Immediate
+parameters:
+  nfs-path: /shared
+  nfs-server: nfs.example.com

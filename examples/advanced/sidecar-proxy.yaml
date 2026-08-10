@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app-with-sidecar
+spec:
+  containers:
+  - name: app
+    image: nginx:1.25
+    volumeMounts:
+    - name: shared
+      mountPath: /usr/share/nginx/html
+  - name: sidecar
+    image: busybox
+    command: ["sh", "-c", "echo health > /shared/index.html; sleep 3600"]
+    volumeMounts:
+    - name: shared
+      mountPath: /shared
+  volumes:
+  - name: shared
+    emptyDir: {}
