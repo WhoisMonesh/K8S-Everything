@@ -153,12 +153,12 @@ kubectl patch priorityclass <bad-one> -p '{"globalDefault":false}'
 ## Preemption Flow
 
 ```mermaid
-sequenceDiagram
-    A[High-priority pod: Pending] -> B[Scheduler]
-    B -> C{Can it fit anywhere?}
-    C -> |No| D[Find node with\nlowest priority pods]
-    D -> E[Preempt (delete)\nlowest priority pod]
-    E -> F[High-priority pod\nschedules successfully]
+flowchart TD
+    A[High-priority pod: Pending] --> B[Scheduler]
+    B --> C{Can it fit anywhere?}
+    C -->|No| D[Find node with lowest priority pods]
+    D --> E[Preempt delete lowest priority pod]
+    E --> F[High-priority pod schedules successfully]
 
 ```
 

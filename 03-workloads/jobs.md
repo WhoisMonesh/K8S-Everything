@@ -73,7 +73,7 @@ spec:
 ## Job States
 
 ```mermaid
-stateDiagram-vI
+stateDiagram-v2
     [*] --> Active: Job created
     Active --> Active: Pods running/failing
     Active --> Complete: Required completions reached

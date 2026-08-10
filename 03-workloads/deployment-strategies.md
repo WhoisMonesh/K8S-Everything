@@ -77,17 +77,17 @@ spec:
 Two identical environments (Blue = current, Green = new). Traffic is switched atomically.
 
 ```mermaid
-graph TB
-    A[Blue (v1)] --active--> D[Users: current]
-    B[Green (v2)] --staging--> D
+graph LR
+    A[Blue v1] -->|active| D[Users]
+    B[Green v2] -->|staging| D
     subgraph "Before switch"
         A
         B
     end
 
     subgraph "After switch"
-        C[Blue (v1)] --inactive--> Users
-        B[Green (v2)] --active--> Users
+        C[Blue v1] -->|now inactive| D
+        B -->|now active| D
     end
 ```
 

@@ -15,7 +15,7 @@ Everyday Kubernetes work is often "a Pod won't start", "my request is slow", or 
 
 ```mermaid
 flowchart TD
-    A[User: "my app is down"] --> B[Is the Pod running?]
+    A[User: my app is down] --> B[Is the Pod running?]
     B -->|No / Pending| C[Check events: ImagePull, RBAC, Resources, Affinity]
     B -->|CrashLoopBackOff| D[kubectl logs -p previous, OOM, livenessProbe]
     B -->|Running| E[Can I reach it? port-forward / curl / DNS]

@@ -184,7 +184,7 @@ spec:
 ### Traffic Flow with Readiness
 
 ```mermaid
-flowflowchart LR
+flowchart LR
     A[Client] --> B[Service ClusterIP]
     B -->|Ready pods only| C[Pod 1]
     B -.->|Not ready, skipped| D[Pod 2\nreadiness failed]
