@@ -1,11 +1,12 @@
 # Monitoring Examples
 
-> Prometheus Operator and alerting patterns.
+> Prometheus Operator, alerting, and Grafana dashboard-as-code.
 
 ## Contents
-- `app-service-monitor.yaml` — app exposing /metrics + Service + ServiceMonitor.
-- `service-monitor.yaml` — a standalone ServiceMonitor for an existing Service.
-- `prometheus-alert.yaml` — an SLO-style recording/alert rule.
+- `app-service-monitor.yaml` — app exposing /metrics + Service + ServiceMonitor.  OK
+- `service-monitor.yaml` — standalone ServiceMonitor for an existing Service.  OK
+- `prometheus-alert.yaml` — an SLO-style alert rule.  OK
+- `grafana-dashboard.yaml` — a Grafana Dashboard JSON (CPU + memory panels) in a ConfigMap.  OK
 
 ## Usage
 

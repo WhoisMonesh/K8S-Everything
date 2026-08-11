@@ -1,0 +1,43 @@
+# Pod Security Standards (PSA) — enforce tiers via NAMESPACE LABELS.
+# Replace the deprecated PodSecurityPolicy (removed in 1.25) with these three
+# levels: privileged (anything), baseline (least-privilege default), restricted (hardestening).
+#
+# Verify enforcement: kubectl describe pod -n <ns> <p>  -> look for events like
+# "pod <x> is violating PodSecurity ... restricted".
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: prod
+  labels:
+    pod-security.kubernetes.io/enforce: restricted        # enforce = deny non-compliant
+    pod-security.kubernetes.io/enforce-version: latest
+    pod-security.kubernetes.io/audit: baseline            # log (not block) baseline violations
+    pod-security.kubernetes.io/warn: restricted
+    pod-security.kubernetes.io/warn-version: latest
+---
+# A Deployment that COMPLIES with the `restricted` tier:
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: api, namespace: prod, labels: { app: api } }
+spec:
+  replicas: 2
+  selector: { matchLabels: { app: api } }
+  template:
+    metadata:
+      labels: { app: api }
+    spec:
+      # restricted requires a default seccomp profile:
+      securityContext:
+        seccompProfile: { type: RuntimeDefault }
+      containers:
+      - name: api
+        image: ghcr.io/acme/api:1.2.3
+        # must NOT be privileged, must drop ALL, must runAsNonRoot:
+        securityContext:
+          runAsNonRoot: true
+          runAsUser: 10001
+          allowPrivilegeEscalation: false
+          readOnlyRootFilesystem: true
+          capabilities: { drop: ["ALL"] }
+        ports: [{ containerPort: 8080 }]
+        resources: { requests: { cpu: 100m, memory: 128Mi }, limits: { cpu: 500m, memory: 256Mi } }

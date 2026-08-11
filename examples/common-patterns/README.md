@@ -398,3 +398,9 @@ kubectl delete -f .
 # Get status of all resources
 kubectl get all,ingress,configmap,secret
 ```
+
+## Manifest files in this directory
+- `configmap-secret.yaml`
+- `deployment.yaml`
+- `ingress.yaml`
+- `service.yaml`

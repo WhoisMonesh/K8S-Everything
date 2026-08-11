@@ -15,23 +15,23 @@
 | # | Category | Directory | Documents |
 |---|----------|-----------|-----------|
 | 1 | Core Concepts | [01-core-concepts](01-core-concepts) | [README](01-core-concepts/README.md) + 16 docs |
-| 2 | Architecture | [02-architecture](02-architecture) | [README](02-architecture/README.md) + 9 docs |
+| 2 | Architecture | [02-architecture](02-architecture) | [README](02-architecture/README.md) + 10 docs |
 | 3 | Workloads | [03-workloads](03-workloads) | [README](03-workloads/README.md) + 14 docs |
-| 4 | Networking | [04-networking](04-networking) | [README](04-networking/README.md) + 9 docs |
+| 4 | Networking | [04-networking](04-networking) | [README](04-networking/README.md) + 13 docs |
 | 5 | Storage | [05-storage](05-storage) | [README](05-storage/README.md) + 5 docs |
-| 6 | Security | [06-security](06-security) | [README](06-security/README.md) + 9 docs |
-| 7 | Scheduling & Autoscaling | [07-scheduling-autoscaling](07-scheduling-autoscaling) | [README](07-scheduling-autoscaling/README.md) + 9 docs |
-| 8 | Cluster Operations | [08-cluster-operations](08-cluster-operations) | [README](08-cluster-operations/README.md) + 4 docs |
-| 9 | Package Management | [10-package-management](10-package-management) | [README](10-package-management/README.md) + 3 docs |
+| 6 | Security | [06-security](06-security) | [README](06-security/README.md) + 11 docs |
+| 7 | Scheduling & Autoscaling | [07-scheduling-autoscaling](07-scheduling-autoscaling) | [README](07-scheduling-autoscaling/README.md) + 11 docs |
+| 8 | Cluster Operations | [08-cluster-operations](08-cluster-operations) | [README](08-cluster-operations/README.md) + 8 docs |
+| 9 | Package Management | [10-package-management](10-package-management) | [README](10-package-management/README.md) + 4 docs |
 | 10 | CI/CD & GitOps | [11-ci-cd-gitops](11-ci-cd-gitops) | [README](11-ci-cd-gitops/README.md) + 4 docs |
-| 11 | Service Mesh | [12-service-mesh](12-service-mesh) | [README](12-service-mesh/README.md) + 3 docs |
-| 12 | Observability | [13-observability](13-observability) | [README](13-observability/README.md) + 4 docs |
-| 13 | Troubleshooting | [14-troubleshooting](14-troubleshooting) | [README](14-troubleshooting/README.md) + 2 docs |
+| 11 | Service Mesh | [12-service-mesh](12-service-mesh) | [README](12-service-mesh/README.md) + 4 docs |
+| 12 | Observability | [13-observability](13-observability) | [README](13-observability/README.md) + 6 docs |
+| 13 | Troubleshooting | [14-troubleshooting](14-troubleshooting) | [README](14-troubleshooting/README.md) + 4 docs |
 | 14 | Reference | (top-level) | [API groups](api-groups-reference.md), [versions](kubernetes-versions.md), [companies](companies-using-kubernetes.md), [certifications](kubernetes-certifications.md) |
 | 15 | Cheat Sheets | [cheat-sheets](cheat-sheets) | [kubectl](cheat-sheets/kubectl.md), [helm](cheat-sheets/helm.md), [yaml](cheat-sheets/yaml.md), [certs](cheat-sheets/cert-cheatsheet.md) |
-| 16 | Examples | [examples](examples) | [README](examples/README.md) + 25 YAML manifests across common-patterns, scheduling, security, storage, monitoring, ci-cd, advanced |
+| 16 | Examples | [examples](examples) | [README](examples/README.md) + 28 YAML manifests across common-patterns, scheduling, security, storage, monitoring, ci-cd, advanced |
 
-**Total: 17 categories, 199 documents, ~125k words.**
+**Total: 17 categories, 202 documents, ~180774 words.**
 
 ---
 

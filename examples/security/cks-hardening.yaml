@@ -1,0 +1,87 @@
+# CKS hardening pack. The cluster-level flags below (kube-apiserver/kubelet)
+# are configured at node install time; this manifest provides the in-cluster
+# counterparts you can apply: a `restricted` namespace, a hardened Deployment,
+# and a Kyverno policy that only runs signed images.
+#
+# Node/component flags (set in /etc/kubernetes/manifests):
+#   kube-apiserver: --authorization-mode=Node,Webhook --anonymous-auth=false --service-account-issuer=...
+#   kubelet:        --authorization-mode=Webhook --read-only-port=0 --rotate-certificates=true \
+#                  --protect-kernel-defaults=true --seccomp-default=unconfined->RuntimeDefault
+#   etcd:           encrypt Secrets at rest (EncryptionConfiguration).
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: harden
+  labels: { pod-security.kubernetes.io/enforce: restricted }
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: api, namespace: harden, labels: { app: api } }
+spec:
+  replicas: 2
+  selector: { matchLabels: { app: api } }
+  template:
+    metadata:
+      labels: { app: api }
+      annotations:
+        seccomp.security.alpha.kubernetes.io/pod: runtime/default   # default-seccomp: RuntimeDefault
+    spec:
+      serviceAccountName: api
+      securityContext: { seccompProfile: { type: RuntimeDefault } }
+      containers:
+      - name: api
+        image: ghcr.io/acme/api:1.2.3
+        securityContext:
+          allowPrivilegeEscalation: false
+          readOnlyRootFilesystem: true
+          runAsNonRoot: true
+          runAsUser: 10001
+          capabilities: { drop: ["ALL"] }
+        ports: [{ containerPort: 8080 }]
+        resources: { requests: { cpu: 100m, memory: 128Mi } }
+      # Never mount / or hostPath unless required; restrict hostNetwork/hosts:
+      hostNetwork: false
+---
+# Kyverno policy: only cosign-signed images may run.
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata: { name: verify-image-signatures, annotations: { policies.kyverno.io/title: Require signed images, policies.kyverno.io/severity: high } }
+spec:
+  validationFailureAction: enforce
+  background: false
+  rules:
+  - name: verify-signature
+    match:
+      any:
+      - resources: { kinds: [Pod] }
+    verifyImages:
+    - image: "ghcr.io/acme/*:*"
+      keyless:
+        url: https://fulcio.sigstore.dev
+        identities:
+        - issuer: https://token.actions.githubusercontent.com
+          regexp: "https://github.com/acme/.*"
+---
+# ClusterRole granting the LEAST privilege the `api` ServiceAccount needs
+# (do not grant cluster-admin to workloads).
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata: { name: api-reader }
+rules:
+- apiGroups: [""]
+  resources: ["endpoints"]
+  verbs: ["get"]
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata: { name: api, namespace: harden }
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata: { name: api-reader-binding }
+roleRef: { apiGroup: rbac.authorization.k8s.io, kind: ClusterRole, name: api-reader }
+subjects:
+- kind: ServiceAccount
+  name: api
+  namespace: harden

@@ -1,0 +1,56 @@
+# Grafana dashboard-as-code: store a Dashboard JSON in a ConfigMap so it imports
+# automatically (mounted via the grafana sidecar). Panels shown: pod CPU and memory
+# from `container_cpu_usage_seconds_total` / `container_memory_working_set_bytes`.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-dashboard-api
+  labels:
+    grafana_dashboard: "1"            # picked up by the grafana-sc-dashboard sidecar
+    app.kubernetes.io/part-of: grafana
+data:
+  api-dashboard.json: |
+    {
+      "annotations": { "list": [{ "builtIn": 1, "datasource": "-- Grafana Data Source --", "enable": true, "hide": true, "iconColor": "rgba(0,211,255,1)", "name": "Annotations", "type": "dashboard"}]},
+      "editable": false,
+      "gnetId": null,
+      "graphTooltip": 0,
+      "id": null,
+      "iteration": 1650000000000,
+      "links": [],
+      "panels": [
+        {
+          "datasource": "Prometheus",
+          "fieldConfig": { "defaults": { "unit": "short" } },
+          "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+          "id": 1,
+          "targets": [{ "expr": "sum(rate(container_cpu_usage_seconds_total{container!=\"\",namespace=\"prod\"}[5m])) by (pod)", "legendFormat": "{{pod}}", "refId": "A" }],
+          "title": "Pod CPU usage (rate 5m)",
+          "type": "timeseries"
+        },
+        {
+          "datasource": "Prometheus",
+          "fieldConfig": { "defaults": { "unit": "bytes" } },
+          "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 },
+          "id": 2,
+          "targets": [{ "expr": "container_memory_working_set_bytes{container!=\"\",namespace=\"prod\"}", "legendFormat": "{{pod}}", "refId": "A" }],
+          "title": "Pod memory (working set)",
+          "type": "timeseries"
+        }
+      ],
+      "refresh": "30s",
+      "schemaVersion": 38,
+      "style": "dark",
+      "tags": ["prod","api"],
+      "templating": {
+        "list": [
+          { "current": { "text": "prod", "value": "prod" }, "definition": "query_result(namespace=\"prod\")", "hide": 0, "name": "namespace", "type": "query" }
+        ]
+      },
+      "time": { "from": "now-6h", "to": "now" },
+      "timepicker": {},
+      "timezone": "",
+      "title": "API - prod",
+      "uid": "api-prod",
+      "version": 1
+    }
