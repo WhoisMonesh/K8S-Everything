@@ -27,7 +27,7 @@
 | 15 | [Interview Prep](16-interview-prep/README.md) | CKA, CKAD, CKS, Questions, Cheatsheets | 5 |
 | 16 | [Reference & Cheatsheets](#reference-documentation) | API groups, versions, companies, certs, cheatsheets, glossary | 6+ |
 
-**Total: ~221 Kubernetes concepts, components, tools, and patterns across 16 topic categories + reference docs.**
+**Total: ~266 Kubernetes concepts, components, tools, and patterns across 17 topic categories + reference docs.**
 
 > 💡 *Categories 13-cloud-integrations, 14-advanced-patterns, 17-company-cases and 18-real-incidents are planned. The canonical docs for those topics live in their related-topic pages (e.g. [EKS/GKE/AKS coverage](companies-using-kubernetes.md), [admission/PSA controls](06-security/admission-controllers.md), [Blue/Green & Canary](11-ci-cd-gitops/ci-cd.md)).*
 
@@ -40,9 +40,18 @@ The following playbooks/reference were added to close operational + exam gaps; e
 
 | Topic | Location |
 |-------|----------|
+| **Learning Path** (Zero to Expert, 4 phases, 52 topics) | [`docs/learning-path.md`](docs/learning-path.md) |
+| **Tutorial: Nginx + Domain + TLS** (deploy → ingress → cert-manager) | [`examples/tutorials/tutorial-nginx-domain.md`](examples/tutorials/tutorial-nginx-domain.md) |
+| **Tutorial: Nginx + Istio** (mTLS, VirtualService, canary) | [`examples/tutorials/tutorial-nginx-istio.md`](examples/tutorials/tutorial-nginx-istio.md) |
+| **Tutorial: Full Stack App** (ConfigMap, Secret, PVC, HPA, PDB, monitoring) | [`examples/tutorials/tutorial-full-stack.md`](examples/tutorials/tutorial-full-stack.md) |
+| **Amazon EKS Deep Dive** (VPC CNI, IRSA, ALB Controller) | [`09-cloud-integrations/eks-deep-dive.md`](09-cloud-integrations/eks-deep-dive.md) |
+| **Google GKE Deep Dive** (Autopilot, Workload Identity) | [`09-cloud-integrations/gke-deep-dive.md`](09-cloud-integrations/gke-deep-dive.md) |
+| **Microsoft AKS Deep Dive** (Azure CNI, Workload Identity) | [`09-cloud-integrations/aks-deep-dive.md`](09-cloud-integrations/aks-deep-dive.md) |
+| **CRDs** (Custom Resource Definitions, OpenAPI validation) | [`15-advanced-patterns/crds.md`](15-advanced-patterns/crds.md) |
+| **Operators** (controllers, Kubebuilder, OLM) | [`15-advanced-patterns/operators.md`](15-advanced-patterns/operators.md) |
 | Troubleshooting Encyclopedia — symptom → diagnosis tables (Pods, Net, Control-plane, Nodes, Sched, Storage, Security, Helm, Perf) | [`14-troubleshooting/troubleshooting-encyclopedia.md`](14-troubleshooting/troubleshooting-encyclopedia.md) |
 | Disaster Cases — real incidents & runbooks (etcd loss, cert expiry, registry outage, upgrade cascade, PVC loss…) | [`14-troubleshooting/disaster-cases.md`](14-troubleshooting/disaster-cases.md) |
-| Real Company Incident Case Studies (9 outages: GitLab, GitHub, Spotify, Slack, Zalando, Roblox, Capital One, Adidas, Netflix) | [`14-troubleshooting/incidents/`](14-troubleshooting/incidents/) |
+| Real Company Incident Case Studies (39 outages: GitLab, GitHub, Spotify, Slack, Zalando, Roblox, Capital One, Adidas, Netflix, Cloudflare, Tesla, Amazon, Google, Azure, Shopify, Discord, Epic Games, Apple, LinkedIn, Stripe, Twilio, Uber, Airbnb, Pinterest, Reddit, Wayfair, Bloomberg, JPMorgan, Goldman Sachs) | [`14-troubleshooting/incidents/`](14-troubleshooting/incidents/) |
 | Full Kubernetes Version History (v1.0 Jul 2015 → current) + release lifecycle/skew | [`kubernetes-versions.md`](kubernetes-versions.md) |
 | CKA/CKAD/CKS Exam Walkthrough (domain → command map) | [`16-interview-prep/exam-walkthrough.md`](16-interview-prep/exam-walkthrough.md) |
 | kubeadm bootstrap (init/join/HA, certs, upgrades) | [`08-cluster-operations/kubeadm.md`](08-cluster-operations/kubeadm.md) |
@@ -60,6 +69,7 @@ The following playbooks/reference were added to close operational + exam gaps; e
 | HPA/VPA/KEDA + Cluster Autoscaler | [`07-scheduling-autoscaling/hpa-vpa.md`](07-scheduling-autoscaling/hpa-vpa.md) |
 | Resource Requests/Limits & QoS | [`07-scheduling-autoscaling/resource-management.md`](07-scheduling-autoscaling/resource-management.md) |
 | Observability overview (golden signals, OTel, Prometheus) | [`13-observability/observability.md`](13-observability/observability.md) |
+| Chaos Engineering (experiments, Chaos Mesh, PDB) | [`15-advanced-patterns/chaos-engineering.md`](15-advanced-patterns/chaos-engineering.md) |
 | Troubleshooting Cheat Sheet (90-second commands) | [`cheat-sheets/troubleshooting.md`](cheat-sheets/troubleshooting.md) |
 | K8s Glossary (terms, acronyms, concepts) | [`cheat-sheets/glossary.md`](cheat-sheets/glossary.md) |
 | Lab Workbook (5 hands-on labs: deploy, troubleshoot, RBAC, Helm, GitOps) | [`examples/common-patterns/lab-instructions.md`](examples/common-patterns/lab-instructions.md) |

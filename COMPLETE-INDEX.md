@@ -31,7 +31,7 @@
 | 15 | Cheat Sheets | [cheat-sheets](cheat-sheets) | [kubectl](cheat-sheets/kubectl.md), [helm](cheat-sheets/helm.md), [yaml](cheat-sheets/yaml.md), [certs](cheat-sheets/cert-cheatsheet.md) |
 | 16 | Examples | [examples](examples) | [README](examples/README.md) + 28 YAML manifests across common-patterns, scheduling, security, storage, monitoring, ci-cd, advanced |
 
-**Total: 17 categories, 256 documents, ~230000 words.**
+**Total: 17 categories, 266 documents, ~245000 words.**
 
 ---
 
@@ -297,6 +297,20 @@
 | Security | [examples/security/](examples/security) |
 | Storage | [examples/storage/](examples/storage) |
 
+### Tutorials (examples/tutorials/)
+
+| Tutorial | File |
+|----------|------|
+| Nginx + Domain + TLS (deploy → service → ingress → cert-manager) | [tutorial-nginx-domain.md](examples/tutorials/tutorial-nginx-domain.md) |
+| Nginx + Istio Service Mesh (mTLS, VirtualService, canary) | [tutorial-nginx-istio.md](examples/tutorials/tutorial-nginx-istio.md) |
+| Full Stack App (ConfigMap, Secret, PVC, HPA, PDB, monitoring) | [tutorial-full-stack.md](examples/tutorials/tutorial-full-stack.md) |
+
+## 16b. Learning Path (docs/)
+
+| Topic | File |
+|-------|------|
+| Zero to Expert learning path (4 phases, 52 topics, 5 labs) | [learning-path.md](docs/learning-path.md) |
+
 
 ---
 
@@ -327,6 +341,16 @@ These were added to close gaps for learners and operators; every link below reso
 | K8s glossary (terms, acronyms, concepts) | [glossary.md](cheat-sheets/glossary.md) |
 | SBOM (Software Bill of Materials) | [sbom.md](11-supply-chain/sbom.md) |
 | Container image scanning (Trivy, Grype, CI/CD) | [image-scanning.md](11-supply-chain/image-scanning.md) |
+| Chaos Engineering (experiments, Chaos Mesh, PDB) | [chaos-engineering.md](15-advanced-patterns/chaos-engineering.md) |
+| Learning Path (Zero to Expert, 4 phases) | [learning-path.md](docs/learning-path.md) |
+| Tutorial: Nginx + Domain + TLS | [tutorial-nginx-domain.md](examples/tutorials/tutorial-nginx-domain.md) |
+| Tutorial: Nginx + Istio Service Mesh | [tutorial-nginx-istio.md](examples/tutorials/tutorial-nginx-istio.md) |
+| Tutorial: Full Stack App | [tutorial-full-stack.md](examples/tutorials/tutorial-full-stack.md) |
+| Amazon EKS Deep Dive (VPC CNI, IRSA, ALB Controller) | [eks-deep-dive.md](09-cloud-integrations/eks-deep-dive.md) |
+| Google GKE Deep Dive (Autopilot, Workload Identity) | [gke-deep-dive.md](09-cloud-integrations/gke-deep-dive.md) |
+| Microsoft AKS Deep Dive (Azure CNI, Workload Identity) | [aks-deep-dive.md](09-cloud-integrations/aks-deep-dive.md) |
+| Custom Resource Definitions (CRDs) | [crds.md](15-advanced-patterns/crds.md) |
+| Kubernetes Operators | [operators.md](15-advanced-patterns/operators.md) |
 | Lab workbook (5 hands-on labs: deploy, troubleshoot, RBAC, Helm, GitOps) | [lab-instructions.md](examples/common-patterns/lab-instructions.md) |
 
 ---
