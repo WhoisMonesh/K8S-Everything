@@ -206,6 +206,7 @@
 | 4 | Certification Study Plan | [study-plan.md](16-interview-prep/study-plan.md) |
 | 5 | CKA Practice Tests | [cka-practice.md](16-interview-prep/cka-practice.md) |
 | 6 | Exam Day Checklist | [exam-checklist.md](16-interview-prep/exam-checklist.md) |
+| 7 | CKA/CKAD/CKS Exam Walkthrough (domain→command map) | [exam-walkthrough.md](16-interview-prep/exam-walkthrough.md) |
 | 7 | Debugging Commands | [debugging-commands.md](16-interview-prep/debugging-commands.md) |
 | 8 | Conceptual Interview Questions | (inline Q&A in each certification doc) |
 

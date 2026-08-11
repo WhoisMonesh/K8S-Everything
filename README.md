@@ -42,6 +42,7 @@ The following playbooks/reference were added to close operational + exam gaps; e
 | Troubleshooting Encyclopedia — symptom → diagnosis tables (Pods, Net, Control-plane, Nodes, Sched, Storage, Security, Helm, Perf) | [`14-troubleshooting/troubleshooting-encyclopedia.md`](14-troubleshooting/troubleshooting-encyclopedia.md) |
 | Disaster Cases — real incidents & runbooks (etcd loss, cert expiry, registry outage, upgrade cascade, PVC loss…) | [`14-troubleshooting/disaster-cases.md`](14-troubleshooting/disaster-cases.md) |
 | Full Kubernetes Version History (v1.0 Jul 2015 → current) + release lifecycle/skew | [`kubernetes-versions.md`](kubernetes-versions.md) |
+| CKA/CKAD/CKS Exam Walkthrough (domain → command map) | [`16-interview-prep/exam-walkthrough.md`](16-interview-prep/exam-walkthrough.md) |
 | kubeadm bootstrap (init/join/HA, certs, upgrades) | [`08-cluster-operations/kubeadm.md`](08-cluster-operations/kubeadm.md) |
 | FinOps (cost buckets, right-sizing, spot, allocation, idle nodes) | [`08-cluster-operations/finops.md`](08-cluster-operations/finops.md) |
 | Backup & DR runbook (etcd + Velero + restore) | [`08-cluster-operations/backup-disaster-recovery.md`](08-cluster-operations/backup-disaster-recovery.md) |
