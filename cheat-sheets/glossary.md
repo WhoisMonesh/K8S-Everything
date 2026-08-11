@@ -165,4 +165,4 @@
 
 - [Kubernetes Architecture](../02-architecture/README.md)
 - [Core Concepts](../01-core-concepts/README.md)
-- [Cheat Sheets](./README.md)
+- [Cheat Sheets](../cheat-sheets/)

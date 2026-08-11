@@ -26,12 +26,12 @@
 | 10 | CI/CD & GitOps | [11-ci-cd-gitops](11-ci-cd-gitops) | [README](11-ci-cd-gitops/README.md) + 4 docs |
 | 11 | Service Mesh | [12-service-mesh](12-service-mesh) | [README](12-service-mesh/README.md) + 4 docs |
 | 12 | Observability | [13-observability](13-observability) | [README](13-observability/README.md) + 6 docs |
-| 13 | Troubleshooting | [14-troubleshooting](14-troubleshooting) | [README](14-troubleshooting/README.md) + 4 docs + [incidents/](14-troubleshooting/incidents) (9 case studies) |
+| 13 | Troubleshooting | [14-troubleshooting](14-troubleshooting) | [README](14-troubleshooting/README.md) + 4 docs + [incidents/](14-troubleshooting/incidents) (49 case studies + README) |
 | 14 | Reference | (top-level) | [API groups](api-groups-reference.md), [versions](kubernetes-versions.md), [companies](companies-using-kubernetes.md), [certifications](kubernetes-certifications.md) |
 | 15 | Cheat Sheets | [cheat-sheets](cheat-sheets) | [kubectl](cheat-sheets/kubectl.md), [helm](cheat-sheets/helm.md), [yaml](cheat-sheets/yaml.md), [certs](cheat-sheets/cert-cheatsheet.md) |
 | 16 | Examples | [examples](examples) | [README](examples/README.md) + 28 YAML manifests across common-patterns, scheduling, security, storage, monitoring, ci-cd, advanced |
 
-**Total: 17 categories, 266 documents, ~245000 words.**
+**Total: 17 categories, 280 documents, ~255000 words.**
 
 ---
 
@@ -246,7 +246,18 @@
 | 36 | Zalando Operator Crash Loop | [zalando-operator-crash-loop.md](14-troubleshooting/incidents/zalando-operator-crash-loop.md) |
 | 37 | Adidas PVC Binding Failure | [adidas-pvc-binding-failure.md](14-troubleshooting/incidents/adidas-pvc-binding-failure.md) |
 | 38 | GitLab Helm Corruption | [gitlab-helm-corruption.md](14-troubleshooting/incidents/gitlab-helm-corruption.md) |
-| 39 | Incidents README | [README.md](14-troubleshooting/incidents/README.md) |
+| 39 | Airbnb Helm Chart Conflict | [airbnb-helm-conflict.md](14-troubleshooting/incidents/airbnb-helm-conflict.md) |
+| 40 | Bloomberg etcd Performance | [bloomberg-etcd-performance.md](14-troubleshooting/incidents/bloomberg-etcd-performance.md) |
+| 41 | Capital One RBAC Escalation | [capital-one-rbac-escalation.md](14-troubleshooting/incidents/capital-one-rbac-escalation.md) |
+| 42 | Cloudflare Log4j Response | [cloudflare-log4j-response.md](14-troubleshooting/incidents/cloudflare-log4j-response.md) |
+| 43 | Discord Node Drain Storm | [discord-node-drain-storm.md](14-troubleshooting/incidents/discord-node-drain-storm.md) |
+| 44 | Netflix Encoding Pipeline | [netflix-encoding-pipeline.md](14-troubleshooting/incidents/netflix-encoding-pipeline.md) |
+| 45 | Reddit K8s Upgrade Failure | [reddit-k8s-upgrade-failure.md](14-troubleshooting/incidents/reddit-k8s-upgrade-failure.md) |
+| 46 | Shopify Flash Sale Outage | [shopify-flash-sale-outage.md](14-troubleshooting/incidents/shopify-flash-sale-outage.md) |
+| 47 | Spotify Backstage Failure | [spotify-backstage-failure.md](14-troubleshooting/incidents/spotify-backstage-failure.md) |
+| 48 | Stripe Network Policy Lockout | [stripe-network-policy-lockout.md](14-troubleshooting/incidents/stripe-network-policy-lockout.md) |
+| 49 | Uber Envoy Memory Leak | [uber-envoy-memory-leak.md](14-troubleshooting/incidents/uber-envoy-memory-leak.md) |
+| 50 | Incidents README | [README.md](14-troubleshooting/incidents/README.md) |
 
 ---
 
@@ -310,7 +321,10 @@
 | Topic | File |
 |-------|------|
 | Zero to Expert learning path (4 phases, 52 topics, 5 labs) | [learning-path.md](docs/learning-path.md) |
-
+| CKA/CKAD/CKS Certification Study Plan (4-week plans) | [certification-study-plan.md](docs/certification-study-plan.md) |
+| Security Hardening Guide (defense in depth, RBAC, Network Policies, Pod Security) | [security-hardening-guide.md](docs/security-hardening-guide.md) |
+| Performance Tuning Guide (HPA, networking, storage, monitoring) | [performance-tuning-guide.md](docs/performance-tuning-guide.md) |
+| Advanced YAML Examples (multi-container, init, StatefulSet, DaemonSet, HPA) | [advanced-yaml-examples.md](docs/advanced-yaml-examples.md) |
 
 ---
 
@@ -352,6 +366,10 @@ These were added to close gaps for learners and operators; every link below reso
 | Custom Resource Definitions (CRDs) | [crds.md](15-advanced-patterns/crds.md) |
 | Kubernetes Operators | [operators.md](15-advanced-patterns/operators.md) |
 | Lab workbook (5 hands-on labs: deploy, troubleshoot, RBAC, Helm, GitOps) | [lab-instructions.md](examples/common-patterns/lab-instructions.md) |
+| Certification Study Plan (CKA/CKAD/CKS 4-week plans) | [certification-study-plan.md](docs/certification-study-plan.md) |
+| Security Hardening Guide (defense in depth, RBAC, Network Policies, Pod Security) | [security-hardening-guide.md](docs/security-hardening-guide.md) |
+| Performance Tuning Guide (HPA, networking, storage, monitoring) | [performance-tuning-guide.md](docs/performance-tuning-guide.md) |
+| Advanced YAML Examples (multi-container, init, StatefulSet, DaemonSet, HPA) | [advanced-yaml-examples.md](docs/advanced-yaml-examples.md) |
 
 ---
 

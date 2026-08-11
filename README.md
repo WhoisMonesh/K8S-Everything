@@ -19,7 +19,7 @@
 | 8 | [Scheduling & Autoscaling](07-scheduling-autoscaling/README.md) | Scheduling, Taints, Affinity, Quotas, HPA, VPA, KEDA, Cluster Autoscaler, Priority | 12 |
 | 8 | [Cluster Operations](08-cluster-operations/README.md) | kubelet, Debugging, Backup/Restore, Upgrades | 5 |
 | 9 | [Observability](13-observability/README.md) | Monitoring Fundamentals, Prometheus, Grafana, Logging | 4 |
-| 10 | [Troubleshooting](14-troubleshooting/README.md) | Debugging Pods, Common Failure Patterns, kubectl, Real Company Incidents (9 case studies) | 6 |
+| 10 | [Troubleshooting](14-troubleshooting/README.md) | Debugging Pods, Common Failure Patterns, kubectl, Real Company Incidents (49 case studies) | 6 |
 | 11 | [Package Management](10-package-management/README.md) | Helm, Kustomize | 4 |
 | 12 | [CI/CD & GitOps](11-ci-cd-gitops/README.md) | CI/CD, Argo CD, Flux, Tekton | 5 |
 | 13 | [Supply Chain Security](11-supply-chain/) | Cosign, SBOM, Image Scanning | 3 |
@@ -27,7 +27,7 @@
 | 15 | [Interview Prep](16-interview-prep/README.md) | CKA, CKAD, CKS, Questions, Cheatsheets | 5 |
 | 16 | [Reference & Cheatsheets](#reference-documentation) | API groups, versions, companies, certs, cheatsheets, glossary | 6+ |
 
-**Total: ~266 Kubernetes concepts, components, tools, and patterns across 17 topic categories + reference docs.**
+**Total: ~280 Kubernetes concepts, components, tools, and patterns across 17 topic categories + reference docs.**
 
 > 💡 *Categories 13-cloud-integrations, 14-advanced-patterns, 17-company-cases and 18-real-incidents are planned. The canonical docs for those topics live in their related-topic pages (e.g. [EKS/GKE/AKS coverage](companies-using-kubernetes.md), [admission/PSA controls](06-security/admission-controllers.md), [Blue/Green & Canary](11-ci-cd-gitops/ci-cd.md)).*
 
@@ -51,7 +51,7 @@ The following playbooks/reference were added to close operational + exam gaps; e
 | **Operators** (controllers, Kubebuilder, OLM) | [`15-advanced-patterns/operators.md`](15-advanced-patterns/operators.md) |
 | Troubleshooting Encyclopedia — symptom → diagnosis tables (Pods, Net, Control-plane, Nodes, Sched, Storage, Security, Helm, Perf) | [`14-troubleshooting/troubleshooting-encyclopedia.md`](14-troubleshooting/troubleshooting-encyclopedia.md) |
 | Disaster Cases — real incidents & runbooks (etcd loss, cert expiry, registry outage, upgrade cascade, PVC loss…) | [`14-troubleshooting/disaster-cases.md`](14-troubleshooting/disaster-cases.md) |
-| Real Company Incident Case Studies (39 outages: GitLab, GitHub, Spotify, Slack, Zalando, Roblox, Capital One, Adidas, Netflix, Cloudflare, Tesla, Amazon, Google, Azure, Shopify, Discord, Epic Games, Apple, LinkedIn, Stripe, Twilio, Uber, Airbnb, Pinterest, Reddit, Wayfair, Bloomberg, JPMorgan, Goldman Sachs) | [`14-troubleshooting/incidents/`](14-troubleshooting/incidents/) |
+| Real Company Incident Case Studies (49 outages: GitLab, GitHub, Spotify, Slack, Zalando, Roblox, Capital One, Adidas, Netflix, Cloudflare, Tesla, Amazon, Google, Azure, Shopify, Discord, Epic Games, Apple, LinkedIn, Stripe, Twilio, Uber, Airbnb, Pinterest, Reddit, Wayfair, Bloomberg, JPMorgan, Goldman Sachs) | [`14-troubleshooting/incidents/`](14-troubleshooting/incidents/) |
 | Full Kubernetes Version History (v1.0 Jul 2015 → current) + release lifecycle/skew | [`kubernetes-versions.md`](kubernetes-versions.md) |
 | CKA/CKAD/CKS Exam Walkthrough (domain → command map) | [`16-interview-prep/exam-walkthrough.md`](16-interview-prep/exam-walkthrough.md) |
 | kubeadm bootstrap (init/join/HA, certs, upgrades) | [`08-cluster-operations/kubeadm.md`](08-cluster-operations/kubeadm.md) |
@@ -73,6 +73,10 @@ The following playbooks/reference were added to close operational + exam gaps; e
 | Troubleshooting Cheat Sheet (90-second commands) | [`cheat-sheets/troubleshooting.md`](cheat-sheets/troubleshooting.md) |
 | K8s Glossary (terms, acronyms, concepts) | [`cheat-sheets/glossary.md`](cheat-sheets/glossary.md) |
 | Lab Workbook (5 hands-on labs: deploy, troubleshoot, RBAC, Helm, GitOps) | [`examples/common-patterns/lab-instructions.md`](examples/common-patterns/lab-instructions.md) |
+| Certification Study Plan (CKA/CKAD/CKS 4-week plans) | [`docs/certification-study-plan.md`](docs/certification-study-plan.md) |
+| Security Hardening Guide (defense in depth, RBAC, Network Policies, Pod Security) | [`docs/security-hardening-guide.md`](docs/security-hardening-guide.md) |
+| Performance Tuning Guide (HPA, networking, storage, monitoring) | [`docs/performance-tuning-guide.md`](docs/performance-tuning-guide.md) |
+| Advanced YAML Examples (multi-container, init, StatefulSet, DaemonSet, HPA) | [`docs/advanced-yaml-examples.md`](docs/advanced-yaml-examples.md) |
 
 
 ## Kubernetes Overview
