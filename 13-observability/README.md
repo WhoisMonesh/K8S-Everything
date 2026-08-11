@@ -12,6 +12,7 @@ Observability = understanding what your cluster and apps are doing through **met
 | [prometheus.md](prometheus.md) | Prometheus operator, ServiceMonitors, alerts |
 | [grafana.md](grafana.md) | Dashboards for K8s + app metrics |
 | [logging.md](logging.md) | Logging architecture (stdout vs sidecars) |
+| [tracing.md](tracing.md) | Distributed tracing (OpenTelemetry, Jaeger, Tempo, sampling) |
 
 ## Architecture
 

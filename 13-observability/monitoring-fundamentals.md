@@ -134,6 +134,8 @@ Distributed tracing requires:
 2. **A collector** — the **OpenTelemetry Collector** (or Jaeger agent) receives spans, enriches them with K8s metadata (namespace, Pod, node), batches them, and forwards to a backend (Jaeger, Tempo, Datadog).
 3. **A backend** — stores the trace DAG and lets you search (by service, latency, error).
 
+See [Distributed Tracing](tracing.md) for the full Trace/Span model, OpenTelemetry Collector patterns, and tail-based sampling.
+
 ```mermaid
 graph TD
     A[App emits\nOpenTelemetry spans] --> B[OTel Collector Agent\n(DaemonSet)]
