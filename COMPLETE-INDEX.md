@@ -31,7 +31,7 @@
 | 15 | Cheat Sheets | [cheat-sheets](cheat-sheets) | [kubectl](cheat-sheets/kubectl.md), [helm](cheat-sheets/helm.md), [yaml](cheat-sheets/yaml.md), [certs](cheat-sheets/cert-cheatsheet.md) |
 | 16 | Examples | [examples](examples) | [README](examples/README.md) + 28 YAML manifests across common-patterns, scheduling, security, storage, monitoring, ci-cd, advanced |
 
-**Total: 17 categories, 221 documents, ~200000 words.**
+**Total: 17 categories, 256 documents, ~230000 words.**
 
 ---
 
@@ -217,7 +217,36 @@
 | 7 | Capital One CNI Plugin Upgrade → Network Partition | [capital-one-cni-network-partition.md](14-troubleshooting/incidents/capital-one-cni-network-partition.md) |
 | 8 | Adidas Helm Hook Partial Rollback | [adidas-helm-hook-partial-rollback.md](14-troubleshooting/incidents/adidas-helm-hook-partial-rollback.md) |
 | 9 | Netflix Chaos Engineering Cascade | [netflix-chaos-cascade.md](14-troubleshooting/incidents/netflix-chaos-cascade.md) |
-| 10 | Incidents README | [README.md](14-troubleshooting/incidents/README.md) |
+| 10 | Cloudflare BGP Route Leak → Global Outage | [cloudflare-bgp-leak.md](14-troubleshooting/incidents/cloudflare-bgp-leak.md) |
+| 11 | Tesla K8s Dashboard Cryptojacking | [tesla-k8s-dashboard-cryptojacking.md](14-troubleshooting/incidents/tesla-k8s-dashboard-cryptojacking.md) |
+| 12 | Amazon US-EAST-1 Network Outage | [amazon-us-east-1-outage.md](14-troubleshooting/incidents/amazon-us-east-1-outage.md) |
+| 13 | Google Cloud Config Push Outage | [google-cloud-config-push-outage.md](14-troubleshooting/incidents/google-cloud-config-push-outage.md) |
+| 14 | Azure Load Balancer Outage | [azure-load-balancer-outage.md](14-troubleshooting/incidents/azure-load-balancer-outage.md) |
+| 15 | Shopify OOM Kill Storm | [shopify-oom-kill-storm.md](14-troubleshooting/incidents/shopify-oom-kill-storm.md) |
+| 16 | Discord Memory Leak | [discord-memory-leak.md](14-troubleshooting/incidents/discord-memory-leak.md) |
+| 17 | Epic Games Fortnite Outage | [epic-games-fortnite-outage.md](14-troubleshooting/incidents/epic-games-fortnite-outage.md) |
+| 18 | Apple iCloud Outage | [apple-icloud-outage.md](14-troubleshooting/incidents/apple-icloud-outage.md) |
+| 19 | LinkedIn DNS Outage | [linkedin-dns-outage.md](14-troubleshooting/incidents/linkedin-dns-outage.md) |
+| 20 | Stripe Certificate Expiry | [stripe-cert-expiry.md](14-troubleshooting/incidents/stripe-cert-expiry.md) |
+| 21 | Twilio Dependency Failure | [twilio-dependency-failure.md](14-troubleshooting/incidents/twilio-dependency-failure.md) |
+| 22 | GitLab Database Incident | [gitlab-database-incident.md](14-troubleshooting/incidents/gitlab-database-incident.md) |
+| 23 | Uber Cascading Failure | [uber-cascading-failure.md](14-troubleshooting/incidents/uber-cascading-failure.md) |
+| 24 | Airbnb Resource Exhaustion | [airbnb-resource-exhaustion.md](14-troubleshooting/incidents/airbnb-resource-exhaustion.md) |
+| 25 | Pinterest Node Failure Storm | [pinterest-node-failure-storm.md](14-troubleshooting/incidents/pinterest-node-failure-storm.md) |
+| 26 | Reddit RBAC Lockout | [reddit-rbac-lockout.md](14-troubleshooting/incidents/reddit-rbac-lockout.md) |
+| 27 | Wayfair Storage Failure | [wayfair-storage-failure.md](14-troubleshooting/incidents/wayfair-storage-failure.md) |
+| 28 | Bloomberg API Server Overload | [bloomberg-api-server-overload.md](14-troubleshooting/incidents/bloomberg-api-server-overload.md) |
+| 29 | JPMorgan Network Policy Misconfiguration | [jpmorgan-network-policy.md](14-troubleshooting/incidents/jpmorgan-network-policy.md) |
+| 30 | Goldman Sachs Helm Chart Conflict | [goldman-sachs-helm-conflict.md](14-troubleshooting/incidents/goldman-sachs-helm-conflict.md) |
+| 31 | Capital One Data Breach | [capital-one-breach.md](14-troubleshooting/incidents/capital-one-breach.md) |
+| 32 | Netflix Chaos Gone Wrong | [netflix-chaos-gone-wrong.md](14-troubleshooting/incidents/netflix-chaos-gone-wrong.md) |
+| 33 | Spotify ConfigMap Corruption | [spotify-configmap-corruption.md](14-troubleshooting/incidents/spotify-configmap-corruption.md) |
+| 34 | Slack Service Mesh Outage | [slack-service-mesh-outage.md](14-troubleshooting/incidents/slack-service-mesh-outage.md) |
+| 35 | Roblox HPA Misconfiguration | [roblox-hpa-misconfiguration.md](14-troubleshooting/incidents/roblox-hpa-misconfiguration.md) |
+| 36 | Zalando Operator Crash Loop | [zalando-operator-crash-loop.md](14-troubleshooting/incidents/zalando-operator-crash-loop.md) |
+| 37 | Adidas PVC Binding Failure | [adidas-pvc-binding-failure.md](14-troubleshooting/incidents/adidas-pvc-binding-failure.md) |
+| 38 | GitLab Helm Corruption | [gitlab-helm-corruption.md](14-troubleshooting/incidents/gitlab-helm-corruption.md) |
+| 39 | Incidents README | [README.md](14-troubleshooting/incidents/README.md) |
 
 ---
 
