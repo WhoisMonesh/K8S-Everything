@@ -8,24 +8,19 @@ Kubernetes follows a strict release cycle with **three-way version skew policy**
 
 ## Release Cycle
 
+```mermaid
+graph LR
+    subgraph Active ["Active release window (n-3 minors overlap)"]
+        A["v1.30<br/>Jun 2024"] --> B["v1.31<br/>Sep 2024"] --> C["v1.32<br/>Dec 2024"] --> D["v1.33<br/>2025"]
+    end
+    O["v1.0<br/>Jul 2015"] -->|quarterly minor releases| A
+    style A fill:#e8f0fe
+    style B fill:#e8f0fe
+    style C fill:#e8f0fe
+    style D fill:#e8f0fe
 ```
-Timeline:     v1.28   v1.29   v1.30   v1.31   v1.32
-              ├───────┼───────┼───────┼───────┤
-              │       │       │  GA   │  GA   │
-Release:      │       │  GA   │  ↑    │  ↑    │
-              │       │       │  │    │  │    │
-Support Ends: │───────┼───────┼──┘    │  │    │
-               │      │       │        │  │    │
-EOL:           └──X───┼───X───┼────────X  │    │
-                      │   X   │          │  │    │
-                   ┌──X───┼──X───┐      │  │    │
-                   │      │      │      │  │    │
-Current:           │      │  ↑   │  ↑   │  ↑   │
-                   │      │  │   │  │   │  │   │
-                   │      └──X───┘  │   └──X───┘
-                   │               │
-                   │  Active       │  Active
-```
+
+A new minor release lands roughly every 14 weeks; only the **n-3 most recent** minors receive patches, so each release is supported for ~14 months of overlap.
 
 ### Release Cadence
 | Milestone | Frequency | Description |
@@ -36,6 +31,57 @@ Current:           │      │  ↑   │  ↑   │  ↑   │
 | Code Freeze | 3 weeks before release | Only critical fixes allowed |
 | Release | ~14 weeks from cycle start | GA version published |
 | EOL (End of Life) | +14 weeks after release | No more patches |
+
+## Version History (v1.0 → current)
+
+> The initial production release, **v1.0**, shipped **21 July 2015**. Since then Kubernetes has cut a **minor release every ~14 weeks (three per year)**. Only the **n-3 most recent** minors are patched (the *support window*), so a given release is live + maintained for roughly 14 months before it stops receiving fixes. Dates below follow the project's official release history.
+
+### Major milestones
+
+| Version | Released | Release Theme / Notable |
+|---------|----------|--------------------------|
+| v1.0 | Jul 2015 | Initial production **GA** release — Pods, Services, ReplicationController, Deployments, `kubectl` |
+| v1.1 | Nov 2015 | `PetSet` (→ StatefulSet), Namespaces GA, network isolation |
+| v1.2 | Mar 2016 | Scalability — cluster size raised to **5000 nodes** |
+| v1.3 | Jul 2016 | **Container Runtime Interface (CRI)**; rkt integration |
+| v1.4 | Sep 2016 | `kubectl apply` (strategic merge); `Deployment` rollout GA; Helm 1.0 |
+| v1.5 | Jan 2017 | **kubeadm** beta; Secrets encryption (alpha); RuntimeClassName (alpha) |
+| v1.6 | Apr 2017 | **RBAC** GA; NetworkPolicy GA |
+| v1.7 | Jun 2017 | **apps/v1 GA** — Deployment, ReplicaSet, StatefulSet, DaemonSet |
+| v1.8 | Sep 2017 | TLS Bootstrap; cloud-provider out-of-tree (alpha); `kubectl --dry-run=server` |
+| v1.9 | Dec 2017 | PriorityClass; PVC/PV lifecycle features |
+| v1.10 | Mar 2018 | **kubeadm HA** (alpha); TLS **certificate rotation** (alpha); NodeLease API |
+| v1.11 | Jun 2018 | IPv4/IPv6 dual-stack (alpha); CoreDNS promoted as default DNS addon |
+| v1.12 | Jul 2018 | Windows containers GA (Windows Server); kubelet credential providers |
+| v1.13 | Jan 2019 | **Local PersistentVolumes** GA; `kubectl` kustomize built-in |
+| v1.14 | Mar 2019 | Windows Server containers **GA** as worker nodes; scheduler extensibility |
+| v1.15 | Jul 2019 | **CustomResourceDefinitions** GA; `kubectl` plugin manager (`krew`) |
+| v1.16 | Sep 2019 | **Server-side apply** (alpha); CRDs `apiextensions.k8s.io/v1` GA; `kubectl` apply dry-run |
+| v1.17 | Dec 2019 | Default container image (`k8s.gcr.io` namespace); CSI Windows |
+| v1.18 | Mar 2020 | Server-side apply **beta**; `kubectl` debug (ephemeral containers) beta |
+| v1.19 | Aug 2020 | **Ingress** GA (`networking.k8s.io/v1`); Windows CSI; `kubectl` 1.0 maturity |
+| v1.20 | Dec 2020 | Node **cgroup v2** support; `kubectl` logs for crash-loop; dockershim warning |
+| v1.21 | Apr 2021 | `kubectl` 1.21; Windows CSI GA; PodSecurityPolicy deprecation announced |
+| v1.22 | Aug 2021 | **Dockershim deprecated** (Docker to be removed as a runtime); `node.kubernetes.io` not-ready taint |
+| v1.23 | Dec 2021 | `kubectl` 1.23; minimum `kubectl` skew window widened to +/- 2 minors |
+| v1.24 | May 2022 | **Dockershim removed** — containerd/CRI-O only (Docker-cre based `cri-dockerd` workaround) |
+| v1.25 | Aug 2022 | **PodSecurityPolicy removed**; **Pod Security Admission** GA; `kubectl` 1.25 |
+| v1.26 | Dec 2022 | **n-3 support window** formalized; stable metrics (`metrics.k8s.io`); `kubectl` 1.26 |
+| v1.27 | Apr 2023 | containerd default for EKS, GKE; Windows cgroup v2 GA |
+| v1.28 | Aug 2023 | Server-side `apply`/`kubectl` improvements; `CronJob` suspend; min Go 1.20 |
+| v1.29 | Feb 2024 | Live config reload for kube-scheduler/controller-manager; Windows CNI GA |
+| v1.30 | Jun 2024 | **Native node swap** support (alpha GA-bound); `registry.k8s.io` default; `kubectl` 1.30 |
+| v1.31 | Sep 2024 | **CEL** for ValidatingAdmissionPolicy GA; min Go 1.22; `kubectl` 1.31 |
+| v1.32 | Dec 2024 | `PodLifecycleSleepAction`; min Go 1.22; in-place Pod resources resize |
+
+> ℹ️ Dates are approximate release-month; see the official [release history](https://github.com/kubernetes/sig-release/tree/master/releases) for exact days.
+
+### Support & EOL policy (at a glance)
+
+- A minor is **actively patched** while it is within the **n-3 window**; once it falls out, it is EOL.
+- **kubelet skew**: nodes may be **1 minor** older (or newer) than the API server.
+- **kubectl skew**: `kubectl` is compatible with the API server **±2 minors**.
+- **managed services** (EKS/GKE/AKS) **delay** the upstream minor by a few weeks, but inherit the same n-3 patch policy on the underlying distro.
 
 ## Version Skew Policy
 

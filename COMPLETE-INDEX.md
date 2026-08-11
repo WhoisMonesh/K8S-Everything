@@ -31,7 +31,7 @@
 | 15 | Cheat Sheets | [cheat-sheets](cheat-sheets) | [kubectl](cheat-sheets/kubectl.md), [helm](cheat-sheets/helm.md), [yaml](cheat-sheets/yaml.md), [certs](cheat-sheets/cert-cheatsheet.md) |
 | 16 | Examples | [examples](examples) | [README](examples/README.md) + per-topic YAML patterns |
 
-**Total: ~15 core categories, ~115 documents, ~125k words.**
+**Total: 17 categories, 199 documents, ~125k words.**
 
 ---
 
@@ -238,6 +238,32 @@
 | Monitoring | [examples/monitoring/](examples/monitoring) |
 | Security | [examples/security/](examples/security) |
 | Storage | [examples/storage/](examples/storage) |
+
+
+---
+
+## Added / Updated — new playbooks & reference
+
+These were added to close gaps for learners and operators; every link below resolves to a real file.
+
+| Topic | File |
+|-------|------|
+| kubeadm cluster bootstrap (init/join/HA, certs, upgrades) | [kubeadm.md](08-cluster-operations/kubeadm.md) |
+| FinOps (cost buckets, right-sizing, spot, allocation, idle nodes) | [finops.md](08-cluster-operations/finops.md) |
+| Backup & DR runbook (etcd snapshots + Velero + restore) | [backup-disaster-recovery.md](08-cluster-operations/backup-disaster-recovery.md) |
+| Gateway API implementations (controller matrix) | [gateway-api-implementations.md](04-networking/gateway-api-implementations.md) |
+| WASM as a workload (runtimes, RuntimeClass, OCI) | [wasm.md](15-advanced-patterns/wasm.md) |
+| OCI artifacts (images, charts, sigs, SBOM, WASM) | [oci.md](10-package-management/oci.md) |
+| Multi-Cluster federation (Istio multi-primary, Cilium Mesh) | [multicluster.md](12-service-mesh/multicluster.md) |
+| Supply chain / Cosign (keyless signing + SBoM) | [cosign.md](11-supply-chain/cosign.md) |
+| Security overview (defense in depth, PSA, etcd encryption) | [security.md](06-security/security.md) |
+| HPA/VPA/KEDA + Cluster Autoscaler | [hpa-vpa.md](07-scheduling-autoscaling/hpa-vpa.md) |
+| Resource requests/limits & QoS | [resource-management.md](07-scheduling-autoscaling/resource-management.md) |
+| Observability overview (golden signals, OTel, Prometheus) | [observability.md](13-observability/observability.md) |
+| Troubleshooting Encyclopedia (symptom to diagnosis tables) | [troubleshooting-encyclopedia.md](14-troubleshooting/troubleshooting-encyclopedia.md) |
+| Disaster Cases (real incidents and runbooks) | [disaster-cases.md](14-troubleshooting/disaster-cases.md) |
+| Pod Security Context (runAsUser, readOnlyRootFilesystem) | [pod-security-context.md](06-security/pod-security-context.md) |
+| Version history (v1.0 to current) | [kubernetes-versions.md](kubernetes-versions.md) |
 
 ---
 

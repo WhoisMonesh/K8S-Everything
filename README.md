@@ -32,6 +32,31 @@
 
 ---
 
+
+## Added Reference & Playbooks (this pass)
+
+The following playbooks/reference were added to close operational + exam gaps; every link resolves.
+
+| Topic | Location |
+|-------|----------|
+| Troubleshooting Encyclopedia — symptom → diagnosis tables (Pods, Net, Control-plane, Nodes, Sched, Storage, Security, Helm, Perf) | [`14-troubleshooting/troubleshooting-encyclopedia.md`](14-troubleshooting/troubleshooting-encyclopedia.md) |
+| Disaster Cases — real incidents & runbooks (etcd loss, cert expiry, registry outage, upgrade cascade, PVC loss…) | [`14-troubleshooting/disaster-cases.md`](14-troubleshooting/disaster-cases.md) |
+| Full Kubernetes Version History (v1.0 Jul 2015 → current) + release lifecycle/skew | [`kubernetes-versions.md`](kubernetes-versions.md) |
+| kubeadm bootstrap (init/join/HA, certs, upgrades) | [`08-cluster-operations/kubeadm.md`](08-cluster-operations/kubeadm.md) |
+| FinOps (cost buckets, right-sizing, spot, allocation, idle nodes) | [`08-cluster-operations/finops.md`](08-cluster-operations/finops.md) |
+| Backup & DR runbook (etcd + Velero + restore) | [`08-cluster-operations/backup-disaster-recovery.md`](08-cluster-operations/backup-disaster-recovery.md) |
+| Gateway API Implementations (controller matrix) | [`04-networking/gateway-api-implementations.md`](04-networking/gateway-api-implementations.md) |
+| WASM as a workload | [`15-advanced-patterns/wasm.md`](15-advanced-patterns/wasm.md) |
+| OCI Artifacts (images, charts, sigs, SBOM, WASM) | [`10-package-management/oci.md`](10-package-management/oci.md) |
+| Multi-Cluster federation | [`12-service-mesh/multicluster.md`](12-service-mesh/multicluster.md) |
+| Supply Chain / Cosign (keyless signing + SBoM) | [`11-supply-chain/cosign.md`](11-supply-chain/cosign.md) |
+| Security overview (defense in depth, PSA, etcd encryption) | [`06-security/security.md`](06-security/security.md) |
+| Pod Security Context (runAsUser, readOnlyRootFilesystem, seccomp) | [`06-security/pod-security-context.md`](06-security/pod-security-context.md) |
+| HPA/VPA/KEDA + Cluster Autoscaler | [`07-scheduling-autoscaling/hpa-vpa.md`](07-scheduling-autoscaling/hpa-vpa.md) |
+| Resource Requests/Limits & QoS | [`07-scheduling-autoscaling/resource-management.md`](07-scheduling-autoscaling/resource-management.md) |
+| Observability overview (golden signals, OTel, Prometheus) | [`13-observability/observability.md`](13-observability/observability.md) |
+
+
 ## Kubernetes Overview
 
 ### What Is Kubernetes?
