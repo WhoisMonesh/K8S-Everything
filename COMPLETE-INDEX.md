@@ -26,12 +26,12 @@
 | 10 | CI/CD & GitOps | [11-ci-cd-gitops](11-ci-cd-gitops) | [README](11-ci-cd-gitops/README.md) + 4 docs |
 | 11 | Service Mesh | [12-service-mesh](12-service-mesh) | [README](12-service-mesh/README.md) + 4 docs |
 | 12 | Observability | [13-observability](13-observability) | [README](13-observability/README.md) + 6 docs |
-| 13 | Troubleshooting | [14-troubleshooting](14-troubleshooting) | [README](14-troubleshooting/README.md) + 4 docs |
+| 13 | Troubleshooting | [14-troubleshooting](14-troubleshooting) | [README](14-troubleshooting/README.md) + 4 docs + [incidents/](14-troubleshooting/incidents) (9 case studies) |
 | 14 | Reference | (top-level) | [API groups](api-groups-reference.md), [versions](kubernetes-versions.md), [companies](companies-using-kubernetes.md), [certifications](kubernetes-certifications.md) |
 | 15 | Cheat Sheets | [cheat-sheets](cheat-sheets) | [kubectl](cheat-sheets/kubectl.md), [helm](cheat-sheets/helm.md), [yaml](cheat-sheets/yaml.md), [certs](cheat-sheets/cert-cheatsheet.md) |
 | 16 | Examples | [examples](examples) | [README](examples/README.md) + 28 YAML manifests across common-patterns, scheduling, security, storage, monitoring, ci-cd, advanced |
 
-**Total: 17 categories, 202 documents, ~180774 words.**
+**Total: 17 categories, 221 documents, ~200000 words.**
 
 ---
 
@@ -170,6 +170,14 @@
 | 3 | Flux | [flux.md](11-ci-cd-gitops/flux.md) |
 | 4 | Tekton | [tekton.md](11-ci-cd-gitops/tekton.md) |
 
+## 10b. Supply Chain Security (11-supply-chain)
+
+| # | Topic | File |
+|---|-------|------|
+| 1 | Cosign (keyless signing + SBoM) | [cosign.md](11-supply-chain/cosign.md) |
+| 2 | SBOM (Software Bill of Materials) | [sbom.md](11-supply-chain/sbom.md) |
+| 3 | Container Image Scanning | [image-scanning.md](11-supply-chain/image-scanning.md) |
+
 ## 11. Service Mesh (12-service-mesh)
 
 | # | Topic | File |
@@ -193,6 +201,23 @@
 |---|-------|------|
 | 1 | Troubleshooting Patterns (Pending, CrashLoopBackOff, ImagePull, Services, DNS) | [troubleshooting-patterns.md](14-troubleshooting/troubleshooting-patterns.md) |
 | 2 | kubectl Debug (describe, logs, ephemeral containers, port-forward) | [kubectl-debug.md](14-troubleshooting/kubectl-debug.md) |
+| 3 | Troubleshooting Encyclopedia | [troubleshooting-encyclopedia.md](14-troubleshooting/troubleshooting-encyclopedia.md) |
+| 4 | Disaster Cases | [disaster-cases.md](14-troubleshooting/disaster-cases.md) |
+
+### Real Company Incident Case Studies (incidents/)
+
+| # | Incident | File |
+|---|----------|------|
+| 1 | GitLab ORM Migration → Deployment Cascade | [gitlab-orm-migration-outage.md](14-troubleshooting/incidents/gitlab-orm-migration-outage.md) |
+| 2 | GitHub ALB Controller + NLB Firewall Drain | [github-alb-nlb-firewall.md](14-troubleshooting/incidents/github-alb-nlb-firewall.md) |
+| 3 | Spotify Istio Cert Rotation → 5xx Cascade | [spotify-istio-cert-rotation.md](14-troubleshooting/incidents/spotify-istio-cert-rotation.md) |
+| 4 | Slack CoreDNS Cache Thrashing | [slack-coredns-cache-thrashing.md](14-troubleshooting/incidents/slack-coredns-cache-thrashing.md) |
+| 5 | Zalando etcd Quorum Loss + Botched Restore | [zalando-etcd-quorum-loss.md](14-troubleshooting/incidents/zalando-etcd-quorum-loss.md) |
+| 6 | Roblox CPU Throttling Under Load | [roblox-cpu-throttling.md](14-troubleshooting/incidents/roblox-cpu-throttling.md) |
+| 7 | Capital One CNI Plugin Upgrade → Network Partition | [capital-one-cni-network-partition.md](14-troubleshooting/incidents/capital-one-cni-network-partition.md) |
+| 8 | Adidas Helm Hook Partial Rollback | [adidas-helm-hook-partial-rollback.md](14-troubleshooting/incidents/adidas-helm-hook-partial-rollback.md) |
+| 9 | Netflix Chaos Engineering Cascade | [netflix-chaos-cascade.md](14-troubleshooting/incidents/netflix-chaos-cascade.md) |
+| 10 | Incidents README | [README.md](14-troubleshooting/incidents/README.md) |
 
 ---
 
@@ -227,6 +252,8 @@
 | Helm | [helm.md](cheat-sheets/helm.md) |
 | YAML | [yaml.md](cheat-sheets/yaml.md) |
 | CKA/CKAD/CKS exam | [cert-cheatsheet.md](cheat-sheets/cert-cheatsheet.md) |
+| Troubleshooting (90-second commands) | [troubleshooting.md](cheat-sheets/troubleshooting.md) |
+| Glossary (terms, acronyms, concepts) | [glossary.md](cheat-sheets/glossary.md) |
 
 ## 16. Examples (examples)
 
@@ -266,6 +293,12 @@ These were added to close gaps for learners and operators; every link below reso
 | Disaster Cases (real incidents and runbooks) | [disaster-cases.md](14-troubleshooting/disaster-cases.md) |
 | Pod Security Context (runAsUser, readOnlyRootFilesystem) | [pod-security-context.md](06-security/pod-security-context.md) |
 | Version history (v1.0 to current) | [kubernetes-versions.md](kubernetes-versions.md) |
+| Real company incident case studies (9 outages) | [incidents/](14-troubleshooting/incidents/) |
+| Troubleshooting cheat sheet (90-second commands) | [troubleshooting.md](cheat-sheets/troubleshooting.md) |
+| K8s glossary (terms, acronyms, concepts) | [glossary.md](cheat-sheets/glossary.md) |
+| SBOM (Software Bill of Materials) | [sbom.md](11-supply-chain/sbom.md) |
+| Container image scanning (Trivy, Grype, CI/CD) | [image-scanning.md](11-supply-chain/image-scanning.md) |
+| Lab workbook (5 hands-on labs: deploy, troubleshoot, RBAC, Helm, GitOps) | [lab-instructions.md](examples/common-patterns/lab-instructions.md) |
 
 ---
 

@@ -119,6 +119,6 @@ A: **etcd death.** etcd is the single source of truth; lose quorum (2/3 members)
 ## Related Resources
 - [Troubleshooting Encyclopedia](troubleshooting-encyclopedia.md)
 - [Backup & Disaster Recovery](../08-cluster-operations/backup-disaster-recovery.md)
-- [etcd](...) (see `../02-architecture/etcd.md`)
+- [etcd](../02-architecture/etcd.md)
 - [Observability](../13-observability/observability.md)
 - [Security](../06-security/security.md)

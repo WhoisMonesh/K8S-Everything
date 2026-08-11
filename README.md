@@ -19,14 +19,15 @@
 | 8 | [Scheduling & Autoscaling](07-scheduling-autoscaling/README.md) | Scheduling, Taints, Affinity, Quotas, HPA, VPA, KEDA, Cluster Autoscaler, Priority | 12 |
 | 8 | [Cluster Operations](08-cluster-operations/README.md) | kubelet, Debugging, Backup/Restore, Upgrades | 5 |
 | 9 | [Observability](13-observability/README.md) | Monitoring Fundamentals, Prometheus, Grafana, Logging | 4 |
-| 10 | [Troubleshooting](14-troubleshooting/README.md) | Debugging Pods, Common Failure Patterns, kubectl | 2 |
+| 10 | [Troubleshooting](14-troubleshooting/README.md) | Debugging Pods, Common Failure Patterns, kubectl, Real Company Incidents (9 case studies) | 6 |
 | 11 | [Package Management](10-package-management/README.md) | Helm, Kustomize | 4 |
 | 12 | [CI/CD & GitOps](11-ci-cd-gitops/README.md) | CI/CD, Argo CD, Flux, Tekton | 5 |
-| 13 | [Service Mesh](12-service-mesh/README.md) | Service Mesh, Istio, Linkerd | 3 |
-| 14 | [Interview Prep](16-interview-prep/README.md) | CKA, CKAD, CKS, Questions, Cheatsheets | 5 |
-| 15 | [Reference & Cheatsheets](#reference-documentation) | API groups, versions, companies, certs, cheatsheets | 4+ |
+| 13 | [Supply Chain Security](11-supply-chain/) | Cosign, SBOM, Image Scanning | 3 |
+| 14 | [Service Mesh](12-service-mesh/README.md) | Service Mesh, Istio, Linkerd | 3 |
+| 15 | [Interview Prep](16-interview-prep/README.md) | CKA, CKAD, CKS, Questions, Cheatsheets | 5 |
+| 16 | [Reference & Cheatsheets](#reference-documentation) | API groups, versions, companies, certs, cheatsheets, glossary | 6+ |
 
-**Total: ~130 Kubernetes concepts, components, tools, and patterns across 13 topic categories + reference docs.**
+**Total: ~221 Kubernetes concepts, components, tools, and patterns across 16 topic categories + reference docs.**
 
 > 💡 *Categories 13-cloud-integrations, 14-advanced-patterns, 17-company-cases and 18-real-incidents are planned. The canonical docs for those topics live in their related-topic pages (e.g. [EKS/GKE/AKS coverage](companies-using-kubernetes.md), [admission/PSA controls](06-security/admission-controllers.md), [Blue/Green & Canary](11-ci-cd-gitops/ci-cd.md)).*
 
@@ -41,6 +42,7 @@ The following playbooks/reference were added to close operational + exam gaps; e
 |-------|----------|
 | Troubleshooting Encyclopedia — symptom → diagnosis tables (Pods, Net, Control-plane, Nodes, Sched, Storage, Security, Helm, Perf) | [`14-troubleshooting/troubleshooting-encyclopedia.md`](14-troubleshooting/troubleshooting-encyclopedia.md) |
 | Disaster Cases — real incidents & runbooks (etcd loss, cert expiry, registry outage, upgrade cascade, PVC loss…) | [`14-troubleshooting/disaster-cases.md`](14-troubleshooting/disaster-cases.md) |
+| Real Company Incident Case Studies (9 outages: GitLab, GitHub, Spotify, Slack, Zalando, Roblox, Capital One, Adidas, Netflix) | [`14-troubleshooting/incidents/`](14-troubleshooting/incidents/) |
 | Full Kubernetes Version History (v1.0 Jul 2015 → current) + release lifecycle/skew | [`kubernetes-versions.md`](kubernetes-versions.md) |
 | CKA/CKAD/CKS Exam Walkthrough (domain → command map) | [`16-interview-prep/exam-walkthrough.md`](16-interview-prep/exam-walkthrough.md) |
 | kubeadm bootstrap (init/join/HA, certs, upgrades) | [`08-cluster-operations/kubeadm.md`](08-cluster-operations/kubeadm.md) |
@@ -51,11 +53,16 @@ The following playbooks/reference were added to close operational + exam gaps; e
 | OCI Artifacts (images, charts, sigs, SBOM, WASM) | [`10-package-management/oci.md`](10-package-management/oci.md) |
 | Multi-Cluster federation | [`12-service-mesh/multicluster.md`](12-service-mesh/multicluster.md) |
 | Supply Chain / Cosign (keyless signing + SBoM) | [`11-supply-chain/cosign.md`](11-supply-chain/cosign.md) |
+| SBOM (Software Bill of Materials) | [`11-supply-chain/sbom.md`](11-supply-chain/sbom.md) |
+| Container Image Scanning (Trivy, Grype, CI/CD) | [`11-supply-chain/image-scanning.md`](11-supply-chain/image-scanning.md) |
 | Security overview (defense in depth, PSA, etcd encryption) | [`06-security/security.md`](06-security/security.md) |
 | Pod Security Context (runAsUser, readOnlyRootFilesystem, seccomp) | [`06-security/pod-security-context.md`](06-security/pod-security-context.md) |
 | HPA/VPA/KEDA + Cluster Autoscaler | [`07-scheduling-autoscaling/hpa-vpa.md`](07-scheduling-autoscaling/hpa-vpa.md) |
 | Resource Requests/Limits & QoS | [`07-scheduling-autoscaling/resource-management.md`](07-scheduling-autoscaling/resource-management.md) |
 | Observability overview (golden signals, OTel, Prometheus) | [`13-observability/observability.md`](13-observability/observability.md) |
+| Troubleshooting Cheat Sheet (90-second commands) | [`cheat-sheets/troubleshooting.md`](cheat-sheets/troubleshooting.md) |
+| K8s Glossary (terms, acronyms, concepts) | [`cheat-sheets/glossary.md`](cheat-sheets/glossary.md) |
+| Lab Workbook (5 hands-on labs: deploy, troubleshoot, RBAC, Helm, GitOps) | [`examples/common-patterns/lab-instructions.md`](examples/common-patterns/lab-instructions.md) |
 
 
 ## Kubernetes Overview
