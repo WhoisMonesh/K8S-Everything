@@ -12,6 +12,8 @@ Beyond plain Deployments live the patterns that let you **run your own controlle
 | [helm-hooks.md](helm-hooks.md) | Helm hooks (lifecycle: pre/post install/upgrade/delete/test) |
 | [blue-green-canary.md](blue-green-canary.md) | Blue/Green + Canary strategies, feature flags, traffic shifting |
 | [pod-patterns.md](pod-patterns.md) | Sidecar, Ambassador, Adapter, Init-container patterns |
+| [knative.md](knative.md) | Knative Serving + Eventing (serverless, scale-to-zero) |
+| [sandbox-runtimes.md](sandbox-runtimes.md) | gVisor / Kata Containers via RuntimeClass |
 
 ## Architecture
 

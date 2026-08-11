@@ -20,6 +20,7 @@ Kubernetes networking connects pods to each other, services, and the outside wor
 | [ingress-controllers.md](ingress-controllers.md) | Ingress controller overview |
 | [nginx-ingress.md](nginx-ingress.md) | NGINX Ingress Controller |
 | [traefik-ingress.md](traefik-ingress.md) | Traefik Ingress Controller |
+| [gateway-api.md](gateway-api.md) | Gateway API (GatewayClass/Gateway/HTTPRoute) - Ingress successor |
 
 ## Network Policies (East-West Security)
 
@@ -31,7 +32,8 @@ Kubernetes networking connects pods to each other, services, and the outside wor
 
 | File | Topic |
 |------|-------|
-| [cni-plugins.md](cni-plugins.md) | Calico, Cilium, Flannel, Cilium, Kube-OVN, etc. |
+| [cni-plugins.md](cni-plugins.md) | Calico, Cilium, Flannel, Kube-OVN, etc. |
+| [cilium.md](cilium.md) | Cilium + eBPF (identity-aware security, Hubble, kube-proxy replacement) |
 
 ## Learning Path
 

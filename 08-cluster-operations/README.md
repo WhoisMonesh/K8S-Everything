@@ -14,6 +14,7 @@ This category covers **running, inspecting, and debugging** a Kubernetes cluster
 | [upgrades.md](upgrades.md) | Upgrading clusters (control plane + nodes) |
 | [backup-restore.md](backup-restore.md) | etcd backup + Velero |
 | [logging.md](../13-observability/logging.md) | Cluster logging (fluentd, fluent-bit, Loki) |
+| [cluster-api.md](cluster-api.md) | Cluster API (declarative multi-cluster lifecycle) |
 | [monitoring.md](../13-observability/prometheus.md) | Monitoring (Prometheus + kube-state-metrics) |
 
 ## Quick Start: Node Inspection
