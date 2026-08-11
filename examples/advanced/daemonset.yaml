@@ -1,0 +1,42 @@
+# Runs ONE Pod on every (matching) node — e.g. a node log collector / agent.
+apiVersion: apps/v1
+kind: DaemonSet
+metadata: { name: node-exporter, labels: { app: node-exporter } }
+spec:
+  selector: { matchLabels: { app: node-exporter } }
+  updateStrategy:
+    type: RollingUpdate
+    rollingUpdate: { maxUnavailable: 1 }      # keep a replacement before killing the old
+  template:
+    metadata:
+      labels: { app: node-exporter }
+      annotations:
+        prometheus.io/port: "9100"
+        prometheus.io/scrape: "true"
+    spec:
+      # Tolerate all taints so agents run even on control-plane / GPU nodes:
+      tolerations:
+      - { key: node-role.kubernetes.io/control-plane, operator: Exists, effect: NoSchedule }
+      - { key: node-role.kubernetes.io/master, operator: Exists, effect: NoSchedule }
+      - { key: "CriticalAddonsOnly", operator: Exists }
+      hostNetwork: true               # needs host network to read node metrics
+      dnsPolicy: ClusterFirstWithHostNet
+      containers:
+      - name: node-exporter
+        image: quay.io/prometheus/node-exporter:v1.8.1
+        args:
+        - --path=rootfs=/host
+        - --path.procfs=/host/proc
+        - --path.sysfs=/host/sys
+        - --collector.filesystem.mount-points-exclude=^/(dev|proc|sys|var/lib/docker/.+)($$|\\\\s)
+        ports: [{ containerPort: 9100, name: metrics }]
+        resources: { requests: { cpu: 100m, memory: 100Mi }, limits: { cpu: 200m, memory: 200Mi } }
+        securityContext: { readOnlyRootFilesystem: false }
+        volumeMounts:
+        - { name: proc,  mountPath: /host/proc, readOnly: true }
+        - { name: sys,   mountPath: /host/sys,  readOnly: true }
+        - { name: root,  mountPath: /host,      readOnly: true }
+      volumes:
+      - { name: proc, hostPath: { path: /proc } }
+      - { name: sys,  hostPath: { path: /sys } }
+      - { name: root, hostPath: { path: / } }

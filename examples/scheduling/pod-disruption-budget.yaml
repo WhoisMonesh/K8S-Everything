@@ -1,0 +1,16 @@
+apiVersion: policy/v1              # policy/v1 (PSP removed in 1.25)
+kind: PodDisruptionBudget
+metadata: { name: web-pdb, labels: { app: web } }
+spec:
+  minAvailable: 2             # keep at least 2 of 3 replicas during drain/upgrade
+  # -- or equivalently: maxUnavailable: 1   (at most 1 down at once)
+  selector:
+    matchLabels: { app: web }
+---
+# Namespace-wide: protect the whole namespace from full evacuation at once
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata: { name: whole-namespace-pdb }
+spec:
+  minAvailable: 1
+  selector: {}                # selects every Pod in the namespace

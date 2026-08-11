@@ -1,0 +1,36 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata: { name: fast-ssd }
+provisioner: ebs.csi.aws.com              # swap for your CSI; `kubernetes.io/gce-pd` etc.
+volumeBindingMode: WaitForConsumer      # use Immediate only for stateless/fast
+parameters:
+  type: gp3
+  fsType: ext4
+allowVolumeExpansion: true
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata: { name: web-data }
+spec:
+  accessModes: [ReadWriteOnce]            # use ReadWriteMany only if your storage supports it
+  storageClassName: fast-ssd
+  resources: { requests: { storage: 10Gi } }
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: web }
+spec:
+  replicas: 2
+  selector: { matchLabels: { app: web } }
+  template:
+    metadata: { labels: { app: web } }
+    spec:
+      containers:
+      - name: web
+        image: nginx:1.25-alpine
+        volumeMounts:
+        - name: data
+          mountPath: /usr/share/nginx/html
+      volumes:
+      - name: data
+        persistentVolumeClaim: { claimName: web-data }

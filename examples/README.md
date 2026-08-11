@@ -12,16 +12,20 @@ This directory contains ready-to-use Kubernetes YAML manifests and configuration
 |-----------|-------------|
 | [common-patterns/](common-patterns/) | Reusable YAML templates (deployment, service, ingress) |
 | [advanced/](advanced/) | Advanced patterns (sidecar, init containers, multi-container) |
-| [security/](security/) | RBAC, network policies, PSP examples |
+| [security/](security/) | RBAC, network policies, PSA, egress examples |
 | [storage/](storage/) | PV/PVC, StorageClass, volume snapshot examples |
+| [scheduling/](scheduling/) | HPA, VPA, ResourceQuota, LimitRange, PDB, affinity |
 | [monitoring/](monitoring/) | Prometheus, Grafana, alerting examples |
 | [ci-cd/](ci-cd/) | Argo CD, Flux deployment examples |
 
 ## Quick Start
 
 ```bash
-# Deploy the bundled common patterns (Deployment + Service + Ingress + Secret + ConfigMap)
-kubectl apply -f common-patterns/common-patterns.md
+# Deploy the core common patterns
+kubectl apply -f common-patterns/deployment.yaml
+kubectl apply -f common-patterns/service.yaml
+kubectl apply -f common-patterns/configmap-secret.yaml
+kubectl apply -f common-patterns/ingress.yaml
 
 # Apply everything in this folder at once
 kubectl apply -R -f .

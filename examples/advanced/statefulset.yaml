@@ -1,0 +1,33 @@
+# Headless Service (stable DNS: <pod>.web-ns.svc.cluster.local)
+apiVersion: v1
+kind: Service
+metadata: { name: web, labels: { app: web } }
+spec:
+  clusterIP: None                # headless -> one Endpoint per pod
+  selector: { app: web }
+  ports: [{ port: 80, targetPort: 9376, name: http }]
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata: { name: web }
+spec:
+  serviceName: web
+  replicas: 3                     # pod-0, pod-1, pod-2 with stable identity
+  selector: { matchLabels: { app: web } }
+  template:
+    metadata: { labels: { app: web } }
+    spec:
+      containers:
+      - name: web
+        image: nginx:1.25-alpine
+        ports: [{ containerPort: 9376, name: http }]
+        volumeMounts:
+        - name: data              # per-pod PVC (stable storage)
+          mountPath: /usr/share/nginx/html
+        readinessProbe: { httpGet: { path: /, port: 9376 }, periodSeconds: 2 }
+  volumeClaimTemplates:            # one PVC per Pod, backed by the named StorageClass
+  - metadata: { name: data }
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: fast-ssd
+      resources: { requests: { storage: 5Gi } }

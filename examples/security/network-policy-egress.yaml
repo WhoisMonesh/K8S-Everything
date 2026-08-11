@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata: { name: web-netpol }
+spec:
+  podSelector: { matchLabels: { app: web } }    # applies to every web Pod
+  policyTypes: [Ingress, Egress]
+  # Default: allow only same-namespace ingress
+  ingress:
+  - from: [{ namespaceSelector: {}, podSelector: { matchLabels: { app: web } } }]
+  # Egress: allow DNS (for image pulls / service discovery) + Redis; deny everything else
+  egress:
+  - to: [{ namespaceSelector: {}, podSelector: { matchLabels: { app: redis } } }]   # redis in same ns
+    ports: [{ protocol: TCP, port: 6379 }]
+  - to:          # DNS — kube-system kube-dns, usually 10.96.0.10 / :53
+    - namespaceSelector: { matchLabels: { name: kube-system } }
+      podSelector:           { matchLabels: { k8s-app: kube-dns } }
+    ports: [{ protocol: UDP, port: 53 }, { protocol: TCP, port: 53 }]
+---
+# Catch-all default-deny (place once per namespace to enforce zero-trust)
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata: { name: default-deny-all }
+spec:
+  podSelector: {}
+  policyTypes: [Ingress, Egress]

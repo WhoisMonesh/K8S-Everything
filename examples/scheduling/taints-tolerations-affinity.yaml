@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: web }
+spec:
+  replicas: 3
+  selector: { matchLabels: { app: web } }
+  template:
+    metadata: { labels: { app: web } }
+    spec:
+      # Run only on dedicated/infra nodes and survive their taints:
+      tolerations:
+      - key: "dedicated"
+        operator: Equal
+        value: "frontend"
+        effect: NoSchedule
+      - key: "node.kubernetes.io/not-ready"
+        operator: Exists
+        effect: NoExecute
+        tolerationSeconds: 30
+      nodeSelector:
+        disktype: ssd          # hard constraint
+      affinity:
+        # Prefer different nodes (HA); avoid co-locating replicas
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector: { matchLabel: {app: web} }
+              topologyKey: kubernetes.io/hostname
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - { key: kubernetes.io/arch, operator: In, values: [amd64] }
+      containers:
+      - name: web
+        image: nginx:1.25-alpine
+        ports: [{ containerPort: 80 }]
+        resources: { requests: { cpu: 100m, memory: 128Mi } }

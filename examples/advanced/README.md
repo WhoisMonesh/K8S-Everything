@@ -1,7 +1,17 @@
 # Advanced Examples
 
-Multi-container pod patterns, init containers, and lifecycle hooks.
+> Multi-container pod patterns, init containers, StatefulSets, and DaemonSets.
 
 ## Contents
-- `sidecar-proxy.yaml` — a Pod with an app + a sidecar sharing an emptyDir.
-- `init-container.yaml` — a Pod that runs a setup task before the app starts.
+- `daemonset.yaml` — node-exporter DaemonSet with hostNetwork + control-plane tolerations.
+- `init-container.yaml` — a Pod that runs a setup task (init container) before the app starts.
+- `sidecar-proxy.yaml` — an app + a sidecar sharing an emptyDir.
+- `statefulset.yaml` — StatefulSet + headless Service + volumeClaimTemplates.
+
+## Usage
+
+```bash
+kubectl apply -R -f .          # deploy all in this directory
+kubectl apply -f . --dry-run=client   # validate first
+kubectl delete -R -f .            # remove
+```

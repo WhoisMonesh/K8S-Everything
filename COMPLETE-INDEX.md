@@ -29,7 +29,7 @@
 | 13 | Troubleshooting | [14-troubleshooting](14-troubleshooting) | [README](14-troubleshooting/README.md) + 2 docs |
 | 14 | Reference | (top-level) | [API groups](api-groups-reference.md), [versions](kubernetes-versions.md), [companies](companies-using-kubernetes.md), [certifications](kubernetes-certifications.md) |
 | 15 | Cheat Sheets | [cheat-sheets](cheat-sheets) | [kubectl](cheat-sheets/kubectl.md), [helm](cheat-sheets/helm.md), [yaml](cheat-sheets/yaml.md), [certs](cheat-sheets/cert-cheatsheet.md) |
-| 16 | Examples | [examples](examples) | [README](examples/README.md) + per-topic YAML patterns |
+| 16 | Examples | [examples](examples) | [README](examples/README.md) + 25 YAML manifests across common-patterns, scheduling, security, storage, monitoring, ci-cd, advanced |
 
 **Total: 17 categories, 199 documents, ~125k words.**
 
@@ -232,7 +232,8 @@
 | Topic | Path |
 |-------|------|
 | README + structure | [examples/README.md](examples/README.md) |
-| Common patterns (PVC, RBAC, HPA, etc.) | [examples/common-patterns/](examples/common-patterns) |
+| Common patterns (Deployment, Service, Ingress, ConfigMap/Secret) | [examples/common-patterns/](examples/common-patterns) |
+| Scheduling (HPA, VPA, Quota, PDB, affinity) | [examples/scheduling/](examples/scheduling) |
 | Advanced (operators, CRDs, hooks) | [examples/advanced/](examples/advanced) |
 | CI/CD | [examples/ci-cd/](examples/ci-cd) |
 | Monitoring | [examples/monitoring/](examples/monitoring) |

@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1            # Ingress GA since 1.19 (PSP-era)
+kind: Ingress
+metadata:
+  name: web
+  annotations:
+    # Pick ONE ingress controller; these are the common NGINX-ingress knobs:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/proxy-body-size: 10m
+  labels: { app: web }
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts: [web.example.com]
+    secretName: web-tls        # TLS secret (cert-manager / cosign-managed cert)
+  rules:
+  - host: web.example.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: web
+            port: { number: 80 }

@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+  labels: { app: web, tier: frontend }
+spec:
+  replicas: 3
+  selector:
+    matchLabels: { app: web }
+  template:
+    metadata:
+      labels: { app: web, tier: frontend }
+    spec:
+      # Non-root, read-only root, drop all caps (Pod Security "restricted")
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+      containers:
+      - name: web
+        image: nginx:1.25-alpine
+        ports: [{ containerPort: 8080, name: http }]
+        securityContext:
+          allowPrivilegeEscalation: false
+          readOnlyRootFilesystem: true
+          capabilities: { drop: ["ALL"] }
+        resources:
+          requests: { cpu: 100m, memory: 128Mi }
+          limits:   { cpu: 500m, memory: 256Mi }      # CPU limit optional; see FinOps
+        livenessProbe:  { httpGet: { path: /healthz, port: 8080 }, initialDelaySeconds: 5, periodSeconds: 10 }
+        readinessProbe: { httpGet: { path: /,        port: 8080 }, initialDelaySeconds: 2, periodSeconds: 5 }
