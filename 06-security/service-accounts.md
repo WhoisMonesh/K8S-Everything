@@ -325,5 +325,3 @@ A: It authorizes the kubelet (acting for that SA/Pod) to pull images from privat
 - [Secrets](secrets.md)
 - [Admission Controllers](admission-controllers.md)
 - [Pod Security Admission](pod-security-admission.md)
-EOF
-echo "service-accounts.md written"

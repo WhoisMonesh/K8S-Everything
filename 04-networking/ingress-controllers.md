@@ -297,5 +297,3 @@ A: In **Secrets** of type `kubernetes.io/tls` (containing `tls.crt` and `tls.key
 - [Services](services.md)
 - [NGINX Ingress](nginx-ingress.md)
 - [Traefik Ingress](traefik-ingress.md)
-EOF
-echo "ingress-controllers.md written"

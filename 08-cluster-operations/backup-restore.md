@@ -257,7 +257,6 @@ cat > /etc/cron.d/etcd-backup <<'EOF'
   --key=/etc/kubernetes/pki/etcd/peer.key \
   snapshot save /var/backups/etcd-snapshot.db \
   && aws s3 cp /var/backups/etcd-snapshot.db s3://bucket/$(date +%F-%H%M).db
-EOF
 ```
 
 ## Disaster Recovery Steps (Plan)

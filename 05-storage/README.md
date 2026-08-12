@@ -80,5 +80,3 @@ What happens to the PV (and the underlying disk) when the PVC is deleted:
 - [Networking](../04-networking/README.md)
 - [Security](../06-security/README.md)
 - [Cluster Operations](../08-cluster-operations/README.md)
-EOF
-echo "05-storage/README.md written"

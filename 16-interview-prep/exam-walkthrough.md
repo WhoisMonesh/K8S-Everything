@@ -64,7 +64,6 @@ spec:
   policyTypes: [Ingress,Egress]
   ingress: [{from:[{podSelector:{matchLabels:{app: api}}}]}]
   egress: []
-EOF
 ```
 
 ### 4. Storage (10–15%)

@@ -440,5 +440,3 @@ A: When the new version **cannot coexist** with the old version — e.g., a data
 - [HPA](hpa.md)
 - [Pod Disruption Budget](../01-core-concepts/pod-disruption-budgets.md)
 - [kubectl Cheatsheet](../cheat-sheets/kubectl.md)
-EOF
-echo "deployments.md written"

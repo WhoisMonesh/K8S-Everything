@@ -215,5 +215,3 @@ Then the cloud-provider cloud-controller-manager is run separately (if needed).
 - [kube-controller-manager](kube-controller-manager.md)
 - [Cloud Integrations](../companies-using-kubernetes.md)
 - [kubectl Cheatsheet](../cheat-sheets/kubectl.md)
-EOF
-echo "cloud-controller-manager.md written"

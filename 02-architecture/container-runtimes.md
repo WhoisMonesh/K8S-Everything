@@ -263,7 +263,6 @@ cat <<EOF | sudo tee /etc/containerd/config.toml
 version = 2
 [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options]
   SystemdCgroup = true
-EOF
 
 sudo systemctl restart containerd
 
@@ -327,5 +326,3 @@ ps aux | grep kubelet
 - [Architecture](architecture.md)
 - [Container Security](../06-security/secrets.md)
 - [kubectl Cheatsheet](../cheat-sheets/kubectl.md)
-EOF
-echo "container-runtimes.md written"

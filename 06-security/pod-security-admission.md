@@ -233,5 +233,3 @@ metadata:
 - [RBAC](rbac.md)
 - [Kyverno (alternative)](kyverno.md)
 - [OPA Gatekeeper (alternative)](opa-gatekeeper.md)
-EOF
-echo "pod-security-admission.md written"

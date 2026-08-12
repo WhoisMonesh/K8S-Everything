@@ -232,5 +232,3 @@ A: Yes — common is one per disk type/zone (`fast-ssd`, `slow-hdd`, `efs`). Onl
 - [Storage Fundamentals](storage.md)
 - [Persistent Volumes](persistent-volumes.md)
 - [Volume Snapshots](volume-snapshots.md)
-EOF
-echo "storage-classes.md written"

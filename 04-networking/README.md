@@ -61,5 +61,3 @@ graph LR
 - [07 - Scheduling & Autoscaling](../07-scheduling-autoscaling/README.md) — Affinity, taints
 - [08 - Cluster Operations](../08-cluster-operations/README.md) — Troubleshooting, upgrades
 - [11 - Service Mesh](../12-service-mesh/README.md) — Advanced traffic management
-EOF
-echo "networking README.md written"

@@ -186,5 +186,3 @@ A: Yes — very high. The default system critical classes are 2B. A high-priorit
 - [Affinity](../07-scheduling-autoscaling/)
 - [Pod Disruption Budget](../01-core-concepts/pod-disruption-budgets.md)
 - [kubectl Cheatsheet](../cheat-sheets/kubectl.md)
-EOF
-echo "priority-classes.md written"

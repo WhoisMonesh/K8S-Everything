@@ -369,5 +369,3 @@ A: Only if the access mode allows: `ReadOnlyMany` and `ReadWriteMany` allow this
 - [Volume Snapshots](volume-snapshots.md)
 - [Inline Volumes](inline-volumes.md)
 - [Networking](../04-networking/README.md)
-EOF
-echo "storage.md written"

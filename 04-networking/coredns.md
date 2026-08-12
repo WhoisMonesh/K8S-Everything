@@ -239,5 +239,3 @@ A: `kubectl -n kube-system get pods -l k8s-app=kube-dns`; run `nslookup kubernet
 - [Networking Model](networking.md)
 - [StatefulSets (Headless Services)](../03-workloads/statefulsets.md)
 - [Network Policies](network-policies.md)
-EOF
-echo "coredns.md written"

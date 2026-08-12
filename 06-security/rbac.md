@@ -272,5 +272,3 @@ A: `kubectl get clusterrolebindings` (which ClusterRoles grant secret access) an
 - [Secrets](secrets.md)
 - [Admission Controllers](admission-controllers.md)
 - [Pod Security Admission](pod-security-admission.md)
-EOF
-echo "rbac.md written"

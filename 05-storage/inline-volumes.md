@@ -292,5 +292,3 @@ A: A projected volume **merges multiple volume sources** (ConfigMap, Secret, Dow
 - [Persistent Volumes](persistent-volumes.md)
 - [Storage Classes](storage-classes.md)
 - [Secrets (Security)](../06-security/README.md)
-EOF
-echo "inline-volumes.md written"

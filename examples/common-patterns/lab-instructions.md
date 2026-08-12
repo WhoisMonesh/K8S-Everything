@@ -96,7 +96,6 @@ spec:
       - name: app
         image: nginx:1.25
         command: ["sh","-c","echo hello && exit 1"]  # crashes immediately
-EOF
 # Your task: fix the command so pods stay Running (hint: use "nginx -g 'daemon off;'")
 ```
 
@@ -115,7 +114,6 @@ spec:
       requests:
         cpu: "999"
         memory: "999Gi"
-EOF
 # Your task: reduce requests to something the cluster can satisfy, or delete and recreate
 ```
 
@@ -131,7 +129,6 @@ spec:
     app: wrong-label     # no pods have this label
   ports:
   - port: 80
-EOF
 # Your task: fix the selector to match the broken-app pods (label: app=broken)
 ```
 
@@ -168,7 +165,6 @@ roleRef:
   kind: Role
   name: pod-reader
   apiGroup: rbac.authorization.k8s.io
-EOF
 
 # Task 2: Verify — should succeed
 k auth can-i list pods -n rbac-lab --as=system:serviceaccount:rbac-lab:dev-sa
@@ -231,7 +227,6 @@ spec:
     automated:
       prune: true
       selfHeal: true
-EOF
 
 # Task 4: Watch sync status
 kubectl get applications -n argocd -w
@@ -276,4 +271,3 @@ kubectl delete namespace argocd 2>/dev/null
 - [Troubleshooting Encyclopedia](../../14-troubleshooting/troubleshooting-encyclopedia.md) · [Exam walkthrough](../../16-interview-prep/exam-walkthrough.md) · [FinOps](../../08-cluster-operations/finops.md)
 - [Incident Case Studies](../../14-troubleshooting/incidents/README.md) · [Glossary](../../cheat-sheets/glossary.md)
 EOFMARKER
-echo "lab: lab-instructions.md written ($(wc -l < common-patterns/lab-instructions.md) lines)"

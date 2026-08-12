@@ -113,7 +113,6 @@ spec:
             name: nginx
             port:
               number: 80
-EOF
 
 kubectl get pods -o wide
 # You should see 2/2 containers per pod (nginx + istio-proxy)

@@ -207,5 +207,3 @@ kubectl get ds -n kube-system kube-proxy -o jsonpath='{.spec.template.spec.conta
 - [CNI Plugins](../04-networking/cni-plugins.md)
 - [Architecture](architecture.md)
 - [kubectl Cheatsheet](../cheat-sheets/kubectl.md)
-EOF
-echo "kube-proxy.md written"

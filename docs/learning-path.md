@@ -223,7 +223,6 @@ spec:
           service:
             name: nginx
             port: { number: 80 }
-EOF
 kubectl get ingress nginx
 ```
 
@@ -260,7 +259,6 @@ spec:
     ports:
     - protocol: UDP
       port: 53
-EOF
 kubectl get netpol -n secure-app
 
 # RBAC
@@ -294,7 +292,6 @@ spec:
         resources:
           requests: { cpu: 100m, memory: 128Mi }
           limits: { cpu: 500m, memory: 256Mi }
-EOF
 
 # HPA
 kubectl autoscale deployment nginx --cpu-percent=70 --min=3 --max=10
@@ -310,7 +307,6 @@ spec:
   minAvailable: 2
   selector:
     matchLabels: { app: nginx }
-EOF
 kubectl get pdb
 ```
 
@@ -339,7 +335,6 @@ spec:
       - name: app
         image: nginx:1.25
         command: ["sh","-c","exit 1"]
-EOF
 # Fix: change command to ["sh","-c","nginx -g 'daemon off;'"]
 
 # Task 2: Fix Pending pod
@@ -355,7 +350,6 @@ spec:
     image: nginx:1.25
     resources:
       requests: { cpu: "999", memory: "999Gi" }
-EOF
 # Fix: reduce requests
 
 # Task 3: Fix Service endpoints
@@ -369,7 +363,6 @@ spec:
   selector: { app: wrong }
   ports:
   - port: 80
-EOF
 # Fix: change selector to { app: broken }
 
 # Verify

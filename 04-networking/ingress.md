@@ -230,5 +230,3 @@ A: Use `path` + `pathType: Prefix` (or `Exact`). E.g., `/api` to `api-service`, 
 - [NGINX Ingress](nginx-ingress.md)
 - [Traefik Ingress](traefik-ingress.md)
 - [Network Policies](network-policies.md)
-EOF
-echo "ingress.md written"

@@ -170,5 +170,3 @@ The kube-controller-manager uses **leader election** for HA:
 - [kube-scheduler](kube-scheduler.md)
 - [kube-apiserver](kube-apiserver.md)
 - [Troubleshooting Guide](../14-troubleshooting/troubleshooting-patterns.md)
-EOF
-echo "kube-controller-manager.md written"

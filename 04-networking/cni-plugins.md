@@ -216,5 +216,3 @@ kubectl get pods -n kube-system -l k8s-app=calico-node  # Calico supports NPs
 - [Network Policies](network-policies.md)
 - [Services](services.md)
 - [CoreDNS](coredns.md)
-EOF
-echo "cni-plugins.md written"

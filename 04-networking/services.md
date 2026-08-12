@@ -332,5 +332,3 @@ A: `localhost:<nodePort>` — kube-proxy (or the host's rules) redirects to a ba
 - [Network Policies](network-policies.md)
 - [CoreDNS](coredns.md)
 - [CNI Plugins](cni-plugins.md)
-EOF
-echo "services.md written"

@@ -21,17 +21,21 @@
 | 5 | Storage | [05-storage](05-storage) | [README](05-storage/README.md) + 5 docs |
 | 6 | Security | [06-security](06-security) | [README](06-security/README.md) + 11 docs |
 | 7 | Scheduling & Autoscaling | [07-scheduling-autoscaling](07-scheduling-autoscaling) | [README](07-scheduling-autoscaling/README.md) + 11 docs |
-| 8 | Cluster Operations | [08-cluster-operations](08-cluster-operations) | [README](08-cluster-operations/README.md) + 8 docs |
-| 9 | Package Management | [10-package-management](10-package-management) | [README](10-package-management/README.md) + 4 docs |
-| 10 | CI/CD & GitOps | [11-ci-cd-gitops](11-ci-cd-gitops) | [README](11-ci-cd-gitops/README.md) + 4 docs |
-| 11 | Service Mesh | [12-service-mesh](12-service-mesh) | [README](12-service-mesh/README.md) + 4 docs |
-| 12 | Observability | [13-observability](13-observability) | [README](13-observability/README.md) + 6 docs |
-| 13 | Troubleshooting | [14-troubleshooting](14-troubleshooting) | [README](14-troubleshooting/README.md) + 4 docs + [incidents/](14-troubleshooting/incidents) (49 case studies + README) |
-| 14 | Reference | (top-level) | [API groups](api-groups-reference.md), [versions](kubernetes-versions.md), [companies](companies-using-kubernetes.md), [certifications](kubernetes-certifications.md) |
-| 15 | Cheat Sheets | [cheat-sheets](cheat-sheets) | [kubectl](cheat-sheets/kubectl.md), [helm](cheat-sheets/helm.md), [yaml](cheat-sheets/yaml.md), [certs](cheat-sheets/cert-cheatsheet.md) |
-| 16 | Examples | [examples](examples) | [README](examples/README.md) + 28 YAML manifests across common-patterns, scheduling, security, storage, monitoring, ci-cd, advanced |
+| 8 | Cluster Operations | [08-cluster-operations](08-cluster-operations) | [README](08-cluster-operations/README.md) + 9 docs |
+| 9 | Cloud Integrations | [09-cloud-integrations](09-cloud-integrations) | [README](09-cloud-integrations/README.md) + 7 docs |
+| 10 | Package Management | [10-package-management](10-package-management) | [README](10-package-management/README.md) + 4 docs |
+| 11 | CI/CD & GitOps | [11-ci-cd-gitops](11-ci-cd-gitops) | [README](11-ci-cd-gitops/README.md) + 4 docs |
+| 12 | Service Mesh | [12-service-mesh](12-service-mesh) | [README](12-service-mesh/README.md) + 4 docs |
+| 13 | Observability | [13-observability](13-observability) | [README](13-observability/README.md) + 6 docs |
+| 14 | Troubleshooting | [14-troubleshooting](14-troubleshooting) | [README](14-troubleshooting/README.md) + 4 docs + [incidents/](14-troubleshooting/incidents) (49 case studies + README) |
+| 15 | Advanced Patterns | [15-advanced-patterns](15-advanced-patterns) | [README](15-advanced-patterns/README.md) + 11 docs |
+| 16 | Interview Prep | [16-interview-prep](16-interview-prep) | [README](16-interview-prep/README.md) + 7 docs |
+| 17 | Company Cases | [17-company-cases](17-company-cases) | [README](17-company-cases/README.md) + 31 docs |
+| 18 | Learning & Reference | [docs](docs) | [README](docs/README.md) + 5 docs |
+| 19 | Cheat Sheets | [cheat-sheets](cheat-sheets) | [README](cheat-sheets/README.md) + 6 docs |
+| 20 | Examples | [examples](examples) | [README](examples/README.md) + 28 YAML manifests across common-patterns, scheduling, security, storage, monitoring, ci-cd, advanced |
 
-**Total: 17 categories, 280 documents, ~255000 words.**
+**Total: 20 categories, 290 documents, ~260000 words.**
 
 ---
 
@@ -104,6 +108,9 @@
 | 8 | Network Policies | [network-policies.md](04-networking/network-policies.md) |
 | 9 | CNI & kube-proxy (under the hood) | [cni-kube-proxy.md](04-networking/cni-kube-proxy.md) |
 | 10 | CNI Plugins | [cni-plugins.md](04-networking/cni-plugins.md) |
+| 11 | Gateway API | [gateway-api.md](04-networking/gateway-api.md) |
+| 12 | Gateway API Implementations | [gateway-api-implementations.md](04-networking/gateway-api-implementations.md) |
+| 13 | Cilium | [cilium.md](04-networking/cilium.md) |
 
 ## 5. Storage (05-storage)
 
@@ -128,6 +135,8 @@
 | 7 | OPA Gatekeeper | [opa-gatekeeper.md](06-security/opa-gatekeeper.md) |
 | 8 | Kyverno | [kyverno.md](06-security/kyverno.md) |
 | 9 | TLS Certificates | [certificates.md](06-security/certificates.md) |
+| 10 | Security Overview | [security.md](06-security/security.md) |
+| 11 | Pod Security Context | [pod-security-context.md](06-security/pod-security-context.md) |
 
 ## 7. Scheduling & Autoscaling (07-scheduling-autoscaling)
 
@@ -142,6 +151,8 @@
 | 7 | Resource Quota | [resource-quotas.md](07-scheduling-autoscaling/resource-quotas.md) |
 | 8 | Priority Classes | [priority-classes.md](07-scheduling-autoscaling/priority-classes.md) |
 | 9 | Topology Spread | [topology-spread.md](07-scheduling-autoscaling/topology-spread.md) |
+| 10 | HPA/VPA/KEDA | [hpa-vpa.md](07-scheduling-autoscaling/hpa-vpa.md) |
+| 11 | Resource Management | [resource-management.md](07-scheduling-autoscaling/resource-management.md) |
 
 ## 8. Cluster Operations (08-cluster-operations)
 
@@ -152,6 +163,10 @@
 | 3 | Debugging | [debugging.md](08-cluster-operations/debugging.md) |
 | 4 | Backup & Restore (etcd + Velero) | [backup-restore.md](08-cluster-operations/backup-restore.md) |
 | 5 | Cluster & Component Upgrades | [upgrades.md](08-cluster-operations/upgrades.md) |
+| 6 | kubeadm Bootstrap | [kubeadm.md](08-cluster-operations/kubeadm.md) |
+| 7 | FinOps (cost optimization) | [finops.md](08-cluster-operations/finops.md) |
+| 8 | Backup & DR Runbook | [backup-disaster-recovery.md](08-cluster-operations/backup-disaster-recovery.md) |
+| 9 | Cluster API | [cluster-api.md](08-cluster-operations/cluster-api.md) |
 
 ## 9. Package Management (10-package-management)
 
@@ -160,6 +175,7 @@
 | 1 | Helm | [helm.md](10-package-management/helm.md) |
 | 2 | Helm Charts | [helm-charts.md](10-package-management/helm-charts.md) |
 | 3 | Kustomize | [kustomize.md](10-package-management/kustomize.md) |
+| 4 | OCI Artifacts | [oci.md](10-package-management/oci.md) |
 
 ## 10. CI/CD & GitOps (11-ci-cd-gitops)
 
@@ -185,6 +201,7 @@
 | 1 | Service Mesh Overview (mTLS, sidecar injection) | [service-mesh.md](12-service-mesh/service-mesh.md) |
 | 2 | Istio (control plane, VirtualService, PeerAuthentication) | [istio.md](12-service-mesh/istio.md) |
 | 3 | Linkerd (lightweight mesh, identity, policy) | [linkerd.md](12-service-mesh/linkerd.md) |
+| 4 | Multi-Cluster Federation | [multicluster.md](12-service-mesh/multicluster.md) |
 
 ## 12. Observability (13-observability)
 
@@ -194,6 +211,8 @@
 | 2 | Prometheus (Operator, ServiceMonitor, alerts, PromQL) | [prometheus.md](13-observability/prometheus.md) |
 | 3 | Grafana (dashboards, data sources, alerting) | [grafana.md](13-observability/grafana.md) |
 | 4 | Logging (Fluent Bit, Loki, Elasticsearch, structured logs) | [logging.md](13-observability/logging.md) |
+| 5 | Observability Overview | [observability.md](13-observability/observability.md) |
+| 6 | Distributed Tracing | [tracing.md](13-observability/tracing.md) |
 
 ## 13. Troubleshooting (14-troubleshooting)
 

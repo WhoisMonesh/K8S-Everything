@@ -64,7 +64,6 @@ sudo apt-get install gvisor-containerd-shim-runsc-dev runsc
 containerd config patch <<'EOF'
 [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runsc]
   runtime_type = "io.containerd.runsc.v1"
-EOF
 # Kata:
 sudo kata-runtime set-default-runtime.sh   # or install via kata-deploy
 ```

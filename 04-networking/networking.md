@@ -248,5 +248,3 @@ A: The CNI plugin allocates an IP from the Pod CIDR per Node. The `kubelet` requ
 - [Network Policies](network-policies.md)
 - [CNI Plugins](cni-plugins.md)
 - [CoreDNS](coredns.md)
-EOF
-echo "networking.md written"

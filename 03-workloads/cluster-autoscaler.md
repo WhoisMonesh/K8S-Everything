@@ -270,5 +270,3 @@ A: Yes — if all the Pods on that node can be **safely rescheduled** elsewhere 
 - [Node Affinity](../07-scheduling-autoscaling/node-affinity.md)
 - [Pod Disruption Budget](../01-core-concepts/pod-disruption-budgets.md)
 - [Priority Classes](../03-workloads/priority-classes.md)
-EOF
-echo "cluster-autoscaler.md written"

@@ -308,5 +308,3 @@ A: **No** — NetworkPolicy is strictly L3/L4 (IP/ports). For HTTP routing/paths
 - [CNI Plugins](cni-plugins.md)
 - [Calico](cni-plugins.md#calico)
 - [Cilium](cni-plugins.md#cilium)
-EOF
-echo "network-policies.md written"

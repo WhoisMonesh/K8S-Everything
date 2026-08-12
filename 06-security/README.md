@@ -26,7 +26,7 @@ This category covers Kubernetes' built-in security primitives: **authentication,
 ```mermaid
 graph TD
     A[User/Admin] --> B[Authenticate\nWho are you?]
-    B --> C[Authorize\nRBAC / ABAC
+    B --> C[Authorize\nRBAC / ABAC]
     C --> D[Admission Control\nValidate / Mutate]
     D --> E[Pod runs\nwith ServiceAccount]
     E --> F[Runtime\nFalco / Seccomp]

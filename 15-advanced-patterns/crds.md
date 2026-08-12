@@ -187,7 +187,6 @@ metadata:
 spec:
   replicas: 0    # violates minimum: 1
   image: nginx   # violates pattern (missing :tag)
-EOF
 # Error: spec.replicas must be >= 1, spec.image must match pattern
 ```
 

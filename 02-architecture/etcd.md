@@ -184,5 +184,3 @@ sudo systemctl start etcd
 - [kube-apiserver](kube-apiserver.md)
 - [etcd Issues](../14-troubleshooting/troubleshooting-patterns.md)
 - [Velero Backup](../08-cluster-operations/backup-restore.md)
-EOF
-echo "etcd.md written"

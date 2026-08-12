@@ -198,7 +198,6 @@ spec:
             name: app
             port:
               number: 80
-EOF
 ```
 
 ## EKS Addons

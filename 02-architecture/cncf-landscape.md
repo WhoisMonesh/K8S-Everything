@@ -236,5 +236,3 @@ pie
 - [CNCF Website](https://www.cncf.io/)
 - [Architecture](architecture.md)
 - [Cloud Integrations](../companies-using-kubernetes.md)
-EOF
-echo "cncf-landscape.md written"

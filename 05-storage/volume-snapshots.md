@@ -230,7 +230,6 @@ spec:
   volumeSnapshotClassName: csi-ebs-snapclass
   source:
     persistentVolumeClaimName: my-pvc
-EOF
 kubectl apply -f snap.yaml
 
 # Wait for readiness
@@ -253,7 +252,6 @@ spec:
       storage: 5Gi
   accessModes:
   - ReadWriteOnce
-EOF
 kubectl apply -f restore.yaml
 
 # Check the new PVC is Bound
@@ -282,5 +280,3 @@ A: No — only PVCs provisioned by a CSI driver that implements the snapshotter 
 - [Storage Fundamentals](storage.md)
 - [Persistent Volumes](persistent-volumes.md)
 - [Storage Classes](storage-classes.md)
-EOF
-echo "volume-snapshots.md written"

@@ -359,5 +359,3 @@ A: (1) `kubectl describe ingress <name>` to check rules/events, (2) `kubectl exe
 - [Traefik Ingress](traefik-ingress.md)
 - [Networking Model](networking.md)
 - [Services](services.md)
-EOF
-echo "nginx-ingress.md written"

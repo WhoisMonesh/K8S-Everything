@@ -330,5 +330,3 @@ A: `ReadWriteOnce` (RWO) only — they are mounted to **one node**. For multi-no
 - [Storage Classes](storage-classes.md)
 - [Volume Snapshots](volume-snapshots.md)
 - [Inline Volumes](inline-volumes.md)
-EOF
-echo "persistent-volumes.md written"

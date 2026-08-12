@@ -305,5 +305,3 @@ A: Use `behavior.stabilizationWindowSeconds` to buffer scale-up/scale-down actio
 - [KEDA](keda.md)
 - [Metrics Server](../08-cluster-operations/README.md)
 - [Deployments](deployments.md)
-EOF
-echo "hpa.md written"

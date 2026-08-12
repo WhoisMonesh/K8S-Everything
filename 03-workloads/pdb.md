@@ -160,5 +160,3 @@ A: Options: (1) temporarily delete the PDB, (2) add more pods/replicas so PDB ca
 - [Priority Classes](priority-classes.md)
 - [Rollouts/Deployments](deployments.md)
 - [Cluster Autoscaler](cluster-autoscaler.md)
-EOF
-echo "pdb.md written"

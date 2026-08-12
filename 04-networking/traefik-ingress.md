@@ -329,5 +329,3 @@ A: Traefik updates config **dynamically** (hot reload — no restart). NGINX Ing
 - [NGINX Ingress](nginx-ingress.md)
 - [Networking Model](networking.md)
 - [Services](services.md)
-EOF
-echo "traefik-ingress.md written"

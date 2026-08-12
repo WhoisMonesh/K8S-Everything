@@ -301,5 +301,3 @@ curl -k https://localhost:10250/livez
 - [kube-proxy](kube-proxy.md)
 - [Architecture](architecture.md)
 - [kubectl Cheatsheet](../cheat-sheets/kubectl.md)
-EOF
-echo "kubelet.md written"

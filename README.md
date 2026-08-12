@@ -27,9 +27,9 @@
 | 15 | [Interview Prep](16-interview-prep/README.md) | CKA, CKAD, CKS, Questions, Cheatsheets | 5 |
 | 16 | [Reference & Cheatsheets](#reference-documentation) | API groups, versions, companies, certs, cheatsheets, glossary | 6+ |
 
-**Total: ~280 Kubernetes concepts, components, tools, and patterns across 17 topic categories + reference docs.**
+**Total: ~290 Kubernetes concepts, components, tools, and patterns across 20 topic categories + reference docs.**
 
-> 💡 *Categories 13-cloud-integrations, 14-advanced-patterns, 17-company-cases and 18-real-incidents are planned. The canonical docs for those topics live in their related-topic pages (e.g. [EKS/GKE/AKS coverage](companies-using-kubernetes.md), [admission/PSA controls](06-security/admission-controllers.md), [Blue/Green & Canary](11-ci-cd-gitops/ci-cd.md)).*
+> 💡 *This repository covers 17 categories with 280+ documents including cloud integrations (EKS/GKE/AKS), advanced patterns (CRDs, operators, WASM), 50 real-world incident case studies, and company-specific Kubernetes deployments.*
 
 ---
 
@@ -157,7 +157,6 @@ graph TD
 | **CKA** - Certified Kubernetes Administrator | Cluster administration | — | [curriculum](kubernetes-certifications.md) |
 | **CKAD** - Certified Kubernetes Application Developer | Application development | — | [curriculum](kubernetes-certifications.md) |
 | **CKS** - Certified Kubernetes Security Specialist | Security | CKA required | [curriculum](kubernetes-certifications.md) |
-| **CCA** - Certified Chinese Administrator | Chinese localization | — | — |
 
 ### Learning Path
 
