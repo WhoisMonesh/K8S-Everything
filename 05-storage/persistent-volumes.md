@@ -24,7 +24,7 @@ graph TD
     A[Developer creates PVC] --> B[StorageClass / PV Provisioner]
     B --> C[PV gets created<br/>Bound to PVC]
     C --> D[Pod mounts PVC]
-    D --> E[Container<br/>/data &#40;persists across restarts&#41;]
+    D --> E["Container<br/>/data (persists across restarts)"]
 ```
 
 ## PV vs PVC

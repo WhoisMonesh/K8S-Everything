@@ -8,7 +8,7 @@
 graph TD
     A[Pod<br/>gets Cilium Endpoint ID] --> B[eBPF programs<br/>attached in kernel]
     B --> C[Traffic classified<br/>by identity, not IP]
-    C --> D[NetworkPolicy enforced<br/>in-kernel &#40;L3/L4/L7&#41;]
+    C --> D["NetworkPolicy enforced<br/>in-kernel (L3/L4/L7)"]
     C --> E[Hubble<br/>observability]
     B --> F[kube-proxy replacement<br/>service + load balancing]
     style B fill:#e8f0fe

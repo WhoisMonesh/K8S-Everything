@@ -74,13 +74,13 @@ The ReplicaSet uses `spec.selector.matchLabels` (or `matchExpressions`) to find 
 
 ```mermaid
 graph TD
-    A[Deployment] --> B[ReplicaSet &#40;current RS&#41;<br/>selector: app=nginx,version=v1]
-    A --> C[ReplicaSet &#40;previous RS&#41;<br/>version=v0 — kept for rollback]
-    B --> D[Pod &#40;v1&#41;]
-    B --> E[Pod &#40;v1&#41;]
-    B --> F[Pod &#40;v1&#41;]
-    C --> G[Pod &#40;v0&#41;]
-    C --> H[Pod &#40;v0&#41;]
+    A[Deployment] --> B["ReplicaSet (current RS)<br/>selector: app=nginx,version=v1"]
+    A --> C["ReplicaSet (previous RS)<br/>version=v0 — kept for rollback"]
+    B --> D["Pod (v1)"]
+    B --> E["Pod (v1)"]
+    B --> F["Pod (v1)"]
+    C --> G["Pod (v0)"]
+    C --> H["Pod (v0)"]
 ```
 
 When you update a **Deployment** (e.g., change `v1` -> `v2`):

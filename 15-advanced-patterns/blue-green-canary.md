@@ -18,11 +18,11 @@ Two strategies for safer rollouts: **Blue/Green** (switch all traffic at once) a
 graph LR
     subgraph "Before flip"
         LB[Load Balancer / Ingress] --> BlueSVC[svc:Blue<br/>v1 replicaset]
-        LB -.-> GreenSVC[svc:Green<br/>v2 replicaset<br/>&#40;not live&#41;]
+        LB -.-> GreenSVC["svc:Green<br/>v2 replicaset<br/>(not live)"]
     end
     subgraph "After flip"
         LB2[Load Balancer / Ingress] -->|switch selector| GreenSVC2[svc:Green<br/>v2 replicaset]
-        LB2 -.-> BlueSVC2[svc:Blue<br/>v1 replicaset<br/>&#40;drained&#41;]
+        LB2 -.-> BlueSVC2["svc:Blue<br/>v1 replicaset<br/>(drained)"]
     end
 ```
 

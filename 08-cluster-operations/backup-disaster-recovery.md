@@ -8,7 +8,7 @@ A Kubernetes cluster is **stateless compute sitting on stateful data** — so DR
 graph TD
     CP[Control plane state] --> ET[etcd snapshot<br/>`etcdctl snapshot save`]
     W[Workloads &amp; data] --> PV[PV snapshots<br/>CSI / Velero]
-    M[Manifests<br/>state] --> GIT[Git &#40;GitOps&#41;]
+    M[Manifests<br/>state] --> GIT["Git (GitOps)"]
     GIT --> Restore1[Restore cluster]
     ET --> Restore1
     PV --> Restore2[Restore volumes<br/>Velero / CSI Restore]

@@ -28,7 +28,7 @@
 
 ```mermaid
 graph TD
-    A[Git push] --> B[Tekton Triggers<br/>&#40;EventListening&#41;]
+    A[Git push] --> B["Tekton Triggers<br/>(EventListening)"]
     B --> C[PipelineRun CRD created]
     C --> D[Tekton Pipelines controller]
     D --> E[TaskRun Pods<br/>one container per step]

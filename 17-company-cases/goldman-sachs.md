@@ -24,8 +24,8 @@ Goldman Sachs runs **Marquee** (developer/data platform) and consumer-banking se
 ```mermaid
 graph TD
     Dev --> GS[GS UI / API]
-    GS --> Ingress[Ingress &#40;multi-cloud&#41;]
-    Ingress --> Apps[App pods &#40;Marquee<br/>Marcus&#41;]
+    GS --> Ingress["Ingress (multi-cloud)"]
+    Ingress --> Apps["App pods (Marquee<br/>Marcus)"]
     Apps --> Cache[(Redis / Aerospike)]
     Apps --> DB[(Postgres / Dynamo)]
     subgraph K8s

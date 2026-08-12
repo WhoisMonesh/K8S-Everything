@@ -91,7 +91,7 @@ helm install cilium cilium/cilium --namespace kube-system
 graph LR
     A[Pod] --> B[eBPF programs<br/>attached to interfaces]
     B --> C[Kernel<br/>eBPF-based routing]
-    C --> D[eBPF load balancer<br/>&#40;no kube-proxy&#41;]
+    C --> D["eBPF load balancer<br/>(no kube-proxy)"]
     C --> E[Pod on another Node]
 ```
 

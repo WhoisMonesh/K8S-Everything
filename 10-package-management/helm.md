@@ -27,7 +27,7 @@ graph TD
         M[Manifest set]
     end
     subgraph "Cluster"
-        R[Helm Release<br/>&#40;stored as a Secret<br/>in kube-system by default&#41;] --> K8s
+        R["Helm Release<br/>(stored as a Secret<br/>in kube-system by default)"] --> K8s
         K8s[API server]
     end
     C --> T

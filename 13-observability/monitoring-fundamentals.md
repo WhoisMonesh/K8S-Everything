@@ -138,8 +138,8 @@ See [Distributed Tracing](tracing.md) for the full Trace/Span model, OpenTelemet
 
 ```mermaid
 graph TD
-    A[App emits<br/>OpenTelemetry spans] --> B[OTel Collector Agent<br/>&#40;DaemonSet&#41;]
-    B --> C[Collector Gateway<br/>&#40;batching, K8s metadata&#41;]
+    A[App emits<br/>OpenTelemetry spans] --> B["OTel Collector Agent<br/>(DaemonSet)"]
+    B --> C["Collector Gateway<br/>(batching, K8s metadata)"]
     C --> D[Jaeger / Tempo / OTLP backend]
     D --> E[Grafana<br/>trace UI]
 ```

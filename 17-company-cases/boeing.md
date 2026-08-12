@@ -25,7 +25,7 @@ Boeing uses Kubernetes to run **aerospace engineering workloads** (CFD simulatio
 graph TD
     Engineer --> Submit[Job submit API]
     Submit --> Queue[Job scheduler<br/>K8s Jobs]
-    Queue --> HPC[HPC node pool<br/>on-prem &#40;ITAR&#41;]
+    Queue --> HPC["HPC node pool<br/>on-prem (ITAR)"]
     Queue --> Cloud[Cloud node pool<br/>AWS Spot]
     HPC --> Store[(On-prem storage<br/>ITAR data)]
     Cloud --> S3[(S3<br/>non-sensitive)]
