@@ -13,8 +13,8 @@ flowchart TD
     E -->|empty| F[Selector mismatch or Pod not Ready]
     E -->|no| G[NetworkPolicy / CNI / iptables]
     B -->|yes, reachable| H{HTTP status?}
-    H -->|5xx / app error| I[Check app logs]
-    H -->|connection reset / timeout| J[App Readiness probe failing / crashing]
+    H -->|"5xx / app error"| I[Check app logs]
+    H -->|"connection reset / timeout"| J[App Readiness probe failing / crashing]
     style A fill:#e8f0fe
     style I fill:#e6f4ea
     style J fill:#fce8e8

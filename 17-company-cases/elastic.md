@@ -29,7 +29,7 @@ graph TD
     EKS1 --> ECK[ECK Operator<br/>per region]
     ECK --> ES[Elasticsearch CR<br/>Pod set]
     ECK --> KB[Kibana CR]
-    subgraph Customer
+    subgraph "Customer"
         CUST[Customer EKS/GKE] --> ECK2[ECK Operator<br/>installed]
         ECK2 --> ES2[managed Elasticsearch]
     end

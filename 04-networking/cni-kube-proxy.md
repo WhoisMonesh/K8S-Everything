@@ -122,7 +122,7 @@ For a 50-node, 500-service cluster, iptables works. For >1000 Services, switch k
 ```mermaid
 flowchart LR
     PA[Pod A<br/>10.244.1.10] -->|localhost:80| SB[Sidecar/Bridge]
-    SB -->|veth-A host / VXLAN/BGP| NW[Node Network<br/>10.0.x.x]
+    SB -->|"veth-A host / VXLAN/BGP"| NW[Node Network<br/>10.0.x.x]
     NW -->|Node B VXLAN decode| SB2[Sidecar/Bridge B]
     SB2 --> PB[Pod B<br/>10.244.3.5:80]
 ```

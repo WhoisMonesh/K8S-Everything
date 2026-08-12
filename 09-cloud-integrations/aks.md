@@ -15,7 +15,7 @@
 
 ```mermaid
 graph TD
-    subgraph Azure
+    subgraph "Azure"
         CP[AKS Control Plane<br/>managed]
         AAD[Azure AD / RBAC]
         CP --> AAD

@@ -23,8 +23,8 @@ Ingress gives you a **single entry point** with **smart L7 routing** — much ch
 graph LR
     A[Internet] --> B[Ingress Controller NGINX/Traefik]
     B --> C{Ingress Rules}
-    C -->|host=foo.com /api| D[Service A]
-    C -->|host=foo.com /static| E[Service B]
+    C -->|"host=foo.com /api"| D[Service A]
+    C -->|"host=foo.com /static"| E[Service B]
     C -->|host=bar.com| F[Service C]
     D --> G[Pod 1]
     D --> H[Pod 2]

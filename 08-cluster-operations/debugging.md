@@ -25,7 +25,7 @@ flowchart TD
     A[Pod broken] --> B{Scheduled?}
     B -->|No| C[Pending — check scheduler Events]
     B -->|Yes| D{Running?}
-    D -->|No / CrashLoopBackOff| E[Logs --previous + describe]
+    D -->|"No / CrashLoopBackOff"| E[Logs --previous + describe]
     D -->|Yes| F{Serving traffic?}
     F -->|No| G[Exec shell; probe; check config / net]
     F -->|Yes| H[Check upstream dependency / client]

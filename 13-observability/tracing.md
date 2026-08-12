@@ -36,7 +36,7 @@ graph TD
     App[App pods<br/>auto-instrumentation<br/>or OTel SDK] --> Coll[OTel Collector<br/>DaemonSet per-node]
     Coll --> Gat[Collector Gateway<br/>Deployment batches]
     Gat --> BE[Backend<br/>Tempo or Jaeger or Lightstep]
-    subgraph Control
+    subgraph "Control"
         TA[Target Allocator] --> Rel[Prometheus<br/>metric discovery]
     end
     style Coll fill:#e8f0fe

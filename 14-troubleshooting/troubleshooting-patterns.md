@@ -23,7 +23,7 @@ flowchart TD
     B -->|ImagePullBackOff| D[Check image name, tag,<br/>imagePullSecrets, registry auth]
     B -->|CrashLoopBackOff| E[Check `kubectl logs -p`<br/>exit code 137 = OOM\nprobe failures]
     B -->|ErrImagePull| F[Same as ImagePullBackOff]
-    B -->|Running / Ready| G[Can the cluster reach it?<br/>DNS, Service, endpoints]
+    B -->|"Running / Ready"| G[Can the cluster reach it?<br/>DNS, Service, endpoints]
 ```
 
 ## Pattern 1: Pod stuck in `Pending`

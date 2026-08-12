@@ -79,7 +79,7 @@ curl localhost:8080/metrics
 
 ```mermaid
 flowchart TD
-    subgraph Node
+    subgraph "Node"
         A[App /metrics] --> B[Prometheus<br/>scrapes endpoint]
         C[kubelet<br/>/ cadvisor] --> B2[Prometheus]
         D[Node exporter] --> B2

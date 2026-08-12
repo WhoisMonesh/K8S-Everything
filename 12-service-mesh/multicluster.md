@@ -21,17 +21,17 @@ Two clusters share a root CA (or cross-sign) and each runs an Istio control plan
 ```mermaid
 graph TD
     subgraph ClusterA
-        IA[Istio CP<br/>istiod]
-        NS1[sleep / productpage]
-        GW1[EastWest Gateway<br/>15443]
+        IA["Istio CP<br/>istiod"]
+        NS1["sleep / productpage"]
+        GW1["EastWest Gateway<br/>15443"]
     end
     subgraph ClusterB
-        IB[Istio CP<br/>istiod]
-        NS2[ratings / reviews]
-        GW2[EastWest Gateway<br/>15443]
+        IB["Istio CP<br/>istiod"]
+        NS2["ratings / reviews"]
+        GW2["EastWest Gateway<br/>15443"]
     end
-    IA -.root CA. IB
-    NS1 -- mTLS --> GW1 --> GW2 --> NS2
+    IA -. "root CA" .- IB
+    NS1 -- "mTLS" --> GW1 --> GW2 --> NS2
     style NS1 fill:#e8f0fe
     style NS2 fill:#e8f0fe
 ```

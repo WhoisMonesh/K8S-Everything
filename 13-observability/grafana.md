@@ -21,7 +21,7 @@ flowchart TD
         GO[Grafana Operator<br/>reconciles Grafana + Dashboards]
         GC[Grafana Agent<br/>collects metrics/logs/traces]
     end
-    subgraph Data
+    subgraph "Data"
         P[Prometheus]
         L[Loki]
         T[Tempo]

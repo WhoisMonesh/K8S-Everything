@@ -15,7 +15,7 @@ Multi-container Pods let you attach supporting processes to the main container. 
 
 ```mermaid
 flowchart TD
-    subgraph Pod
+    subgraph "Pod"
         A[App Container] -->|shared volume| V[volume]
         B[Init 1<br/>runs to done]
         C[Init 2<br/>runs to done]

@@ -356,7 +356,7 @@ istioctl uninstall --purge -y
 flowchart LR
     Client[Client] -->|DNS| LB[LoadBalancer IP]
     LB --> IstioGW[Istio Ingress Gateway]
-    IstioGW -->|VirtualService<br/>90/10 split| VS[Envoy Sidecar]
+    IstioGW -->|"VirtualService<br/>90/10 split"| VS[Envoy Sidecar]
     VS -->|mTLS| Stable[nginx 1.25<br/>3 pods]
     VS -->|mTLS| Canary[nginx 1.26<br/>1 pod]
 

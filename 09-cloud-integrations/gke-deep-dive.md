@@ -33,7 +33,7 @@ graph TD
                 NP1[Pool 1<br/>e2-medium]
                 NP2[Pool 2<br/>e2-standard-4]
             end
-            subgraph Pods
+            subgraph "Pods"
                 P1[Pod 1]
                 P2[Pod 2]
                 P3[Pod 3]

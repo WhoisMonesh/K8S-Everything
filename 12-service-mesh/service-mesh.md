@@ -19,7 +19,7 @@ A service mesh moves all this logic into the **networking plane** (via sidecar p
 
 ```mermaid
 graph TD
-    subgraph Pod
+    subgraph "Pod"
         A[App container<br/>localhost:8080] --> B[Sidecar proxy<br/>Envoy]
         B --> C[App container:8080<br/>via localhost]
     end

@@ -23,7 +23,7 @@ You need **both** the control-plane state (etcd) AND the application data (PVs) 
 
 ```mermaid
 graph TD
-    subgraph Cluster
+    subgraph "Cluster"
         A[etcd<br/>cluster state] --> B
         C[Control Plane] --> A
         D[Worker Nodes<br/>PVCs/PVs\nactual app data] --> D2[Volumes]

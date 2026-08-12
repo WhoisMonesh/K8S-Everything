@@ -31,7 +31,7 @@ graph TD
                 NP1[System Pool<br/>D2s_v3]
                 NP2[User Pool<br/>D4s_v3]
             end
-            subgraph Pods
+            subgraph "Pods"
                 P1[Pod 1]
                 P2[Pod 2]
             end

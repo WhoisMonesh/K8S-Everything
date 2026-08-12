@@ -18,7 +18,7 @@ Observability = understanding what your cluster and apps are doing through **met
 
 ```mermaid
 graph TD
-    subgraph Nodes
+    subgraph "Nodes"
         A[App Pod] --> L[stdout logs]
         A --> M[metrics endpoint<br/>/metrics]
         B[App Pod] --> L

@@ -14,7 +14,7 @@
 
 ```mermaid
 flowchart TD
-    subgraph Nodes
+    subgraph "Nodes"
         A[App Pod 1 stdout] --> B[Container runtime /var/log/containers/P1.log]
         C[App Pod 2 stdout] --> D[Container runtime /var/log/containers/P2.log]
         B --> F[Fluentd/Fluent Bit tailing logs]

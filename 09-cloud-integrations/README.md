@@ -23,14 +23,14 @@ graph TD
     subgraph GCP
         GKE[GKE Control Plane<br/>managed]
     end
-    subgraph Azure
+    subgraph "Azure"
         AKS[AKS Control Plane<br/>managed]
     end
     subgraph On-prem / Local
         K3s[k3s single server<br/>embedded containerd/etcd]
         Kind[kind<br/>docker-contained]
     end
-    EKS -->|Node IAM (IRSA)| WN1[AWS Nodes]
+    EKS -->|"Node IAM (IRSA)"| WN1[AWS Nodes]
     GKE -->|Node Pool| WN2[GCP Nodes]
     AKS -->|VMSS| WN3[Azure Nodes]
     K3s -->|1-3 servers + agents| WN4[Edge/IoT Nodes]
