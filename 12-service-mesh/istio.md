@@ -18,9 +18,9 @@
 ```mermaid
 graph TD
     A[App Pod<br/>container + istio-proxy] --> B[Sidecar Envoy<br/>data plane]
-    C[Istiod<br/>control plane\n(Pilot + Citadel + Galley)] --> B
+    C[Istiod<br/>control plane<br/>Pilot + Citadel + Galley] --> B
     B --> D[App Pod 2 + Envoy]
-    E[Istio Ingress Gateway<br/>(a Service + Deployment)] --> B
+    E[Istio Ingress Gateway<br/>Service + Deployment] --> B
     F[External Client] --> E
     C --> C2[XDS API<br/>configures Envoys]
 ```

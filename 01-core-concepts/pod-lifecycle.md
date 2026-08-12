@@ -122,8 +122,8 @@ flowchart TD
     E --> F[Startup Probe]
     F -->|Fail| F
     F -->|Pass| G[Readiness Probe]
-    G -->|Fail| H[Not Ready (not in Service endpoints)]
-    G -->|Pass| I[Ready (in Service endpoints)]
+    G -->|Fail| H[Not Ready &#40;not in Service endpoints&#41;]
+    G -->|Pass| I[Ready &#40;in Service endpoints&#41;]
     I --> J[Liveness Probe Loop]
     J -->|Fail| K[Container Restarted]
     K --> F
