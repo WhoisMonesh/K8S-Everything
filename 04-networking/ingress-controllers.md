@@ -35,11 +35,11 @@ A bare `Ingress` resource does nothing without a controller. You need software t
 
 ```mermaid
 flowchart LR
-    A[Inet] --> B[Ingress Controller\nDeployment + Service]
-    B --> C[Watch Ingresses\nvia API]
-    C --> D[Generate Config\nnginx.conf]
+    A[Inet] --> B[Ingress Controller<br/>Deployment + Service]
+    B --> C[Watch Ingresses<br/>via API]
+    C --> D[Generate Config<br/>nginx.conf]
     D --> E[Reload NGINX]
-    E --> F[Route traffic\nto Services]
+    E --> F[Route traffic<br/>to Services]
     F --> G[Pods]
 ```
 

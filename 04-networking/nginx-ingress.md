@@ -51,10 +51,10 @@ helm install metallb metallb/metallb
 
 ```mermaid
 graph LR
-    A[Internet] --> B[Ingress Controller Service\nLoadBalancer/NodePort]
-    B --> C[Ingress Controller Pod\nNGINX + controller]
+    A[Internet] --> B[Ingress Controller Service<br/>LoadBalancer/NodePort]
+    B --> C[Ingress Controller Pod<br/>NGINX + controller]
     C --> D[Ingress Resource]
-    C --> E[NGINX upstreams\nServices]
+    C --> E[NGINX upstreams<br/>Services]
     E --> F[Pods]
 ```
 

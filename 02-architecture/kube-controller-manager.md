@@ -15,16 +15,16 @@ Kubernetes is built on **control loops** — a pattern where a controller observ
 ```mermaid
 graph TD
     A[kube-apiserver] --> B[kube-controller-manager]
-    B --> C[Node Controller\ndrain/uncordon]
-    B --> D[ReplicaSet Controller\nensure pod count]
-    B --> E[Deployment Controller\nrollouts/rollbacks]
-    B --> F[StatefulSet Controller\nordinal pods]
-    B --> G[DaemonSet Controller\none per node]
-    B --> H[Job Controller\nbatch jobs]
-    B --> I[Service Controller\nLB endpoints]
-    B --> J[Endpoint Controller\nconnect SVC to pods]
-    B --> K[GC Controller\ngarbage collection]
-    B --> L[Cloud Controller\ncloud resources]
+    B --> C[Node Controller<br/>drain/uncordon]
+    B --> D[ReplicaSet Controller<br/>ensure pod count]
+    B --> E[Deployment Controller<br/>rollouts/rollbacks]
+    B --> F[StatefulSet Controller<br/>ordinal pods]
+    B --> G[DaemonSet Controller<br/>one per node]
+    B --> H[Job Controller<br/>batch jobs]
+    B --> I[Service Controller<br/>LB endpoints]
+    B --> J[Endpoint Controller<br/>connect SVC to pods]
+    B --> K[GC Controller<br/>garbage collection]
+    B --> L[Cloud Controller<br/>cloud resources]
 
     subgraph "Control Plane"
         B
@@ -68,9 +68,9 @@ graph TD
 
 ```mermaid
 flowchart LR
-    A[Desired State\ne.g. 3 replicas] --> B[Controller\nreads actual state]
+    A[Desired State<br/>e.g. 3 replicas] --> B[Controller<br/>reads actual state]
     B --> C{Compare}
-    C -->|Not matching| D[Reconcile\ncreate/delete pods]
+    C -->|Not matching| D[Reconcile<br/>create/delete pods]
     C -->|Matching| E[No action]
     D --> B
     E --> B

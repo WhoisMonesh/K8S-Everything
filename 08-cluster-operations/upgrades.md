@@ -21,10 +21,10 @@ So during an upgrade, the API server is bumped to v1.x+1, the kubelets follow to
 ```mermaid
 graph TD
     subgraph "Control plane"
-        CP[kube-apiserver\ncontroller-manager\nscheduler\netcd] --> KubeletAPI[kubectl / API]
+        CP[kube-apiserver<br/>controller-manager<br/>scheduler<br/>etcd] --> KubeletAPI[kubectl / API]
     end
     subgraph "Data plane"
-        N1[Worker Node\nkubelet v1.x\nkube-proxy\ncontainer runtime]
+        N1[Worker Node<br/>kubelet v1.x<br/>kube-proxy<br/>container runtime]
         N2[Worker Node]
         N3[Worker Node]
     end

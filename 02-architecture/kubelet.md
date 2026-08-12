@@ -20,16 +20,16 @@ The control plane defines what should run, but **someone needs to actually run i
 
 ```mermaid
 graph TD
-    A[kube-apiserver] --> B[kubelet\nNode Agent]
+    A[kube-apiserver] --> B[kubelet<br/>Node Agent]
     B --> C[PodSpec Sync]
-    B --> D[CRI\nContainer Runtime]
-    C --> E[Pod Status\nHealth, IPs, state]
-    B --> F[NFS/GlusterFS\nVolume Mounts]
-    D --> G[containerd\nDocker/Pods]
-    B --> H[Metrics\nResource Usage]
-    B --> I[Cadvisor\nCPU/mem stats]
-    B --> J[PodLifecycle\nRestart, health probes]
-    B --> K[Security\nRuntime Class, Seccomp]
+    B --> D[CRI<br/>Container Runtime]
+    C --> E[Pod Status<br/>Health, IPs, state]
+    B --> F[NFS/GlusterFS<br/>Volume Mounts]
+    D --> G[containerd<br/>Docker/Pods]
+    B --> H[Metrics<br/>Resource Usage]
+    B --> I[Cadvisor<br/>CPU/mem stats]
+    B --> J[PodLifecycle<br/>Restart, health probes]
+    B --> K[Security<br/>Runtime Class, Seccomp]
 
     subgraph "Worker Node"
         B

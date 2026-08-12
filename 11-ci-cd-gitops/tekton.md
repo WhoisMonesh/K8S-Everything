@@ -28,12 +28,12 @@
 
 ```mermaid
 graph TD
-    A[Git push] --> B[Tekton Triggers\n(EventListening)]
+    A[Git push] --> B[Tekton Triggers<br/>(EventListening)]
     B --> C[PipelineRun CRD created]
     C --> D[Tekton Pipelines controller]
-    D --> E[TaskRun Pods\none container per step]
-    E --> F[Build image\nRun tests]
-    F --> G[Push to registry\nDone]
+    D --> E[TaskRun Pods<br/>one container per step]
+    E --> F[Build image<br/>Run tests]
+    F --> G[Push to registry<br/>Done]
 ```
 
 ## Tasks & Pipelines

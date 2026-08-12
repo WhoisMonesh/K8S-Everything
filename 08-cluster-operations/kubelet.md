@@ -22,12 +22,12 @@ Without a healthy kubelet, a node is **NotReady** and its Pods can't run.
 
 ```mermaid
 graph TD
-    A[Control Plane\nkube-apiserver] --> B[Kubelet\non Node]
-    B --> C[Pod Spec\nvia Watch/API]
-    B --> D[Container Runtime\ncontainerd]
-    B --> E[CNI Plugin\ncalico/cilium]
-    B --> F[Volumes\nCSI driver]
-    D --> G[Containers\nPod CIDRs, localhost]
+    A[Control Plane<br/>kube-apiserver] --> B[Kubelet<br/>on Node]
+    B --> C[Pod Spec<br/>via Watch/API]
+    B --> D[Container Runtime<br/>containerd]
+    B --> E[CNI Plugin<br/>calico/cilium]
+    B --> F[Volumes<br/>CSI driver]
+    D --> G[Containers<br/>Pod CIDRs, localhost]
 ```
 
 ## Kubelet Responsibilities
@@ -54,9 +54,9 @@ The kubelet **continuously syncs**:
 ```mermaid
 flowchart LR
     A[Pod spec from API] --> B[kubelet pod sync]
-    B --> C[Pull image\nStart container\nMount volume]
+    B --> C[Pull image<br/>Start container\nMount volume]
     C --> D[Readiness/liveness probes]
-    D --> E[Report status\nand metrics to API]
+    D --> E[Report status<br/>and metrics to API]
 ```
 
 ## Kubelet Configuration

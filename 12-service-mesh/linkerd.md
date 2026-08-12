@@ -19,15 +19,15 @@
 ```mermaid
 graph TD
     subgraph "Control plane (linkerd)"
-        A[linkerd-identity\nissuing certs]
-        B[linkerd-proxy-inject\nwebhook for injection]
-        C[linkerd-policy\npolicy controller]
-        D[linkerd-destination\nservice discovery]
-        E[linkerd-heartbeat\ncheck-ins]
+        A[linkerd-identity<br/>issuing certs]
+        B[linkerd-proxy-inject<br/>webhook for injection]
+        C[linkerd-policy<br/>policy controller]
+        D[linkerd-destination<br/>service discovery]
+        E[linkerd-heartbeat<br/>check-ins]
     end
     subgraph Data plane
-        F[Pod A\napp + linkerd-proxy] --> G[linkerd-proxy]
-        H[Pod B\napp + linkerd-proxy] --> I[linkerd-proxy]
+        F[Pod A<br/>app + linkerd-proxy] --> G[linkerd-proxy]
+        H[Pod B<br/>app + linkerd-proxy] --> I[linkerd-proxy]
     end
     G <--> I
     A --> G

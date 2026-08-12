@@ -24,11 +24,11 @@ PVs and PVCs provide a **clean abstraction layer** for storage, similar to how P
 
 ```mermaid
 graph TD
-    A[StorageClass\nprovisioning rules] --> B[PV\nactual storage]
-    C[PVC\nstorage request] --> B
+    A[StorageClass<br/>provisioning rules] --> B[PV<br/>actual storage]
+    C[PVC<br/>storage request] --> B
     D[Pod] --> C
-    D --> E[Volume Mount\nuses the PVC]
-    B --> F[Cloud Storage\nEBS / PD / NFS]
+    D --> E[Volume Mount<br/>uses the PVC]
+    B --> F[Cloud Storage<br/>EBS / PD / NFS]
     G[Admin] --> A
     G --> B
     G --> C
@@ -38,10 +38,10 @@ graph TD
 
 ```mermaid
 flowchart LR
-    A[Pod\nrequests storage] --> B[PVC\n10Gi RWO]
-    B --> C[Binding\nPVC to PV]
-    C --> D[PV\n10Gi, nfs]
-    D --> E[Storage Backend\nNFS Server]
+    A[Pod<br/>requests storage] --> B[PVC<br/>10Gi RWO]
+    B --> C[Binding<br/>PVC to PV]
+    C --> D[PV<br/>10Gi, nfs]
+    D --> E[Storage Backend<br/>NFS Server]
 ```
 
 ## Access Modes

@@ -17,9 +17,9 @@
 ```mermaid
 flowchart TD
     subgraph "Grafana tier"
-        G[Grafana OSS /\nEnterprise / Cloud]
-        GO[Grafana Operator\nreconciles Grafana + Dashboards]
-        GC[Grafana Agent\ncollects metrics/logs/traces]
+        G[Grafana OSS /<br/>Enterprise / Cloud]
+        GO[Grafana Operator<br/>reconciles Grafana + Dashboards]
+        GC[Grafana Agent<br/>collects metrics/logs/traces]
     end
     subgraph Data
         P[Prometheus]

@@ -182,7 +182,7 @@ Gradually roll out the new version to a **subset** of users/traffic, then ramp u
 
 ```mermaid
 graph LR
-    A[10% traffic\nto v1] <--> B[Ninety percent\nto v1]
+    A[10% traffic<br/>to v1] <--> B[Ninety percent<br/>to v1]
     A --> C[v2 Canary 10%]
     A --> D[v2 Canary 20%]
     A --> E[v2 Canary 100% All]

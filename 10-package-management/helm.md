@@ -18,16 +18,16 @@
 ```mermaid
 graph TD
     subgraph "You"
-        H[Helm CLI\nversion/v3]
-        V[values.yaml\nmy overrides]
-        C[Chart\ntemplates + Chart.yaml]
+        H[Helm CLI<br/>version/v3]
+        V[values.yaml<br/>my overrides]
+        C[Chart<br/>templates + Chart.yaml]
     end
     subgraph "Render (client-side)"
-        T[helm template\n→ Go templates rendered]
+        T[helm template<br/>→ Go templates rendered]
         M[Manifest set]
     end
     subgraph "Cluster"
-        R[Helm Release\n(stored as a Secret\nin kube-system by default)] --> K8s
+        R[Helm Release<br/>(stored as a Secret<br/>in kube-system by default)] --> K8s
         K8s[API server]
     end
     C --> T

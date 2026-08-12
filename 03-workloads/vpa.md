@@ -20,11 +20,11 @@ VPA **recommends** or (in recommendations-only mode), **applies** optimal resour
 
 ```mermaid
 graph TD
-    A[Metrics Server\nCPU & Memory data] --> B[VPA Recommender\nobserves usage]
-    C[VPA Updater\napplies recommendations] --> D[Pod\nresources updated]
-    B --> E[VPA Object\nrecommendations stored]
+    A[Metrics Server<br/>CPU &amp; Memory data] --> B[VPA Recommender<br/>observes usage]
+    C[VPA Updater<br/>applies recommendations] --> D[Pod<br/>resources updated]
+    B --> E[VPA Object<br/>recommendations stored]
     E --> C
-    E --> F[Admission Controller\napplies on creation]
+    E --> F[Admission Controller<br/>applies on creation]
 ```
 
 ## VPA Components

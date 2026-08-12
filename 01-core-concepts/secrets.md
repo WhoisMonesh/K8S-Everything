@@ -20,13 +20,13 @@ Secrets provide a secure way to manage sensitive data separately from applicatio
 
 ```mermaid
 graph TD
-    A[User Secret Data\npasswords, keys] --> B[Secret\nbase64-encoded in etcd]
+    A[User Secret Data<br/>passwords, keys] --> B[Secret<br/>base64-encoded in etcd]
     B --> C[Pod]
-    C --> D1[Environment Variable\nenvFrom / env]
-    C --> D2[File Volume\nmounted at /var/secrets]
-    C --> D3[Image Pull Secret\nfor private registry]
+    C --> D1[Environment Variable<br/>envFrom / env]
+    C --> D2[File Volume<br/>mounted at /var/secrets]
+    C --> D3[Image Pull Secret<br/>for private registry]
     E[etcd] --> B
-    F[kube-apiserver\nencrypts at rest] --> B
+    F[kube-apiserver<br/>encrypts at rest] --> B
 ```
 
 ## Secret Data

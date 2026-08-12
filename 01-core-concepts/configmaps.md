@@ -21,12 +21,12 @@ ConfigMaps solve this by letting you **manage configuration externally**.
 
 ```mermaid
 graph TD
-    A[External Config\nConfigMap / Secret] --> B[Pod\nenvFrom / env / volumeMounts]
-    B --> C[Container\napp reads from env/files]
+    A[External Config<br/>ConfigMap / Secret] --> B[Pod<br/>envFrom / env / volumeMounts]
+    B --> C[Container<br/>app reads from env/files]
     D[Developer] -->|Updates config| E[ConfigMap]
     E -->|Changes propagate| B
     F[Helm Values] --> E
-    G[External Store\netcd] --> E
+    G[External Store<br/>etcd] --> E
 ```
 
 ## Creating ConfigMaps

@@ -20,10 +20,10 @@ etcd provides all of this via the **Raft consensus algorithm**.
 
 ```mermaid
 graph TD
-    A[kube-apiserver\nwrites API state] --> B[etcd]
-    B --> C[etcd member 1\nLeader]
-    B --> D[etcd member 2\nFollower]
-    B --> E[etcd member 3\nFollower]
+    A[kube-apiserver<br/>writes API state] --> B[etcd]
+    B --> C[etcd member 1<br/>Leader]
+    B --> D[etcd member 2<br/>Follower]
+    B --> E[etcd member 3<br/>Follower]
 ```
 
 ## etcd Data Structure

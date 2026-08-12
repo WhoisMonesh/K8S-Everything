@@ -39,11 +39,11 @@ Kubernetes networking connects pods to each other, services, and the outside wor
 
 ```mermaid
 graph LR
-    A[Pod Networking\nCNI] --> B[Services\nClusterIP, LoadBalancer]
-    B --> C[Ingress\nRouting]
-    C --> D[Ingress Controller\nNGINX, Traefik]
-    B --> E[CoreDNS\nDiscovery]
-    A --> F[Network Policies\nSecurity]
+    A[Pod Networking<br/>CNI] --> B[Services<br/>ClusterIP, LoadBalancer]
+    B --> C[Ingress<br/>Routing]
+    C --> D[Ingress Controller<br/>NGINX, Traefik]
+    B --> E[CoreDNS<br/>Discovery]
+    A --> F[Network Policies<br/>Security]
 ```
 
 ## Key Questions

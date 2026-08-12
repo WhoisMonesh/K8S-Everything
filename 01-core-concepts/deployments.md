@@ -21,15 +21,15 @@ Deployments solve this: They manage ReplicaSets, handle rolling updates, enable 
 
 ```mermaid
 graph TD
-    A[Developer\napplies new YAML] --> B[Deployment Controller]
-    B --> C[Compute diff\ndesired vs current]
-    C --> D[Create new ReplicaSet\nwith new pod template]
-    D --> E[Scale up new RS\ngradually]
-    D --> F[Scale down old RS\ngradually]
+    A[Developer<br/>applies new YAML] --> B[Deployment Controller]
+    B --> C[Compute diff<br/>desired vs current]
+    C --> D[Create new ReplicaSet<br/>with new pod template]
+    D --> E[Scale up new RS<br/>gradually]
+    D --> F[Scale down old RS<br/>gradually]
     E --> G[New Pods]
-    F --> H[Old Pods\nterminating]
+    F --> H[Old Pods<br/>terminating]
     B --> I[Rolling Update Strategy]
-    I --> J[maxSurge: 25%\nmaxUnavailable: 25%]
+    I --> J[maxSurge: 25%<br/>maxUnavailable: 25%]
 ```
 
 ## Deployment Strategies

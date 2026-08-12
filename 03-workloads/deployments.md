@@ -24,7 +24,7 @@ Pods are ephemeral — running a bare Pod gives you **zero** self-healing or upd
 
 ```mermaid
 graph TD
-    A[Deployment] --> B[ReplicaSet\nPod template, replicas=3]
+    A[Deployment] --> B[ReplicaSet<br/>Pod template, replicas=3]
     B --> C[Pod 1]
     B --> D[Pod 2]
     B --> E[Pod 3]

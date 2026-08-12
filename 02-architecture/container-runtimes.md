@@ -18,11 +18,11 @@ Kubernetes needs an abstraction layer between the orchestration engine and the c
 
 ```mermaid
 graph TD
-    A[kubelet] --> B[CRI API\nStandard interface]
-    B --> C[containerd\nor CRI-O]
-    C --> D[containerd-shim\nor conmon]
-    D --> E[runc / crun\nOCI Runtime]
-    E --> F[Container\nisolated process]
+    A[kubelet] --> B[CRI API<br/>Standard interface]
+    B --> C[containerd<br/>or CRI-O]
+    C --> D[containerd-shim<br/>or conmon]
+    D --> E[runc / crun<br/>OCI Runtime]
+    E --> F[Container<br/>isolated process]
 ```
 
 ## The Three Runtimes

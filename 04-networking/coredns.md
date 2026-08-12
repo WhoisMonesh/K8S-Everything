@@ -21,12 +21,12 @@ CoreDNS provides:
 
 ```mermaid
 graph LR
-    A[Pod\nuses /etc/resolv.conf] --> B[CoreDNS Service\nkube-dns ClusterIP]
-    B --> C[Pod 1\nkube-dns]
-    B --> D[Pod 2\nkube-dns]
-    C --> E[Cache\n/ Forward]
+    A[Pod<br/>uses /etc/resolv.conf] --> B[CoreDNS Service<br/>kube-dns ClusterIP]
+    B --> C[Pod 1<br/>kube-dns]
+    B --> D[Pod 2<br/>kube-dns]
+    C --> E[Cache<br/>/ Forward]
     D --> E
-    E --> F[kubernetes plugin\nreads API for svc/endpoint]
+    E --> F[kubernetes plugin<br/>reads API for svc/endpoint]
 ```
 
 ## CoreDNS Config (Corefile)

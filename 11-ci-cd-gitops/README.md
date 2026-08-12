@@ -8,10 +8,10 @@ This category covers **delivering** containers into Kubernetes: CI pipelines (bu
 
 ```mermaid
 graph LR
-    A[CI: Build + Test\nGitHub Actions / GitLab CI / Tekton] --> B[Push Image\nto registry]
-    B --> C[Git commit\nnew image tag]
-    C --> D[GitOps: Argo CD / Flux\nreconciles cluster <-> Git]
-    D --> E[kubernetes Deployment\nupdated → rollout]
+    A[CI: Build + Test<br/>GitHub Actions / GitLab CI / Tekton] --> B[Push Image<br/>to registry]
+    B --> C[Git commit<br/>new image tag]
+    C --> D[GitOps: Argo CD / Flux<br/>reconciles cluster <-> Git]
+    D --> E[kubernetes Deployment<br/>updated → rollout]
 ```
 
 ## Contents
@@ -35,7 +35,7 @@ graph LR
 
 ```mermaid
 graph TD
-    A[CI Pipeline\nbuild & push image] --> B[Git commit\nnew tag]
+    A[CI Pipeline<br/>build &amp; push image] --> B[Git commit<br/>new tag]
     B --> C[GitOps: Argo CD / Flux]
     C --> D[Cluster reconcile]
     C --> E[Pull: Flux]

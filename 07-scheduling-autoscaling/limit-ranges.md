@@ -19,10 +19,10 @@ A LimitRange **enforces sane defaults** and prevents foot-guns.
 
 ```mermaid
 graph TD
-    A[Pod is created in Namespace] --> B[LimitRange\napplies defaults]
+    A[Pod is created in Namespace] --> B[LimitRange<br/>applies defaults]
     B --> C{Request exceeds limits?}
     C -->|Yes| D[Rejected]
-    C -->|No| E[Pod created\nwith bounded requests/limits]
+    C -->|No| E[Pod created<br/>with bounded requests/limits]
 ```
 
 ## LimitRange API

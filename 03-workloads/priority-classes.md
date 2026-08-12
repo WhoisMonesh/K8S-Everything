@@ -22,10 +22,10 @@ With PriorityClass:
 
 ```mermaid
 graph TD
-    A[Pod 1\nPriority: HIGH] --> B[Scheduler\nPrefers HIGH]
-    C[Pod 2\nPriority: LOW] --> B
-    B --> D[High-priority Pod\nPreempts LOW Pod]
-    D --> E[LOW Pod evicted\nrescheduled on another node]
+    A[Pod 1<br/>Priority: HIGH] --> B[Scheduler<br/>Prefers HIGH]
+    C[Pod 2<br/>Priority: LOW] --> B
+    B --> D[High-priority Pod<br/>Preempts LOW Pod]
+    D --> E[LOW Pod evicted<br/>rescheduled on another node]
 ```
 
 ## PriorityClass Spec

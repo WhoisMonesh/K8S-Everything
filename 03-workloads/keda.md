@@ -21,10 +21,10 @@ KEDA brings **serverless-like** scaling to Kubernetes based on real events.
 
 ```mermaid
 graph TD
-    A[Event Source\nKafka / Redis / SQS] --> B[KEDA Scaler\nreads backlog]
-    B --> C[External Metrics API\nexternal.metrics.k8s.io]
-    C --> D[HPA Controller\ntarget: 0-to-N]
-    D --> E[Deployment\ncreates/deletes pods]
+    A[Event Source<br/>Kafka / Redis / SQS] --> B[KEDA Scaler<br/>reads backlog]
+    B --> C[External Metrics API<br/>external.metrics.k8s.io]
+    C --> D[HPA Controller<br/>target: 0-to-N]
+    D --> E[Deployment<br/>creates/deletes pods]
     E --> F[Pod processes event]
 ```
 

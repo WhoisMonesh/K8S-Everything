@@ -23,9 +23,9 @@ Metrics drive **fast alerting**; Logs and Traces drive **debugging**.
 ```mermaid
 graph TD
     subgraph "Three pillars"
-        M[Metrics\nlatency = 42ms] --> A[Prometheus/Grafana]
-        L[Logs\nERROR: connection refused] --> B[Loki/Fluentd]
-        T[Trace\nGET /api 200 42ms] --> C[Jaeger/Temetry]
+        M[Metrics<br/>latency = 42ms] --> A[Prometheus/Grafana]
+        L[Logs<br/>ERROR: connection refused] --> B[Loki/Fluentd]
+        T[Trace<br/>GET /api 200 42ms] --> C[Jaeger/Temetry]
     end
     subgraph "Alerting"
         A --> D[Alertmanager]
@@ -80,17 +80,17 @@ curl localhost:8080/metrics
 ```mermaid
 flowchart TD
     subgraph Node
-        A[App /metrics] --> B[Prometheus\nscrapes endpoint]
-        C[kubelet\n/ cadvisor] --> B2[Prometheus]
+        A[App /metrics] --> B[Prometheus<br/>scrapes endpoint]
+        C[kubelet<br/>/ cadvisor] --> B2[Prometheus]
         D[Node exporter] --> B2
     end
-    E[kube-state-metrics\nobject state] --> B3[Prometheus]
-    F[Metrics Server\nresource-based\nfor HPA] --> G[controllers\nscale from]
-    B --> P[Alertmanager\nalerts]
-    P --> H[Notifier\nPagerDuty/Slack/Webhook]
+    E[kube-state-metrics<br/>object state] --> B3[Prometheus]
+    F[Metrics Server<br/>resource-based\nfor HPA] --> G[controllers<br/>scale from]
+    B --> P[Alertmanager<br/>alerts]
+    P --> H[Notifier<br/>PagerDuty/Slack/Webhook]
     B2 --> P
     B3 --> P
-    B --> I[Grafana\ndashboards]
+    B --> I[Grafana<br/>dashboards]
     B2 --> I
     B3 --> I
 ```
@@ -105,10 +105,10 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    A[App writes to stdout/stderr] --> B[Container runtime\nwrites to /var/log/containers/<pod>.log]
-    B --> C[Log shipper\nFluentd/Fluentbit/Filebeat]
-    C --> D[Log backend\nLoki / Elasticsearch / CloudWatch]
-    D --> E[Grafana / Kibana\nsearch + dashboards]
+    A[App writes to stdout/stderr] --> B[Container runtime<br/>writes to /var/log/containers/POD_NAME.log]
+    B --> C[Log shipper<br/>Fluentd/Fluentbit/Filebeat]
+    C --> D[Log backend<br/>Loki / Elasticsearch / CloudWatch]
+    D --> E[Grafana / Kibana<br/>search + dashboards]
 ```
 
 - **stdout logging** (12-factor) is preferred: the container runtime captures logs to a file.
@@ -138,10 +138,10 @@ See [Distributed Tracing](tracing.md) for the full Trace/Span model, OpenTelemet
 
 ```mermaid
 graph TD
-    A[App emits\nOpenTelemetry spans] --> B[OTel Collector Agent\n(DaemonSet)]
-    B --> C[Collector Gateway\n(batching, K8s metadata)]
+    A[App emits<br/>OpenTelemetry spans] --> B[OTel Collector Agent<br/>(DaemonSet)]
+    B --> C[Collector Gateway<br/>(batching, K8s metadata)]
     C --> D[Jaeger / Tempo / OTLP backend]
-    D --> E[Grafana\ntrace UI]
+    D --> E[Grafana<br/>trace UI]
 ```
 
 The collector's **auto-instrumentation** feature can inject the SDK into your app's language runtime — so you get traces without code changes.

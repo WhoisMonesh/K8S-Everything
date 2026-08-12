@@ -20,7 +20,7 @@ ResourceQuotas help enforce governance and ensure fair sharing of the cluster ac
 
 ```mermaid
 graph TD
-    A[Namespace] --> B[ResourceQuota\nlimits total usage]
+    A[Namespace] --> B[ResourceQuota<br/>limits total usage]
     B --> C[Pods: count, CPU/mem requests]
     B --> D[Services: count, loadbalancers]
     B --> E[PVCs: count, total storage]

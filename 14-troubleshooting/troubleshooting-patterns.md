@@ -19,11 +19,11 @@ When something is broken, look in this order:
 ```mermaid
 flowchart TD
     A[Pod ready? `kubectl get pods`] --> B{Status}
-    B -->|Pending| C[Check events - scheduler\nresources/image/node selector]
-    B -->|ImagePullBackOff| D[Check image name, tag,\nimagePullSecrets, registry auth]
-    B -->|CrashLoopBackOff| E[Check `kubectl logs -p`\nexit code 137 = OOM\nprobe failures]
+    B -->|Pending| C[Check events - scheduler<br/>resources/image/node selector]
+    B -->|ImagePullBackOff| D[Check image name, tag,<br/>imagePullSecrets, registry auth]
+    B -->|CrashLoopBackOff| E[Check `kubectl logs -p`<br/>exit code 137 = OOM\nprobe failures]
     B -->|ErrImagePull| F[Same as ImagePullBackOff]
-    B -->|Running / Ready| G[Can the cluster reach it?\nDNS, Service, endpoints]
+    B -->|Running / Ready| G[Can the cluster reach it?<br/>DNS, Service, endpoints]
 ```
 
 ## Pattern 1: Pod stuck in `Pending`

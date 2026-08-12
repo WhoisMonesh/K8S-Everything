@@ -22,10 +22,10 @@ DaemonSets handle the **node-level scheduling and lifecycle** of these agents.
 
 ```mermaid
 graph TD
-    A[DaemonSet Controller] --> B[Node 1\nPod: fluent-bit]
-    A --> C[Node 2\nPod: fluent-bit]
-    A --> D[Node 3\nPod: fluent-bit]
-    A --> E[Node 4\n(new node)\nPod: fluent-bit]
+    A[DaemonSet Controller] --> B[Node 1<br/>Pod: fluent-bit]
+    A --> C[Node 2<br/>Pod: fluent-bit]
+    A --> D[Node 3<br/>Pod: fluent-bit]
+    A --> E[Node 4<br/>(new node)\nPod: fluent-bit]
 
     subgraph "All Nodes"
         B

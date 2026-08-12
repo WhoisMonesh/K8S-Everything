@@ -19,7 +19,7 @@ ReplicaSets continuously monitor pod health and **launch or terminate pods** to 
 
 ```mermaid
 graph TD
-    A[Deployment] --> B[ReplicaSet\ndesired=3]
+    A[Deployment] --> B[ReplicaSet<br/>desired=3]
     B --> C[Pod 1]
     B --> D[Pod 2]
     B --> E[Pod 3]
@@ -166,9 +166,9 @@ kubectl get rs <name> -w
 flowchart TD
     A[Desired state change] --> B[Compare spec.replicas to status.replicas]
     B --> C{Need more pods?}
-    C -->|Yes| D[Create new pods\nfrom template]
+    C -->|Yes| D[Create new pods<br/>from template]
     C -->|No| E{Too many pods?}
-    E -->|Yes| F[Terminate excess pods\nNOT matching template]
+    E -->|Yes| F[Terminate excess pods<br/>NOT matching template]
     E -->|No| G[Stable - no change]
 ```
 

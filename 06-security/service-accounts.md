@@ -18,11 +18,11 @@ Pods run **as** a service account (default: `default`). The API uses the SA's to
 
 ```mermaid
 graph TD
-    A[Pod] --> B[ServiceAccount\ndefault / my-sa]
-    B --> C[API Token (JWT)\nmounted at /var/run/secrets/kubernetes.io/serviceaccount/token]
-    C --> D[kubelet mounts the token\nas a file in the Pod]
-    D --> E[Pod calls API\n(curl https://kubernetes.default.svc)]
-    E --> F[API Server\nverifies JWT signature + scopes]
+    A[Pod] --> B[ServiceAccount<br/>default / my-sa]
+    B --> C[API Token (JWT)<br/>mounted at /var/run/secrets/kubernetes.io/serviceaccount/token]
+    C --> D[kubelet mounts the token<br/>as a file in the Pod]
+    D --> E[Pod calls API<br/>(curl https://kubernetes.default.svc)]
+    E --> F[API Server<br/>verifies JWT signature + scopes]
 ```
 
 ## Default ServiceAccount

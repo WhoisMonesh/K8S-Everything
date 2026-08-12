@@ -25,9 +25,9 @@ This category covers tools for **packaging, distributing, and managing** Kuberne
 
 ```mermaid
 graph TD
-    A[Manifests YAML] --> B[Kustomize\noverlays]
-    A --> C[Helm Charts\ntemplates + release state]
-    B --> D[GitOps\nArgo CD / Flux]
+    A[Manifests YAML] --> B[Kustomize<br/>overlays]
+    A --> C[Helm Charts<br/>templates + release state]
+    B --> D[GitOps<br/>Argo CD / Flux]
     C --> D
 ```
 

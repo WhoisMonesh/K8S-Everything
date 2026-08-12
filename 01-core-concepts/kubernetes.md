@@ -24,10 +24,10 @@ Kubernetes abstracts all this complexity into a declarative API where you descri
 ```mermaid
 graph TD
     subgraph "Control Plane (Master)"
-        A[API Server\nkube-apiserver]
-        B[etcd\nState store]
-        C[kube-scheduler\nPod placement]
-        D[kube-controller-manager\nAuto-scaling, endpoints, etc.]
+        A[API Server<br/>kube-apiserver]
+        B[etcd<br/>State store]
+        C[kube-scheduler<br/>Pod placement]
+        D[kube-controller-manager<br/>Auto-scaling, endpoints, etc.]
     end
 
     A --> B
@@ -35,22 +35,22 @@ graph TD
     A --> D
 
     subgraph "Worker Nodes"
-        E1[Worker Node 1\nkubelet + kube-proxy]
-        E2[Worker Node 2\nkubelet + kube-proxy]
-        E3[Worker Node 3\nkubelet + kube-proxy]
+        E1[Worker Node 1<br/>kubelet + kube-proxy]
+        E2[Worker Node 2<br/>kubelet + kube-proxy]
+        E3[Worker Node 3<br/>kubelet + kube-proxy]
     end
 
     C --> E1
     C --> E2
     C --> E3
 
-    E1 --> F1[Container Runtime\ncontainerd/docker]
+    E1 --> F1[Container Runtime<br/>containerd/docker]
     E2 --> F2[Container Runtime]
     E3 --> F3[Container Runtime]
 
-    F1 --> G1[Pod\nnginx + redis]
-    F2 --> G2[Pod\nnginx + redis]
-    F3 --> G3[Pod\nnginx + redis]
+    F1 --> G1[Pod<br/>nginx + redis]
+    F2 --> G2[Pod<br/>nginx + redis]
+    F3 --> G3[Pod<br/>nginx + redis]
 
     User[Developer] -->|kubectl| A
 ```

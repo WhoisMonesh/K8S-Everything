@@ -14,10 +14,10 @@ When you run a Pod, Kubernetes must decide: *which node can run this pod?* It lo
 
 ```mermaid
 graph TD
-    A[Pod created\nPending] --> B[kube-scheduler]
-    B --> C[Filter\nRemove unsuitable nodes]
-    C --> D[Score\nRank remaining nodes]
-    D --> E[Bind\nAssign to best node]
+    A[Pod created<br/>Pending] --> B[kube-scheduler]
+    B --> C[Filter<br/>Remove unsuitable nodes]
+    C --> D[Score<br/>Rank remaining nodes]
+    D --> E[Bind<br/>Assign to best node]
     E --> F[kubelet runs the Pod]
 ```
 
@@ -39,7 +39,7 @@ A Pod declares constraints that the scheduler enforces:
 
 ```mermaid
 flowchart TD
-    A[Filter Phase\neliminate candidates] --> A1[NodeResources]
+    A[Filter Phase<br/>eliminate candidates] --> A1[NodeResources]
     A --> A2[NodeAffinity]
     A --> A3[Taints/Tolerations]
     A --> A4[PodAffinity/AntiAffinity]
@@ -47,8 +47,8 @@ flowchart TD
     A --> A6[ImagePolarity]
     A --> A7[Taint]
     A --> A8[QoS]
-    A --> B[Score Phase\nrank survivors]
-    B --> B1[NodeResources\nbalanced allocation]
+    A --> B[Score Phase<br/>rank survivors]
+    B --> B1[NodeResources<br/>balanced allocation]
     B --> B2[ImageLocality]
     B --> B3[LeastRequestedPriority]
     B --> B4[SelectorSpreadingPriority]

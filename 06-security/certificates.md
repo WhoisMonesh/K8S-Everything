@@ -21,11 +21,11 @@ There are **two planes** of certificates:
 
 ```mermaid
 graph TD
-    A[root CA\nca.key] --> B[apiserver cert\napiserver.crt, signed by CA]
-    A --> C[kubelet client cert\nfront-proxy, signed by CA]
-    A --> D[kubelet serving cert\nkubelet.crt, signed by CA]
-    A --> E[etcd server cert\nserver.crt]
-    A --> F[kube-controller-manager client\nadmin client cert for apiserver]
+    A[root CA<br/>ca.key] --> B[apiserver cert<br/>apiserver.crt, signed by CA]
+    A --> C[kubelet client cert<br/>front-proxy, signed by CA]
+    A --> D[kubelet serving cert<br/>kubelet.crt, signed by CA]
+    A --> E[etcd server cert<br/>server.crt]
+    A --> F[kube-controller-manager client<br/>admin client cert for apiserver]
 ```
 
 For a **kubeadm** cluster, the CA and all certs are in `/etc/kubernetes/pki/`:

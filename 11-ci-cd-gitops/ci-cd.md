@@ -18,13 +18,13 @@
 
 ```mermaid
 flowchart LR
-    A[Commit] --> B[CI Runner\nGitHub Actions / GitLab CI / Tekton]
-    B --> C[Build image\ndocker build / kaniko / buildkit]
+    A[Commit] --> B[CI Runner<br/>GitHub Actions / GitLab CI / Tekton]
+    B --> C[Build image<br/>docker build / kaniko / buildkit]
     B --> D[Run tests]
-    B --> E[Scan for CVEs\ntrivy / grype]
-    B --> F[Sign image\ncosign / notation]
-    F --> G[Push to registry\nregistry.example.com/app:commit-sha]
-    G --> H[Commit new tag to Git\nor update image tag]
+    B --> E[Scan for CVEs<br/>trivy / grype]
+    B --> F[Sign image<br/>cosign / notation]
+    F --> G[Push to registry<br/>registry.example.com/app:commit-sha]
+    G --> H[Commit new tag to Git<br/>or update image tag]
 ```
 
 ### Where CI runs

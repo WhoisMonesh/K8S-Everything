@@ -18,11 +18,11 @@ You grant permissions by binding a **Subject** (user/service account) to a **Rol
 
 ```mermaid
 graph TD
-    A[Subject\nUser: alice / SA: my-sa] --> B[RoleBinding]
-    B --> C[Role / ClusterRole\ndefines allowed verbs/resources]
-    C --> D[API Server\nchecks RBAC on every request]
+    A[Subject<br/>User: alice / SA: my-sa] --> B[RoleBinding]
+    B --> C[Role / ClusterRole<br/>defines allowed verbs/resources]
+    C --> D[API Server<br/>checks RBAC on every request]
     D --> E{Allowed?}
-    E -->|Yes| F[Resource\nPod/Service/etc.]
+    E -->|Yes| F[Resource<br/>Pod/Service/etc.]
     E -->|No| G[403 Forbidden]
 ```
 

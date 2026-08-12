@@ -21,11 +21,11 @@ Cluster Autoscaler bridges the gap between **pod-level demand** and **node-level
 
 ```mermaid
 graph TD
-    A[Pods stuck Pending\nno node capacity] --> B[Cluster Autoscaler]
-    B --> C[Scale Up\nAdd VMs to node group]
-    D[Nodes underutilized\npods can be evicted] --> B
-    B --> E[Scale Down\nRemove VMs]
-    C --> F[New Nodes\njoined cluster]
+    A[Pods stuck Pending<br/>no node capacity] --> B[Cluster Autoscaler]
+    B --> C[Scale Up<br/>Add VMs to node group]
+    D[Nodes underutilized<br/>pods can be evicted] --> B
+    B --> E[Scale Down<br/>Remove VMs]
+    C --> F[New Nodes<br/>joined cluster]
     E --> G[VMs terminated]
 ```
 
@@ -38,7 +38,7 @@ flowchart LR
     A[HPA requests more pods] --> B[Scheduler tries to place them]
     B --> C{Enough capacity?}
     C -->|No| D[Pods stay Pending]
-    D --> E[Cluster Autoscaler detects\nPending pods + failed scheduling]
+    D --> E[Cluster Autoscaler detects<br/>Pending pods + failed scheduling]
     E --> F[Adds nodes to node group]
     F --> G[New pods scheduled]
 ```
@@ -47,9 +47,9 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-    A[Node underutilized,\npods can be evicted] --> B[Cluster Autoscaler\nevaluates scale-down]
+    A[Node underutilized,<br/>pods can be evicted] --> B[Cluster Autoscaler<br/>evaluates scale-down]
     B --> C{Pods fit elsewhere?}
-    C -->|Yes| D[Evict pods\ndrain node]
+    C -->|Yes| D[Evict pods<br/>drain node]
     D --> E[Delete node]
 ```
 

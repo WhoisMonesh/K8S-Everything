@@ -29,10 +29,10 @@ Kubernetes storage provides ways for Pods to **persist data** beyond their lifec
 
 ```mermaid
 graph TD
-    A[Pod Volumes\nemptyDir, hostPath] --> B[Persistent Volumes\nPV + PVC]
-    B --> C[Storage Classes\nDynamic Provisioning]
-    C --> D[CSI Drivers\nCloud disks, NFS, File]
-    B --> E[Persistent Volume\nClaims & Snapshots]
+    A[Pod Volumes<br/>emptyDir, hostPath] --> B[Persistent Volumes<br/>PV + PVC]
+    B --> C[Storage Classes<br/>Dynamic Provisioning]
+    C --> D[CSI Drivers<br/>Cloud disks, NFS, File]
+    B --> E[Persistent Volume<br/>Claims &amp; Snapshots]
 ```
 
 ## Core Storage API Objects

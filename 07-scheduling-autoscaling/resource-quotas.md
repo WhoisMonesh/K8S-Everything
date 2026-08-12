@@ -16,7 +16,7 @@ A **ResourceQuota** is a Kubernetes object that limits the **total aggregate con
 
 ```mermaid
 graph TD
-    A[Pod created in Namespace] --> B[Quota Admission\nchecks against ResourceQuota]
+    A[Pod created in Namespace] --> B[Quota Admission<br/>checks against ResourceQuota]
     B --> C{Namespace total exceeded?}
     C -->|Yes| D[Rejected]
     C -->|No| E[Quota counters incremented]

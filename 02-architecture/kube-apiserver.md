@@ -23,11 +23,11 @@ The API server is the **single source of truth** — every other component talks
 ```mermaid
 graph TD
     A[kubectl / UI / CI] --> B[kube-apiserver]
-    B --> C[Authentication\nTLS / Token / OIDC]
-    C --> D[Authorization\nRBAC / ABAC / Webhooks]
-    D --> E[Admission Control\nValidate/Mutate]
-    E --> F[etcd\nPersistent state]
-    B --> G[Watch\npush updates to clients]
+    B --> C[Authentication<br/>TLS / Token / OIDC]
+    C --> D[Authorization<br/>RBAC / ABAC / Webhooks]
+    D --> E[Admission Control<br/>Validate/Mutate]
+    E --> F[etcd<br/>Persistent state]
+    B --> G[Watch<br/>push updates to clients]
     G --> H[kube-scheduler]
     G --> I[kube-controller-manager]
     G --> J[kubelet]
@@ -123,13 +123,13 @@ kubectl get certificaterequests.cert-manager.io
 
 ```mermaid
 flowchart TD
-    A[HTTP Request\nPOST /api/v1/namespaces/default/pods] --> B[Authentication\nWho are you?]
-    B --> C[Authorization\nCan you create pods?]
-    C --> D[Mutating Admission\nAdd defaults\nInject sidecars]
-    D --> E[Validation\nSchema validation\nWebhook validation]
-    E --> F[etcd\nPersist object]
+    A[HTTP Request<br/>POST /api/v1/namespaces/default/pods] --> B[Authentication<br/>Who are you?]
+    B --> C[Authorization<br/>Can you create pods?]
+    C --> D[Mutating Admission<br/>Add defaults\nInject sidecars]
+    D --> E[Validation<br/>Schema validation\nWebhook validation]
+    E --> F[etcd<br/>Persist object]
     F --> G[Response to client]
-    F --> H[Watch notification\nSent to controllers/scheduler]
+    F --> H[Watch notification<br/>Sent to controllers/scheduler]
 ```
 
 ## Commands

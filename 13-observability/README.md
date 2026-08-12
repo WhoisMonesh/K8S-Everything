@@ -20,21 +20,21 @@ Observability = understanding what your cluster and apps are doing through **met
 graph TD
     subgraph Nodes
         A[App Pod] --> L[stdout logs]
-        A --> M[metrics endpoint\n/metrics]
+        A --> M[metrics endpoint<br/>/metrics]
         B[App Pod] --> L
-        C[kubelet\ncadvisor metrics] --> C1[Kubelet /cadvisor]
+        C[kubelet<br/>cadvisor metrics] --> C1[Kubelet /cadvisor]
     end
 
     subgraph "Control plane"
-        KCM[controller-manager\nmetrics] --> KProm
-        API[API server\nmetrics] --> KProm
+        KCM[controller-manager<br/>metrics] --> KProm
+        API[API server<br/>metrics] --> KProm
         C1 --> KProm[Prometheus]
-        D[Events + kube-state-metrics\nobjects-as-metrics] --> KProm
-        KProm --> G[Grafana\ndashboards]
-        KProm --> A2[Alertmanager\nrouting/alerts]
-        A2 --> N[Notification\nchannels]
+        D[Events + kube-state-metrics<br/>objects-as-metrics] --> KProm
+        KProm --> G[Grafana<br/>dashboards]
+        KProm --> A2[Alertmanager<br/>routing/alerts]
+        A2 --> N[Notification<br/>channels]
         L --> F[Fluentd/Fluent Bit<br/>to Loki/Prometheus]
-        M --> P[Prometheus\nscrapes /metrics]
+        M --> P[Prometheus<br/>scrapes /metrics]
     end
 ```
 

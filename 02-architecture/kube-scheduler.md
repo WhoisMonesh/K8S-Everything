@@ -43,12 +43,12 @@ Among feasible nodes, the scheduler scores them by priority:
 
 ```mermaid
 flowchart LR
-    A[New Pod\nPending] --> B[Scheduler]
+    A[New Pod<br/>Pending] --> B[Scheduler]
     B --> C{Filter Nodes}
     C -->|Reject| D[Node: no resources]
     C -->|Accept| E[Node 1, 2, 3]
     E --> F{Score Nodes}
-    F --> G[Node 3\nhighest score]
+    F --> G[Node 3<br/>highest score]
     G --> H[Bind Pod to Node 3]
 ```
 

@@ -23,11 +23,11 @@ Containers are **ephemeral** — when a Pod dies, its filesystem dies. Kubernete
 
 ```mermaid
 graph TD
-    A[Pod\ncontainer] --> B[Mount point\n/data]
-    B --> C[Volume\nPVC]
-    C --> D[PersistentVolume\ne.g., aws-ebs-sc-pvc]
-    D --> E[StorageClass\nebs-sc / csi driver]
-    E --> F[Cloud Disk\nEBS / PD / Disk]
+    A[Pod<br/>container] --> B[Mount point<br/>/data]
+    B --> C[Volume<br/>PVC]
+    C --> D[PersistentVolume<br/>e.g., aws-ebs-sc-pvc]
+    D --> E[StorageClass<br/>ebs-sc / csi driver]
+    E --> F[Cloud Disk<br/>EBS / PD / Disk]
 ```
 
 ## Volumes (in Pod spec)

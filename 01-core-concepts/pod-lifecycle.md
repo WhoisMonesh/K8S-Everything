@@ -187,7 +187,7 @@ spec:
 flowchart LR
     A[Client] --> B[Service ClusterIP]
     B -->|Ready pods only| C[Pod 1]
-    B -.->|Not ready, skipped| D[Pod 2\nreadiness failed]
+    B -.->|Not ready, skipped| D[Pod 2<br/>readiness failed]
 ```
 
 ## Common Probe Configurations

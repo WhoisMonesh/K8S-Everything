@@ -20,11 +20,11 @@ Kubernetes Pods are ephemeral — their IPs change when they restart or are resc
 ```mermaid
 graph TD
     A[Client] --> B[Node IP:30080]
-    B --> C[kube-proxy\niptables/IPVS rules]
-    C --> D[Pod IP 1\n10.244.x.x]
-    C --> E[Pod IP 2\n10.244.y.y]
-    C --> F[Pod IP 3\n10.244.z.z]
-    C --> G[Endpoint controller\nupdates from API]
+    B --> C[kube-proxy<br/>iptables/IPVS rules]
+    C --> D[Pod IP 1<br/>10.244.x.x]
+    C --> E[Pod IP 2<br/>10.244.y.y]
+    C --> F[Pod IP 3<br/>10.244.z.z]
+    C --> G[Endpoint controller<br/>updates from API]
 ```
 
 ## kube-proxy Modes
@@ -77,8 +77,8 @@ data:
 
 ```mermaid
 flowchart LR
-    A[Client Pod] --> B[kube-proxy\niptables rule]
-    B --> C[Round-robin:\nPod A, Pod B, Pod C]
+    A[Client Pod] --> B[kube-proxy<br/>iptables rule]
+    B --> C[Round-robin:<br/>Pod A, Pod B, Pod C]
     C --> D[Backend Pods]
 ```
 

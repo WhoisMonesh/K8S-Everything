@@ -27,11 +27,11 @@ The CCM solves this by making cloud integration **pluggable**.
 ```mermaid
 graph TD
     A[kube-apiserver] --> B[cloud-controller-manager]
-    B --> C[Node Controller\nlifecycle]
-    B --> D[Service Controller\nload balancers]
-    B --> E[Route Controller\ncloud routing]
-    B --> F[Volume Controller\nattach/detach volumes]
-    B --> G[Cloud APIs\nAWS / GCP / Azure / etc.]
+    B --> C[Node Controller<br/>lifecycle]
+    B --> D[Service Controller<br/>load balancers]
+    B --> E[Route Controller<br/>cloud routing]
+    B --> F[Volume Controller<br/>attach/detach volumes]
+    B --> G[Cloud APIs<br/>AWS / GCP / Azure / etc.]
 ```
 
 ## Cloud Controller Plugins

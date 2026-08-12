@@ -19,14 +19,14 @@ Argo CD provides a **web UI** and **CLI** for visualizing deployments, diffs, an
 
 ```mermaid
 graph TD
-    A[Git Repo\ndesired manifests] --> B[Argo CD\nServer]
-    B --> C[Compare / Sync\nto cluster]
-    C --> D[Live Cluster\nresources]
-    D --> E[Argo CD\nDetects drift]
+    A[Git Repo<br/>desired manifests] --> B[Argo CD<br/>Server]
+    B --> C[Compare / Sync<br/>to cluster]
+    C --> D[Live Cluster<br/>resources]
+    D --> E[Argo CD<br/>Detects drift]
     E --> B
     F[Users] --> G[Argo CD UI / CLI]
     G --> B
-    H[Argo CD\nnotifications] --> I[Slack / Email / Teams]
+    H[Argo CD<br/>notifications] --> I[Slack / Email / Teams]
 ```
 
 ### Components

@@ -20,15 +20,15 @@ A service mesh moves all this logic into the **networking plane** (via sidecar p
 ```mermaid
 graph TD
     subgraph Pod
-        A[App container\nlocalhost:8080] --> B[Sidecar proxy\nEnvoy]
-        B --> C[App container:8080\nvia localhost]
+        A[App container<br/>localhost:8080] --> B[Sidecar proxy<br/>Envoy]
+        B --> C[App container:8080<br/>via localhost]
     end
     subgraph Pod 2
         D[App container] --> E[Sidecar proxy]
     end
     B <--> E
     E --> F[Service B]
-    B --> F[Mesh control plane\nIstiod / Linkerd-spi]
+    B --> F[Mesh control plane<br/>Istiod / Linkerd-spi]
     E --> F
 ```
 

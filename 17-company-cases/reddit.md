@@ -25,7 +25,7 @@ Reddit ran its monolith on dedicated AWS instances for years. The migration to K
 graph TD
     LB[NLB] --> API[API pods<br/>on EKS]
     API -->|"calls"| Monolith[Monolith pods<br/>shrinking]
-    API --> Services[150+ services<br/>r/&chestrator, r/feed...]
+    API --> Services[150+ services<br/>r/orchestrator, r/feed...]
     Monolith -->|"reads/writes"| DB[(Cassandra)]
     Services --> DB
     subgraph EKS

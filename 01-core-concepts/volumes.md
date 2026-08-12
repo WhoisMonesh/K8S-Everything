@@ -20,10 +20,10 @@ Volumes solve this by providing **persistent, shared storage** that survives con
 
 ```mermaid
 graph TD
-    A[Pod] --> B[Volume\nShared directory]
-    A --> C[Container 1\nmounts volume at /data]
-    A --> D[Container 2\nmounts volume at /shared]
-    B --> E[Storage Backend\nemptyDir | hostPath | NFS | PV]
+    A[Pod] --> B[Volume<br/>Shared directory]
+    A --> C[Container 1<br/>mounts volume at /data]
+    A --> D[Container 2<br/>mounts volume at /shared]
+    B --> E[Storage Backend<br/>emptyDir | hostPath | NFS | PV]
     C --> B
     D --> B
     E --> B

@@ -22,9 +22,9 @@ Think of PVC = a "storage request ticket", and PV = the "allocated disk".
 ```mermaid
 graph TD
     A[Developer creates PVC] --> B[StorageClass / PV Provisioner]
-    B --> C[PV gets created\nBound to PVC]
+    B --> C[PV gets created<br/>Bound to PVC]
     C --> D[Pod mounts PVC]
-    D --> E[Container\n/data (persists across restarts)]
+    D --> E[Container<br/>/data (persists across restarts)]
 ```
 
 ## PV vs PVC

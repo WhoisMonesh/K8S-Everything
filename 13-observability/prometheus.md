@@ -18,18 +18,18 @@
 ```mermaid
 graph TD
     subgraph "control plane"
-        OPO[Prometheus Operator /\nAdmission Webhooks]
+        OPO[Prometheus Operator /<br/>Admission Webhooks]
         OPO --> PM
     end
     subgraph Data Plane "K8s cluster"
-        A[App Service] --> B[Service\nhas Pod]
-        C[ServiceMonitor\npoints at Service]
-        C --> D[Prometheus\nscrapes pods]
-        E[PrometheusRule\nalert rules] --> D
-        D --> D2[Prometheus TSDB\nlocal on PVC]
-        D --> F[Grafana\nqueries via HTTP]
-        D --> G[Alertmanager\nroutes alerts]
-        D --> H[long term\nstorage e.g. VictoriaMetrics/S3]
+        A[App Service] --> B[Service<br/>has Pod]
+        C[ServiceMonitor<br/>points at Service]
+        C --> D[Prometheus<br/>scrapes pods]
+        E[PrometheusRule<br/>alert rules] --> D
+        D --> D2[Prometheus TSDB<br/>local on PVC]
+        D --> F[Grafana<br/>queries via HTTP]
+        D --> G[Alertmanager<br/>routes alerts]
+        D --> H[long term<br/>storage e.g. VictoriaMetrics/S3]
     end
 ```
 

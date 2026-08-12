@@ -19,11 +19,11 @@
 
 ```mermaid
 graph LR
-    A[Internet] --> B[Traefik\nLoadBalancer Service]
-    B --> C[Traefik Pod\nController + Proxy]
-    C --> D[Watch Ingress/\nIngressRoute/Middlewares]
+    A[Internet] --> B[Traefik<br/>LoadBalancer Service]
+    B --> C[Traefik Pod<br/>Controller + Proxy]
+    C --> D[Watch Ingress/<br/>IngressRoute/Middlewares]
     D --> E[Services]
-    C --> F[Dashboard\nAPI :8080]
+    C --> F[Dashboard<br/>API :8080]
 ```
 
 ## Installing Traefik

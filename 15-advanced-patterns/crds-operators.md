@@ -14,12 +14,12 @@ A **CustomResourceDefinition (CRD)** extends the Kubernetes API with a *new kind
 
 ```mermaid
 graph TD
-    U[User: kubectl apply -f cluster.yaml] --> CR[Custom Resource\nKind: MySQLCluster]
-    CR --> C[Operator Controller\ninformer on MySQLCluster]
+    U[User: kubectl apply -f cluster.yaml] --> CR[Custom Resource<br/>Kind: MySQLCluster]
+    CR --> C[Operator Controller<br/>informer on MySQLCluster]
     C --> W{Reconcile loop\ncompare desired vs actual}
     W -->|drift| D[Deployment]
     W --> P[PVC]
-    W -->|status| CR2[CR.status\nready: true]
+    W -->|status| CR2[CR.status<br/>ready: true]
     W --> B[Backup CronJob / Service]
 ```
 

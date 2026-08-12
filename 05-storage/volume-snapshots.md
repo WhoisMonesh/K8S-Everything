@@ -22,11 +22,11 @@ Snapshots are taken by the **CSI driver** and managed via:
 
 ```mermaid
 flowchart LR
-    A[PVC] --> B[VolumeSnapshot\nRequest]
-    B --> C[VolumeSnapshotClass\nProvisioner]
-    C --> D[CSI Driver\ncreates snapshot]
-    D --> E[Cloud Snapshot\nEBS Snapshot / PD Snapshot]
-    E --> F[VolumeSnapshotContent\nCreated]
+    A[PVC] --> B[VolumeSnapshot<br/>Request]
+    B --> C[VolumeSnapshotClass<br/>Provisioner]
+    C --> D[CSI Driver<br/>creates snapshot]
+    D --> E[Cloud Snapshot<br/>EBS Snapshot / PD Snapshot]
+    E --> F[VolumeSnapshotContent<br/>Created]
     F --> G[Bound to VolumeSnapshot]
 ```
 

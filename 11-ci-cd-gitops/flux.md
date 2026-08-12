@@ -19,9 +19,9 @@ Flux also does **image automation** — it can watch an image repo and bump the 
 
 ```mermaid
 graph TD
-    A[Git Repository\ndesired state] --> B[Flux\nGitRepository + Kustomization]
-    B --> C[Reconciles\nto live cluster]
-    D[Image Registry\nnew tags] --> E[Flux Image\nAutomation]
+    A[Git Repository<br/>desired state] --> B[Flux<br/>GitRepository + Kustomization]
+    B --> C[Reconciles<br/>to live cluster]
+    D[Image Registry<br/>new tags] --> E[Flux Image<br/>Automation]
     E --> F[Updates image tag in Git]
     F --> B
 ```

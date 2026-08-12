@@ -20,14 +20,14 @@ StatefulSets provide these guarantees.
 
 ```mermaid
 graph TD
-    A[StatefulSet Controller] --> B[StatefulSet\n3 replicas]
-    B --> C[Pod 0\nweb-0\nstable identity]
-    B --> D[Pod 1\nweb-1\nordered create]
-    B --> E[Pod 2\nweb-2\nheadless SVC]
-    C --> F[PVC: data-web-0\npersistent storage]
+    A[StatefulSet Controller] --> B[StatefulSet<br/>3 replicas]
+    B --> C[Pod 0<br/>web-0\nstable identity]
+    B --> D[Pod 1<br/>web-1\nordered create]
+    B --> E[Pod 2<br/>web-2\nheadless SVC]
+    C --> F[PVC: data-web-0<br/>persistent storage]
     D --> G[PVC: data-web-1]
     E --> H[PVC: data-web-2]
-    C --> I[web-0.web.default\nDNS name]
+    C --> I[web-0.web.default<br/>DNS name]
 ```
 
 ## Key Guarantees

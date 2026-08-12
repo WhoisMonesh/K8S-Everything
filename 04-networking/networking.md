@@ -28,8 +28,8 @@ This is summarized as: **"One IP per Pod, flat network"**
 
 ```mermaid
 graph LR
-    A[Node 1\nPod IP: 10.1.1.4] -- Direct --> B[Node 2\nPod IP: 10.1.2.9]
-    A -- Direct --> C[Node 2\nPod IP: 10.1.2.3]
+    A[Node 1<br/>Pod IP: 10.1.1.4] -- Direct --> B[Node 2<br/>Pod IP: 10.1.2.9]
+    A -- Direct --> C[Node 2<br/>Pod IP: 10.1.2.3]
     C -- Direct --> A
 ```
 
@@ -87,15 +87,15 @@ networking:
 
 ```mermaid
 graph TD
-    A[Internet] --> B[LoadBalancer\nIngress Controller]
-    B --> C[Service\nClusterIP]
+    A[Internet] --> B[LoadBalancer<br/>Ingress Controller]
+    B --> C[Service<br/>ClusterIP]
     C --> D[Pod 1]
     C --> E[Pod 2]
     C --> F[Pod 3]
-    D --> G[Pod IP\ncontainer interface]
+    D --> G[Pod IP<br/>container interface]
     G --> H[veth pair]
     H --> I[Node]
-    I --> J[CNI Plugin\ne.g., Calico, Cilium]
+    I --> J[CNI Plugin<br/>e.g., Calico, Cilium]
 ```
 
 ## Service Networking (ClusterIP)
@@ -106,7 +106,7 @@ A Service uses `iptables` (or `ipvs`) rules to **redirect traffic** to backend P
 
 ```mermaid
 graph LR
-    A[Pod] -->|traffic to svc.cluster.local:80| B[iptables\non Node]
+    A[Pod] -->|traffic to svc.cluster.local:80| B[iptables<br/>on Node]
     B --> C{Any healthy Pod?}
     C -->|Yes| D[Pod A]
     C -->|Yes| E[Pod B]
@@ -128,8 +128,8 @@ Ingress provides **HTTP/HTTPS routing** into the cluster via rules:
 
 ```mermaid
 graph TD
-    A[Client] --> B[Ingress Controller\nNGINX/Envoy/Traefik]
-    B --> C[VirtualService\nHost: foo.com / Path: /api]
+    A[Client] --> B[Ingress Controller<br/>NGINX/Envoy/Traefik]
+    B --> C[VirtualService<br/>Host: foo.com / Path: /api]
     C --> D[Service]
     D --> E[Pod]
 ```

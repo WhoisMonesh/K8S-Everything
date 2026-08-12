@@ -22,13 +22,13 @@ LimitRanges provide:
 
 ```mermaid
 graph TD
-    A[Namespace] --> B[LimitRange\nconstraints]
-    B --> C[Pod 1\napplies defaults]
-    B --> D[Pod 2\nvalidates limits]
-    B --> E[Pod 3\nrejects violations]
-    C --> F[Container: uses default\nrequests if not set]
-    D --> G[Container: validated\nwithin min/max range]
-    E --> H[Container: rejected if\nrequest exceeds max]
+    A[Namespace] --> B[LimitRange<br/>constraints]
+    B --> C[Pod 1<br/>applies defaults]
+    B --> D[Pod 2<br/>validates limits]
+    B --> E[Pod 3<br/>rejects violations]
+    C --> F[Container: uses default<br/>requests if not set]
+    D --> G[Container: validated<br/>within min/max range]
+    E --> H[Container: rejected if<br/>request exceeds max]
 ```
 
 ## LimitRange Spec

@@ -19,11 +19,11 @@ Services give you a **stable IP** (ClusterIP) and **virtual DNS name** that alwa
 
 ```mermaid
 graph TD
-    A[Client Pod] --> B[Service\nClusterIP]
-    B --> C[kube-proxy\niptables/ipvs rules]
-    C --> D[Pod 1\nEndpoint]
-    C --> E[Pod 2\nEndpoint]
-    C --> F[Pod 3\nEndpoint]
+    A[Client Pod] --> B[Service<br/>ClusterIP]
+    B --> C[kube-proxy<br/>iptables/ipvs rules]
+    C --> D[Pod 1<br/>Endpoint]
+    C --> E[Pod 2<br/>Endpoint]
+    C --> F[Pod 3<br/>Endpoint]
 ```
 
 ## Service Types
@@ -248,7 +248,7 @@ graph TD
     B --> D[Cloud provider available?]
     D -->|Yes| B
     D -->|No| E[NodePort]
-    C --> F[Need DNS to return pod IPs\ne.g. StatefulSet?]
+    C --> F[Need DNS to return pod IPs<br/>e.g. StatefulSet?]
     F -->|Yes| G[Headless Service]
 ```
 

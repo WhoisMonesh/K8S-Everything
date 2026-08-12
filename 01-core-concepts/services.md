@@ -18,10 +18,10 @@ Pods come and go — they get rescheduled, restarted, scaled. Their IPs change c
 
 ```mermaid
 graph TD
-    A[Client] --> B[ClusterIP\nInternal only]
-    A --> C[NodePort\n+ ClusterIP]
-    A --> D[LoadBalancer\n+ ClusterIP + NodePort]
-    A --> E[ExternalName\nCNAME record]
+    A[Client] --> B[ClusterIP<br/>Internal only]
+    A --> C[NodePort<br/>+ ClusterIP]
+    A --> D[LoadBalancer<br/>+ ClusterIP + NodePort]
+    A --> E[ExternalName<br/>CNAME record]
 ```
 
 | Type | Description | Use Case |
@@ -204,10 +204,10 @@ kubectl delete svc <name>
 
 ```mermaid
 flowchart LR
-    A[Client] --> B[Service\nClusterIP: 10.97.x.x]
-    B --> C[Endpoints\nPod 1: 10.244.x.x]
-    B --> D[Endpoints\nPod 2: 10.244.x.x]
-    B --> E[Endpoints\nPod 3: 10.244.x.x]
+    A[Client] --> B[Service<br/>ClusterIP: 10.97.x.x]
+    B --> C[Endpoints<br/>Pod 1: 10.244.x.x]
+    B --> D[Endpoints<br/>Pod 2: 10.244.x.x]
+    B --> E[Endpoints<br/>Pod 3: 10.244.x.x]
     C --> F[pod: web-app]
     D --> G[pod: web-app]
     E --> H[pod: web-app]

@@ -104,11 +104,11 @@ The following playbooks/reference were added to close operational + exam gaps; e
 
 ```mermaid
 graph TD
-    A[User / kubectl] --> B[API Server\nkube-apiserver]
-    B --> C[etcd\nState store]
-    B --> D[kube-scheduler\nAssigns pods to nodes]
-    B --> E[kube-controller-manager\nRuns controllers]
-    B --> F[cloud-controller-manager\nCloud integrations]
+    A[User / kubectl] --> B[API Server<br/>kube-apiserver]
+    B --> C[etcd<br/>State store]
+    B --> D[kube-scheduler<br/>Assigns pods to nodes]
+    B --> E[kube-controller-manager<br/>Runs controllers]
+    B --> F[cloud-controller-manager<br/>Cloud integrations]
 
     subgraph "Control Plane (Master)"
         B
@@ -118,9 +118,9 @@ graph TD
         F
     end
 
-    D --> G[Worker Node 1\nkubelet, kube-proxy]
-    D --> H[Worker Node 2\nkubelet, kube-proxy]
-    D --> I[Worker Node 3\nkubelet, kube-proxy]
+    D --> G[Worker Node 1<br/>kubelet, kube-proxy]
+    D --> H[Worker Node 2<br/>kubelet, kube-proxy]
+    D --> I[Worker Node 3<br/>kubelet, kube-proxy]
 
     subgraph "Worker Nodes"
         G

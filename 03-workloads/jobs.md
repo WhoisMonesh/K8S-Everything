@@ -19,12 +19,12 @@ Jobs provide **completion guarantees** — a job runs until `N` pods succeed, wi
 
 ```mermaid
 graph TD
-    A[Job Controller] --> B[Job\ncompletions: 5]
-    B --> C[Pod 1\nstatus: Success]
-    B --> D[Pod 2\nstatus: Success]
-    B --> E[Pod 3\nstatus: Running]
-    B --> F[Pod 4\nstatus: Pending]
-    B --> G[Pod 5\ncreated when 3,4 finish]
+    A[Job Controller] --> B[Job<br/>completions: 5]
+    B --> C[Pod 1<br/>status: Success]
+    B --> D[Pod 2<br/>status: Success]
+    B --> E[Pod 3<br/>status: Running]
+    B --> F[Pod 4<br/>status: Pending]
+    B --> G[Pod 5<br/>created when 3,4 finish]
 ```
 
 ## Job Spec

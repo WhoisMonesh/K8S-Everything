@@ -20,15 +20,15 @@ Containers need grouping for common concerns:
 ```mermaid
 graph TD
     subgraph "Pod"
-        A[Pod IP\nShared network namespace]
+        A[Pod IP<br/>Shared network namespace]
         B[Shared Volumes]
-        C[Container 1\napp: nginx]
-        D[Container 2\nsidecar: log-agent]
+        C[Container 1<br/>app: nginx]
+        D[Container 2<br/>sidecar: log-agent]
     end
 
     subgraph "Shared Namespaces"
-        E[Network Namespace\nlocalhost, IP, ports]
-        F[IPC Namespace\nshared memory]
+        E[Network Namespace<br/>localhost, IP, ports]
+        F[IPC Namespace<br/>shared memory]
         G[Volumes]
     end
 

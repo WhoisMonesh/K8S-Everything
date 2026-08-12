@@ -53,11 +53,11 @@ kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 
 ```mermaid
 graph LR
-    A[Pod 1] --> B[calico-node\nDaemonSet per Node]
-    A --> C[calico-felix\nPolicy engine]
-    B --> D[BGP\nor IP-in-IP]
+    A[Pod 1] --> B[calico-node<br/>DaemonSet per Node]
+    A --> C[calico-felix<br/>Policy engine]
+    B --> D[BGP<br/>or IP-in-IP]
     D --> E[Pod on Node 2]
-    C --> F[iptables\nNetworkPolicy]
+    C --> F[iptables<br/>NetworkPolicy]
 ```
 
 - **calico-node**: Runs on each node, manages routes + iptables
@@ -89,9 +89,9 @@ helm install cilium cilium/cilium --namespace kube-system
 
 ```mermaid
 graph LR
-    A[Pod] --> B[eBPF programs\nattached to interfaces]
-    B --> C[Kernel\neBPF-based routing]
-    C --> D[eBPF load balancer\n(no kube-proxy)]
+    A[Pod] --> B[eBPF programs<br/>attached to interfaces]
+    B --> C[Kernel<br/>eBPF-based routing]
+    C --> D[eBPF load balancer<br/>(no kube-proxy)]
     C --> E[Pod on another Node]
 ```
 

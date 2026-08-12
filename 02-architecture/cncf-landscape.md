@@ -29,55 +29,55 @@ Each project on the landscape is color-coded by **graduation status**:
 
 ```mermaid
 graph TD
-    A[Kubernetes\nCore orchestrator] --> B[Runtime]
+    A[Kubernetes<br/>Core orchestrator] --> B[Runtime]
     A --> C[Service Mesh]
-    A --> D[Service Discovery & Mesh Management]
+    A --> D[Service Discovery &amp; Mesh Management]
     A --> E[Network]
     A --> F[Storage]
     A --> G[Container Registry]
     A --> H[CI/CD]
-    A --> I[Security & Compliance]
-    A --> J[Observability & Analysis]
+    A --> I[Security &amp; Compliance]
+    A --> J[Observability &amp; Analysis]
 
     B --> B1[containerd]
     B --> B2[CRI-O]
     B --> B3[runc]
 
-    C --> C1[Istio\nGraduated]
-    C --> C2[Linkerd\nIncubating]
-    C --> C3[Consul\nGraduated]
+    C --> C1[Istio<br/>Graduated]
+    C --> C2[Linkerd<br/>Incubating]
+    C --> C3[Consul<br/>Graduated]
 
-    D --> D1[Consul\nDNS]
-    D --> D2[etcd\nGraduated]
+    D --> D1[Consul<br/>DNS]
+    D --> D2[etcd<br/>Graduated]
 
-    E --> E1[Calico\nGraduated]
-    E --> E2[Cilium\nGraduated]
-    E --> E3[Flannel\nIncubating]
+    E --> E1[Calico<br/>Graduated]
+    E --> E2[Cilium<br/>Graduated]
+    E --> E3[Flannel<br/>Incubating]
     E --> E4[Kube-OVN]
 
-    F --> F1[Rook\nStorage orchestration]
+    F --> F1[Rook<br/>Storage orchestration]
     F --> F2[Cassandra]
-    F --> F3[MinIO\nS3-compatible]
+    F --> F3[MinIO<br/>S3-compatible]
 
-    G --> G1[Harbor\nGraduated]
+    G --> G1[Harbor<br/>Graduated]
     G --> G2[JFrog Artifactory]
 
-    H --> H1[Argo CD\nGraduated]
-    H --> H2[Flux\nGraduated]
-    H --> H3[Tekton\nIncubating]
+    H --> H1[Argo CD<br/>Graduated]
+    H --> H2[Flux<br/>Graduated]
+    H --> H3[Tekton<br/>Incubating]
     H --> H4[Jenkins X]
 
-    I --> I1[Prometheus\nGraduated]
-    I --> I2[OpenTelemetry\nGraduated]
-    I --> I3[OPA\nGraduated]
-    I --> I4[Kyverno\nIncubating]
-    I --> I5[Falco\nIncubating]
-    I --> I6[Vault\nGraduated]
+    I --> I1[Prometheus<br/>Graduated]
+    I --> I2[OpenTelemetry<br/>Graduated]
+    I --> I3[OPA<br/>Graduated]
+    I --> I4[Kyverno<br/>Incubating]
+    I --> I5[Falco<br/>Incubating]
+    I --> I6[Vault<br/>Graduated]
 
-    J --> J1[Grafana\nGraduated]
-    J --> J2[Jaeger\nGraduated]
-    J --> J3[Loki\nIncubating]
-    J --> J4[Thanos\nIncubating]
+    J --> J1[Grafana<br/>Graduated]
+    J --> J2[Jaeger<br/>Graduated]
+    J --> J3[Loki<br/>Incubating]
+    J --> J4[Thanos<br/>Incubating]
 ```
 
 ## Project Maturity Levels

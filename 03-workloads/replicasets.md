@@ -21,8 +21,8 @@ ReplicaSet is the **enforcement** layer beneath Deployments.
 
 ```mermaid
 graph TD
-    A[ReplicaSet\nreplicas: 3\nselector: app=nginx] --> B[Pod 1, Pod 2, Pod 3]
-    A --> C[ReplicaSet\nController\nwatches & replaces]
+    A[ReplicaSet<br/>replicas: 3\nselector: app=nginx] --> B[Pod 1, Pod 2, Pod 3]
+    A --> C[ReplicaSet<br/>Controller\nwatches &amp; replaces]
     C --> D{Count == desired?}
     D -->|No| E[Create / Delete Pod]
 ```
@@ -74,8 +74,8 @@ The ReplicaSet uses `spec.selector.matchLabels` (or `matchExpressions`) to find 
 
 ```mermaid
 graph TD
-    A[Deployment] --> B[ReplicaSet (current RS)\nselector: app=nginx,version=v1]
-    A --> C[ReplicaSet (previous RS)\nversion=v0 — kept for rollback]
+    A[Deployment] --> B[ReplicaSet (current RS)<br/>selector: app=nginx,version=v1]
+    A --> C[ReplicaSet (previous RS)<br/>version=v0 — kept for rollback]
     B --> D[Pod (v1)]
     B --> E[Pod (v1)]
     B --> F[Pod (v1)]

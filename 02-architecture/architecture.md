@@ -19,16 +19,16 @@ This separation provides centralized management of cluster state and decentraliz
 ```mermaid
 graph TD
     subgraph "Control Plane (Master)"
-        A[kube-apiserver\nAPI endpoint]
-        B[etcd\nState store]
-        C[kube-scheduler\nPod placement]
-        D[kube-controller-manager\nControllers]
-        E[cloud-controller-manager\nCloud integration]
+        A[kube-apiserver<br/>API endpoint]
+        B[etcd<br/>State store]
+        C[kube-scheduler<br/>Pod placement]
+        D[kube-controller-manager<br/>Controllers]
+        E[cloud-controller-manager<br/>Cloud integration]
     end
     subgraph "Worker Nodes"
-        F1[Node 1\nkubelet\nkube-proxy\nContainer runtime]
-        F2[Node 2\nkubelet\nkube-proxy\nContainer runtime]
-        F3[Node 3\nkubelet\nkube-proxy\nContainer runtime]
+        F1[Node 1<br/>kubelet<br/>kube-proxy<br/>Container runtime]
+        F2[Node 2<br/>kubelet<br/>kube-proxy<br/>Container runtime]
+        F3[Node 3<br/>kubelet<br/>kube-proxy<br/>Container runtime]
     end
     User[Client / kubectl] --> A
     A --> B
@@ -38,9 +38,9 @@ graph TD
     C --> F1
     C --> F2
     C --> F3
-    F1 --> G1[Pod A\nnginx]
-    F2 --> G2[Pod B\nredis]
-    F3 --> G3[Pod C\napp]
+    F1 --> G1[Pod A<br/>nginx]
+    F2 --> G2[Pod B<br/>redis]
+    F3 --> G3[Pod C<br/>app]
 ```
 
 ## Control Plane Components

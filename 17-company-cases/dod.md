@@ -23,7 +23,7 @@ The U.S. Department of Defense adopted Kubernetes as part of the **JEDI/JWCC** c
 
 ```mermaid
 graph TD
-    C4[Command & Control] --> LB[Air-gapped<br/>NLB]
+    C4[Command &amp; Control] --> LB[Air-gapped<br/>NLB]
     LB --> Ingress[Ingress<br/>strict NetworkPolicy]
     Ingress --> App[App pods<br/>classified]
     App --> DB[(Encrypted DB)]

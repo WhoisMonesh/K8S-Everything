@@ -20,7 +20,7 @@ PDB ensures **a minimum number of pods stay up** — so applications don't go fu
 
 ```mermaid
 graph TD
-    A[Deployment\n3 pods] --> B[PDB\nminAvailable: 2]
+    A[Deployment<br/>3 pods] --> B[PDB<br/>minAvailable: 2]
     A --> C[Pod 1]
     A --> D[Pod 2]
     A --> E[Pod 3]
@@ -78,7 +78,7 @@ flowchart LR
     D -->|No| E[Allow eviction]
     D -->|Yes| F[Reject eviction]
     E --> G[Pod terminated]
-    F --> H[Pod stays alive\ndrain blocked]
+    F --> H[Pod stays alive<br/>drain blocked]
 ```
 
 ## PDB with Deployments

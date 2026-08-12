@@ -20,12 +20,12 @@ CronJob provides **Kubernetes-native scheduled jobs** — using standard Cron sy
 
 ```mermaid
 graph TD
-    A[Cron Scheduler\nbuiltin to kube-controller-manager] --> B[CronJob\nschedule: */5 * * * *]
+    A[Cron Scheduler<br/>builtin to kube-controller-manager] --> B[CronJob<br/>schedule: */5 * * * *]
     B --> C{Time to run?}
     C -->|Yes| D[Job Created]
     C -->|No| B
-    D --> E[Pod 1\nbackup-script]
-    D --> F[Concurrency\nAllow | Forbid | Replace]
+    D --> E[Pod 1<br/>backup-script]
+    D --> F[Concurrency<br/>Allow | Forbid | Replace]
     E --> G[Succeeded]
 ```
 
