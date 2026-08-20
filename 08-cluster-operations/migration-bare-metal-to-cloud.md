@@ -9,8 +9,8 @@
 graph LR
     A[Bare-Metal Cluster] --> B[Assess Workloads]
     B --> C[Set Up Cloud Cluster]
-    C --> Migrate Workloads
-    D[Migrate Workloads] --> E[Validate]
+    C --> D[Migrate Workloads]
+    D --> E[Validate]
     E --> F[Cut Over]
     F --> G[Decommission]
 ```
