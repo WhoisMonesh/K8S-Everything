@@ -28,7 +28,7 @@ flowchart TD
     Operator --> CR2[Terraform CR<br/>cust-b apply]
     CR1 --> RUN1[Runner Pod<br/>sandboxed]
     CR2 --> RUN2[Runner Pod]
-    subgraph K8s
+    subgraph "K8s"
         NS[Namespace<br/>per customer] --> RUN1
         NS2[Namespace] --> RUN2
     end

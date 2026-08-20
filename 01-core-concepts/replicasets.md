@@ -23,7 +23,7 @@ graph TD
     B --> C[Pod 1]
     B --> D[Pod 2]
     B --> E[Pod 3]
-    B --> F{Pod count\n== desired?}
+    B --> F{Pod count<br/>== desired?}
     F -->|No| G[Create/Terminate pods]
     F -->|Yes| H[No change]
     C --> I[Status: Running]

@@ -21,13 +21,13 @@ AKS runs the K8s control plane managed by Azure (free control plane). You manage
 
 ```mermaid
 graph TD
-    subgraph Azure Cloud
-        subgraph VNet
-            subgraph AKS Control Plane
+    subgraph "Azure" Cloud
+        subgraph "VNet"
+            subgraph "AKS" Control Plane
                 CP[API Server<br/>Managed by Azure]
                 ETCD[etcd<br/>Managed by Azure]
             end
-            subgraph Node Pools
+            subgraph "Node" Pools
                 NP1[System Pool<br/>D2s_v3]
                 NP2[User Pool<br/>D4s_v3]
             end

@@ -25,7 +25,7 @@ graph TD
         D[linkerd-destination<br/>service discovery]
         E[linkerd-heartbeat<br/>check-ins]
     end
-    subgraph Data plane
+    subgraph "Data" plane
         F[Pod A<br/>app + linkerd-proxy] --> G[linkerd-proxy]
         H[Pod B<br/>app + linkerd-proxy] --> I[linkerd-proxy]
     end

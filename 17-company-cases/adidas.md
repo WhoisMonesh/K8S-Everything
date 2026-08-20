@@ -28,9 +28,9 @@ graph TD
     LB --> Ingress[EKS Ingress<br/>nginx]
     Ingress --> FE[Frontend pods]
     FE --> API[Product API pod]
-    API --> Cache[(Redis)]
-    API --> DB[(Aurora)]
-    subgraph EKS
+    API --> Cache["(Redis)"]
+    API --> DB["(Aurora)"]
+    subgraph "EKS"
         HPA[VPA + HPA<br/>on drop traffic]
         API --> HPA
     end

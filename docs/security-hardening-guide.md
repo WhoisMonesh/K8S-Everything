@@ -7,25 +7,25 @@
 
 ```mermaid
 flowchart TB
-    subgraph Layer1[Layer 1: Cluster]
+    subgraph "Layer1"[Layer 1: Cluster]
         A1[API Server Security]
         A2[etcd Encryption]
         A3[RBAC]
         A4[Network Policies]
     end
-    subgraph Layer2[Layer 2: Workload]
+    subgraph "Layer2"[Layer 2: Workload]
         B1[Pod Security Standards]
         B2[Service Accounts]
         B3[Security Context]
         B4[Seccomp/AppArmor]
     end
-    subgraph Layer3[Layer 3: Supply Chain]
+    subgraph "Layer3"[Layer 3: Supply Chain]
         C1[Image Scanning]
         C2[Image Signing]
         C3[SBOM]
         C4[Admission Controllers]
     end
-    subgraph Layer4[Layer 4: Runtime]
+    subgraph "Layer4"[Layer 4: Runtime]
         D1[Falco]
         D2[Audit Logging]
         D3[Runtime Security]

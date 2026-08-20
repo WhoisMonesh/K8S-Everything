@@ -17,16 +17,16 @@ Running Kubernetes on **managed cloud** providers (EKS, GKE, AKS) gives you the 
 
 ```mermaid
 graph TD
-    subgraph AWS
+    subgraph "AWS"
         EKS[EKS Control Plane<br/>managed API/LB + etcd]
     end
-    subgraph GCP
+    subgraph "GCP"
         GKE[GKE Control Plane<br/>managed]
     end
     subgraph "Azure"
         AKS[AKS Control Plane<br/>managed]
     end
-    subgraph On-prem / Local
+    subgraph "On-prem" / Local
         K3s[k3s single server<br/>embedded containerd/etcd]
         Kind[kind<br/>docker-contained]
     end

@@ -20,12 +20,12 @@ Two clusters share a root CA (or cross-sign) and each runs an Istio control plan
 
 ```mermaid
 graph TD
-    subgraph ClusterA
+    subgraph "ClusterA"
         IA["Istio CP<br/>istiod"]
         NS1["sleep / productpage"]
         GW1["EastWest Gateway<br/>15443"]
     end
-    subgraph ClusterB
+    subgraph "ClusterB"
         IB["Istio CP<br/>istiod"]
         NS2["ratings / reviews"]
         GW2["EastWest Gateway<br/>15443"]

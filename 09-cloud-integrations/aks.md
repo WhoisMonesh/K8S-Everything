@@ -19,7 +19,7 @@ graph TD
         CP[AKS Control Plane<br/>managed]
         AAD[Azure AD / RBAC]
         CP --> AAD
-        subgraph VMSS
+        subgraph "VMSS"
             VM1[Node VM]
             VM1 --> Pod1[Pod]
             Pod1 --> MI[AAD Pod Identity<br/>assign Azure role]

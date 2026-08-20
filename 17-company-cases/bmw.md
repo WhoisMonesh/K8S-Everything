@@ -26,7 +26,7 @@ graph TD
     Car[Car telemetry] --> IoT[IoT ingest pods<br/>MQTT/WebSocket]
     IoT --> Stream[Kafka stream<br/>on K8s]
     Stream --> Analytics[Analytics pods]
-    Analytics --> DB[(Time-series DB)]
+    Analytics --> DB["(Time-series DB)"]
     Stream --> Model[ML training pods]
 ```
 

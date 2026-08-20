@@ -125,8 +125,8 @@ kubectl get certificaterequests.cert-manager.io
 flowchart TD
     A[HTTP Request<br/>POST /api/v1/namespaces/default/pods] --> B[Authentication<br/>Who are you?]
     B --> C[Authorization<br/>Can you create pods?]
-    C --> D[Mutating Admission<br/>Add defaults\nInject sidecars]
-    D --> E[Validation<br/>Schema validation\nWebhook validation]
+    C --> D[Mutating Admission<br/>Add defaults<br/>Inject sidecars]
+    D --> E[Validation<br/>Schema validation<br/>Webhook validation]
     E --> F[etcd<br/>Persist object]
     F --> G[Response to client]
     F --> H[Watch notification<br/>Sent to controllers/scheduler]

@@ -28,8 +28,8 @@ graph TD
     Ingress --> Catalog[Catalog pods<br/>CPU-bound]
     Ingress --> Search[Search pods<br/>high-mem]
     Search --> ES[Elasticsearch]
-    Catalog --> DB[(Aurora)]
-    subgraph EKS
+    Catalog --> DB["(Aurora)"]
+    subgraph "EKS"
         HPA[HPA + Spot nodegroups]
         Catalog --> HPA
         Search --> HPA

@@ -28,8 +28,8 @@ graph TD
     LB --> Ingress[Ingress, on-prem K8s]
     Ingress --> SVC[Service]
     SVC --> POD[Terminal service pod]
-    POD --> DB[(Cassandra / Redis)]
-    subgraph K8s
+    POD --> DB["(Cassandra / Redis)"]
+    subgraph "K8s"
         NP[NetworkPolicy: terminal-only<br/>deny-all-default]
         POD --> NP
     end

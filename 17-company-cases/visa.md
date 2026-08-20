@@ -27,9 +27,9 @@ graph TD
     LB --> Ingress[EKS Ingress]
     Ingress --> SVC[Service]
     SVC --> POD[Payment service pod]
-    POD --> Cache[(Redis)]
-    POD --> DB[(Aurora Postgres)]
-    subgraph EKS
+    POD --> Cache["(Redis)"]
+    POD --> DB["(Aurora Postgres)"]
+    subgraph "EKS"
         IRSA[IRSA: KSA -> IAM Role]
         NET[NetworkPolicy default-deny]
         POD --> IRSA

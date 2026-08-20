@@ -28,7 +28,7 @@ graph TD
     ALB --> Ingress[EKS Ingress per app]
     Ingress --> SVC[Service]
     SVC --> POD[Microservice pod + Envoy sidecar]
-    subgraph EKS
+    subgraph "EKS"
         IRSA[IRSA: KSA -> IAM Role]
         POD --> IRSA
         IRSA --> S3[S3 log archives + RDS]

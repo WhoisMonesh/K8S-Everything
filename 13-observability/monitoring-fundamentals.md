@@ -85,7 +85,7 @@ flowchart TD
         D[Node exporter] --> B2
     end
     E[kube-state-metrics<br/>object state] --> B3[Prometheus]
-    F[Metrics Server<br/>resource-based\nfor HPA] --> G[controllers<br/>scale from]
+    F[Metrics Server<br/>resource-based<br/>for HPA] --> G[controllers<br/>scale from]
     B --> P[Alertmanager<br/>alerts]
     P --> H[Notifier<br/>PagerDuty/Slack/Webhook]
     B2 --> P

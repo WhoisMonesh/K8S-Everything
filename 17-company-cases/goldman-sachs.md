@@ -26,9 +26,9 @@ graph TD
     Dev --> GS[GS UI / API]
     GS --> Ingress["Ingress (multi-cloud)"]
     Ingress --> Apps["App pods (Marquee<br/>Marcus)"]
-    Apps --> Cache[(Redis / Aerospike)]
-    Apps --> DB[(Postgres / Dynamo)]
-    subgraph K8s
+    Apps --> Cache["(Redis / Aerospike)"]
+    Apps --> DB["(Postgres / Dynamo)"]
+    subgraph "K8s"
         SPIFFE[SPIFFE/SPIRE<br/>mTLS identity]
         Apps --> SPIFFE
     end

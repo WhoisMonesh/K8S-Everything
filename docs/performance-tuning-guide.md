@@ -7,25 +7,25 @@
 
 ```mermaid
 flowchart TB
-    subgraph L1[Layer 1: Application]
+    subgraph "L1"[Layer 1: Application]
         A1[Resource Requests/Limits]
         A2[Health Probes]
         A3[Graceful Shutdown]
         A4[Connection Pooling]
     end
-    subgraph L2[Layer 2: Scheduling]
+    subgraph "L2"[Layer 2: Scheduling]
         B1[HPA/VPA]
         B2[Topology Spread]
         B3[Affinity/Anti-Affinity]
         B4[Priority Classes]
     end
-    subgraph L3[Layer 3: Networking]
+    subgraph "L3"[Layer 3: Networking]
         C1[Service Mesh]
         C2[DNS Tuning]
         C3[MTU Optimization]
         C4[Conntrack Tuning]
     end
-    subgraph L4[Layer 4: Storage]
+    subgraph "L4"[Layer 4: Storage]
         D1[Storage Class]
         D2[Volume Type]
         D3[Cache Tuning]

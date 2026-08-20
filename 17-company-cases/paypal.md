@@ -28,8 +28,8 @@ graph TD
     LB --> Ingress[EKS Ingress]
     Ingress --> Fraud[Fraud service pod]
     Fraud --> Model[ML model shard]
-    Fraud --> Cache[(Redis)]
-    subgraph EKS
+    Fraud --> Cache["(Redis)"]
+    subgraph "EKS"
         KEDA[KEDA scaledobject<br/>on Kafka lag]
         Fraud --> KEDA
         IRSA[IRSA -> IAM Role<br/>S3 model bucket]

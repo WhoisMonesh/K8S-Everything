@@ -26,9 +26,9 @@ graph TD
     Device[Med device] --> IoT[IoT ingest pods]
     IoT --> Stream[Kafka / Kinesis]
     Stream --> Process[Processing pods]
-    Process --> DB[(Time-series DB)]
+    Process --> DB["(Time-series DB)"]
     App[Consumer app] --> API[API pods]
-    subgraph K8s
+    subgraph "K8s"
         NS1[Namespace: consumer health]
         NS2[Namespace: device telemetry]
     end

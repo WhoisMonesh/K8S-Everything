@@ -54,7 +54,7 @@ The kubelet **continuously syncs**:
 ```mermaid
 flowchart LR
     A[Pod spec from API] --> B[kubelet pod sync]
-    B --> C[Pull image<br/>Start container\nMount volume]
+    B --> C[Pull image<br/>Start container<br/>Mount volume]
     C --> D[Readiness/liveness probes]
     D --> E[Report status<br/>and metrics to API]
 ```

@@ -25,7 +25,7 @@ graph TD
     A[DaemonSet Controller] --> B[Node 1<br/>Pod: fluent-bit]
     A --> C[Node 2<br/>Pod: fluent-bit]
     A --> D[Node 3<br/>Pod: fluent-bit]
-    A --> E["Node 4<br/>(new node)\nPod: fluent-bit"]
+    A --> E["Node 4<br/>(new node)<br/>Pod: fluent-bit"]
 
     subgraph "All Nodes"
         B

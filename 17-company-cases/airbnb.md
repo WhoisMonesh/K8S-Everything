@@ -27,7 +27,7 @@ graph TD
     LB --> Ingress[Nginx Ingress<br/>on EKS]
     Ingress --> Monolith[Monolith pods<br/>containerized]
     Ingress --> Services[30+ services<br/>AirbnbAPI etc.]
-    Monolith --> DB[(Aurora RDS +<br/>Redis + S3)]
+    Monolith --> DB["(Aurora RDS +<br/>Redis + S3)"]
     Services --> DB
 ```
 

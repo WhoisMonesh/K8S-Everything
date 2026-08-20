@@ -29,7 +29,7 @@ graph TD
     CF[Chaos Monkey<br/>runs in Titus] -->|injects failures| Titus[Titus VMs<br/>legacy services]
     Spinn[Spinnaker<br/>CD control plane] --> EKS[EKS production<br/>new microservices]
     Spinn --> GKE[GKE batch<br/>analytics jobs]
-    subgraph AWS
+    subgraph "AWS"
         EKS --> VPCM[Coredns + VPC CNI<br/>+ Calico policy]
         EKS -->|"service mesh"| Istio[Istio]
         EKS --> SVC[Sidecars: Envoy]

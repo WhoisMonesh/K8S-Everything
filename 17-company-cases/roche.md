@@ -26,7 +26,7 @@ graph TD
     Sci[Researcher job submit] --> API[Job API pods]
     API --> Batch[Batch Job pods<br/>bioinformatics]
     Batch --> HPC[HPC node pools<br/>GPU/CPU]
-    Batch --> Store[(Object store<br/>genomic data)]
+    Batch --> Store["(Object store<br/>genomic data)"]
 ```
 
 - Clusters: on-prem K8s (for sensitive data) + GKE (GPU burst for ML training).

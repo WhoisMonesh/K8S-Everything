@@ -25,7 +25,7 @@ graph TD
     A[Pod: shared network namespace] --> B[Container: myapp]
     A --> C[Container: log-sidecar]
     A --> D[Volume: shared emptyDir]
-    B -- shares IP/port with --> C
+    B --" shares IP/port with "--> C
 ```
 
 ## Pod Spec Essentials

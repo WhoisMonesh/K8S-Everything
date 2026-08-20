@@ -27,9 +27,9 @@ graph TD
     Driver --> API
     API --> Match[Matching engine pods<br/>low-latency]
     API --> Map[Maps service pods]
-    Match --> Cache[(Redis)]
-    API --> DB[(MySQL/Cassandra)]
-    subgraph K8s
+    Match --> Cache["(Redis)"]
+    API --> DB["(MySQL/Cassandra)"]
+    subgraph "K8s"
         LL[Node pool: low-latency<br/>reserved]
         Match --> LL
     end

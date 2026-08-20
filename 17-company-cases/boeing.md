@@ -27,8 +27,8 @@ graph TD
     Submit --> Queue[Job scheduler<br/>K8s Jobs]
     Queue --> HPC["HPC node pool<br/>on-prem (ITAR)"]
     Queue --> Cloud[Cloud node pool<br/>AWS Spot]
-    HPC --> Store[(On-prem storage<br/>ITAR data)]
-    Cloud --> S3[(S3<br/>non-sensitive)]
+    HPC --> Store["(On-prem storage<br/>ITAR data)"]
+    Cloud --> S3["(S3<br/>non-sensitive)"]
 ```
 
 - Workload model: simulations are `Job` resources with `nodeAffinity`/`nodeSelector` for GPU or high-CPU nodes.

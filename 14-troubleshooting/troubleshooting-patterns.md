@@ -21,7 +21,7 @@ flowchart TD
     A[Pod ready? `kubectl get pods`] --> B{Status}
     B -->|Pending| C[Check events - scheduler<br/>resources/image/node selector]
     B -->|ImagePullBackOff| D[Check image name, tag,<br/>imagePullSecrets, registry auth]
-    B -->|CrashLoopBackOff| E[Check `kubectl logs -p`<br/>exit code 137 = OOM\nprobe failures]
+    B -->|CrashLoopBackOff| E[Check `kubectl logs -p`<br/>exit code 137 = OOM<br/>probe failures]
     B -->|ErrImagePull| F[Same as ImagePullBackOff]
     B -->|"Running / Ready"| G[Can the cluster reach it?<br/>DNS, Service, endpoints]
 ```

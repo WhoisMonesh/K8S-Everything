@@ -21,31 +21,31 @@ EKS runs the K8s control plane across 3 AWS AZs, managed by AWS. You manage the 
 
 ```mermaid
 graph TD
-    subgraph AWS Cloud
-        subgraph VPC
-            subgraph Private Subnets
-                subgraph AZ-1
+    subgraph "AWS" Cloud
+        subgraph "VPC"
+            subgraph "Private" Subnets
+                subgraph "AZ-1"
                     M1[etcd]
                     A1[API Server]
                     S1[Scheduler]
                 end
-                subgraph AZ-2
+                subgraph "AZ-2"
                     M2[etcd]
                     A2[API Server]
                     S2[Scheduler]
                 end
-                subgraph AZ-3
+                subgraph "AZ-3"
                     M3[etcd]
                     A3[API Server]
                     S3[Scheduler]
                 end
-                subgraph Worker Nodes
+                subgraph "Worker" Nodes
                     W1[Node 1]
                     W2[Node 2]
                     W3[Node 3]
                 end
             end
-            subgraph Public Subnets
+            subgraph "Public" Subnets
                 NLB[NLB]
             end
         end

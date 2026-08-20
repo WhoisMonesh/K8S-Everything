@@ -29,7 +29,7 @@ graph TD
     ArgoCD --> GKEbatch[GKE batch<br/>Spark jobs]
     BS --> Styx[Styx<br/>workflow scheduler]
     Styx --> GKEbatch
-    subgraph GCP
+    subgraph "GCP"
         GKEprod -->|"Workload Identity"| GSA[GCP Service Account]
         GKEprod --> Coredns[.internal DNS]
     end

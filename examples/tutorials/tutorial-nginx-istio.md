@@ -360,7 +360,7 @@ flowchart LR
     VS -->|mTLS| Stable[nginx 1.25<br/>3 pods]
     VS -->|mTLS| Canary[nginx 1.26<br/>1 pod]
 
-    subgraph Istio Mesh
+    subgraph "Istio" Mesh
         VS
         Stable
         Canary

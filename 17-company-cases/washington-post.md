@@ -27,8 +27,8 @@ graph TD
     CF --> LB[ALB]
     LB --> Ingress[EKS Ingress]
     Ingress --> Web[Web/API pods]
-    Web --> Cache[(Redis)]
-    Web --> DB[(Aurora/Postgres)]
+    Web --> Cache["(Redis)"]
+    Web --> DB["(Aurora/Postgres)"]
     Web --> ES[Elasticsearch<br/>search]
 ```
 

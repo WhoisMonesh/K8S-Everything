@@ -27,9 +27,9 @@ graph TD
     L7 --> Frontend[Frontend pods<br/>React SSR]
     L7 --> API[API pods<br/>Python/Go]
     API --> Data[Dataproc on GKE<br/>Spark jobs]
-    Data --> BQ[(BigQuery)]
-    API --> Redis[(Redis cache)]
-    subgraph GKE
+    Data --> BQ["(BigQuery)"]
+    API --> Redis["(Redis cache)"]
+    subgraph "GKE"
         WI[Workload Identity<br/>KSA->GSA] --> API
     end
 ```

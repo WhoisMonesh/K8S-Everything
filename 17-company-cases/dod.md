@@ -26,8 +26,8 @@ graph TD
     C4[Command &amp; Control] --> LB[Air-gapped<br/>NLB]
     LB --> Ingress[Ingress<br/>strict NetworkPolicy]
     Ingress --> App[App pods<br/>classified]
-    App --> DB[(Encrypted DB)]
-    subgraph K8s
+    App --> DB["(Encrypted DB)"]
+    subgraph "K8s"
         PSP[Pod Security<br/>+ Policy]
         RBAC[Military RBAC<br/>need-to-know]
     end

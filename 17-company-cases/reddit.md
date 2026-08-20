@@ -26,9 +26,9 @@ graph TD
     LB[NLB] --> API[API pods<br/>on EKS]
     API -->|"calls"| Monolith[Monolith pods<br/>shrinking]
     API --> Services[150+ services<br/>r/orchestrator, r/feed...]
-    Monolith -->|"reads/writes"| DB[(Cassandra)]
+    Monolith -->|"reads/writes"| DB["(Cassandra)"]
     Services --> DB
-    subgraph EKS
+    subgraph "EKS"
         API --> Side[Envoy sidecar<br/>for mTLS]
     end
 ```

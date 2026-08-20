@@ -27,8 +27,8 @@ graph TD
     LB --> Ingress[Ingress, nginx on EKS]
     Ingress --> APP[Trading app pods]
     APP --> Risk[Risk engine pod]
-    APP --> Cache[(Redis)]
-    subgraph EKS
+    APP --> Cache["(Redis)"]
+    subgraph "EKS"
         SA[ServiceAccount -> IAM Role via IRSA]
         NET[NetworkPolicy, deny-by-default]
         APP --> SA

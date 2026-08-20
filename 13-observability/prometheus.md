@@ -21,7 +21,7 @@ graph TD
         OPO[Prometheus Operator /<br/>Admission Webhooks]
         OPO --> PM
     end
-    subgraph Data Plane "K8s cluster"
+    subgraph "Data" Plane "K8s cluster"
         A[App Service] --> B[Service<br/>has Pod]
         C[ServiceMonitor<br/>points at Service]
         C --> D[Prometheus<br/>scrapes pods]

@@ -27,7 +27,7 @@ graph TD
     Edge --> Analytics[Edge analytics pods]
     Edge -->|batch| Cloud[EKS/GKE<br/>cloud control]
     Cloud --> AI[Central ML/aI jobs]
-    Cloud --> Store[(Data lake)]
+    Cloud --> Store["(Data lake)"]
 ```
 
 - Edge: **k3s** clusters inside factories (single binary, low footprint).

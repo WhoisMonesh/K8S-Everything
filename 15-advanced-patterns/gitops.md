@@ -14,7 +14,7 @@ Three invariants make something "GitOps" (per the CNCF GitOps Working Group):
 
 ```mermaid
 flowchart LR
-    Dev -->|"git push"| Repo[(Git Repo<br/>manifest/)]
+    Dev -->|"git push"| Repo["(Git Repo<br/>manifest/)"]
     Repo --> Controller[Argo CD / Flux]
     Controller -->|"kubectl apply"| Cluster[K8s cluster]
     Cluster -->|metrics| Dashboard[Grafana / Alerts]

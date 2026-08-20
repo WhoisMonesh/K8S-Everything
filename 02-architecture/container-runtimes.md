@@ -64,7 +64,7 @@ The **Container Runtime Interface (CRI)** defines the interface between kubelet 
 
 ```mermaid
 sequenceDiagram
-    Kubelet->>CRI: CreateContainer(...)
+    Kubelet->>CRI: "CreateContainer(...)"
     CRI->>Runtime: pull image → create container → start
     Runtime-->>CRI: Container ID, status
     CRI-->>Kubelet: Success

@@ -7,7 +7,7 @@
 ```mermaid
 graph TD
     Build[CI: build image] --> Sign[cosign sign<br/>or keyless via OIDC]
-    Sign --> ID[(Fulcio<br/>certificate)]
+    Sign --> ID["(Fulcio<br/>certificate)"]
     Sign --> REK[Rekor transparency log]
     Image[Image in registry] --> Pull[A]
     Pull --> Verify[cosign verify<br/>in CI or admission]

@@ -10,7 +10,7 @@ Kubernetes follows a strict release cycle with **three-way version skew policy**
 
 ```mermaid
 graph LR
-    subgraph Active ["Active release window (n-3 minors overlap)"]
+    subgraph "Active" ["Active release window (n-3 minors overlap)"]
         A["v1.30<br/>Jun 2024"] --> B["v1.31<br/>Sep 2024"] --> C["v1.32<br/>Dec 2024"] --> D["v1.33<br/>2025"]
     end
     O["v1.0<br/>Jul 2015"] -->|quarterly minor releases| A

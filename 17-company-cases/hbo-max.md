@@ -29,8 +29,8 @@ graph TD
     Ingress --> API[API pods]
     API --> Rec[Rec engine pods]
     API --> CMS[CMS pods]
-    Rec --> S3[(S3 media store)]
-    CMS --> DB[(Aurora)]
+    Rec --> S3["(S3 media store)"]
+    CMS --> DB["(Aurora)"]
 ```
 
 - Clusters: EKS per region (us-east-1, us-west-2).

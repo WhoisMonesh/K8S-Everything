@@ -23,7 +23,7 @@ graph TD
         A[App container<br/>localhost:8080] --> B[Sidecar proxy<br/>Envoy]
         B --> C[App container:8080<br/>via localhost]
     end
-    subgraph Pod 2
+    subgraph "Pod" 2
         D[App container] --> E[Sidecar proxy]
     end
     B <--> E

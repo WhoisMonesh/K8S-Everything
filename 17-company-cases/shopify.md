@@ -28,7 +28,7 @@ flowchart TD
     GW --> NS2[Namespace<br/>tenant-b]
     NS1 --> POD1[Shop Pod<br/>Rails/Go]
     NS2 --> POD2[Shop Pod]
-    subgraph EKS
+    subgraph "EKS"
         RQ1[ResourceQuota] --> NS1
         RQ2[ResourceQuota] --> NS2
     end

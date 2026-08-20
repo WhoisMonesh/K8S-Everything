@@ -28,9 +28,9 @@ graph TD
     LB --> Ingress[EKS Ingress<br/>per region]
     Ingress --> Stream[Stream API pods]
     Stream --> Transcode[Transcode workers<br/>Job/cron]
-    Stream --> Cache[(Redis)]
+    Stream --> Cache["(Redis)"]
     Transcode --> S3[media store]
-    Stream --> BQ[(BigQuery<br/>via GKE ML pods)]
+    Stream --> BQ["(BigQuery<br/>via GKE ML pods)"]
 ```
 
 - Clusters: per-region EKS (us-east-1, eu-west-1, ap-southeast-1) + dedicated GKE for ML.

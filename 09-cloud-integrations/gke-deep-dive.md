@@ -21,15 +21,15 @@ GKE runs the K8s control plane across multiple zones, managed by Google. You man
 
 ```mermaid
 graph TD
-    subgraph Google Cloud
-        subgraph VPC
-            subgraph GKE Control Plane
+    subgraph "Google" Cloud
+        subgraph "VPC"
+            subgraph "GKE" Control Plane
                 CP1[API Server<br/>Zone A]
                 CP2[API Server<br/>Zone B]
                 CP3[API Server<br/>Zone C]
                 ETCD[etcd<br/>Multi-zone]
             end
-            subgraph Node Pools
+            subgraph "Node" Pools
                 NP1[Pool 1<br/>e2-medium]
                 NP2[Pool 2<br/>e2-standard-4]
             end

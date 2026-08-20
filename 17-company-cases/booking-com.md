@@ -27,9 +27,9 @@ graph TD
     LB --> Ingress[K8s Ingress]
     Ingress --> Search[Search service pods<br/>high-mem]
     Ingress --> Price[Pricing service pods]
-    Search --> Cache[(Redis)]
-    Price --> DB[(Postgres)]
-    subgraph K8s
+    Search --> Cache["(Redis)"]
+    Price --> DB["(Postgres)"]
+    subgraph "K8s"
         HPA[HPA by CPU + custom<br/>search QPS]
         Search --> HPA
         Aff[Affinity: search <-> cache<br/>same AZ]

@@ -26,11 +26,11 @@ graph TD
     subgraph "Cluster"
         A[etcd<br/>cluster state] --> B
         C[Control Plane] --> A
-        D[Worker Nodes<br/>PVCs/PVs\nactual app data] --> D2[Volumes]
+        D[Worker Nodes<br/>PVCs/PVs<br/>actual app data] --> D2[Volumes]
     end
     B["etcd backup<br/>(Velero / kubevirt / restic)"] --> S3
     E[Velero<br/>agent on nodes] --> D2
-    E --> S3[(Object Store: S3/GCS/Azure)]
+    E --> S3["(Object Store: S3/GCS/Azure)"]
     S3 --> R[Restore:<br/>etcd + rebuild volumes from snapshots]
 ```
 

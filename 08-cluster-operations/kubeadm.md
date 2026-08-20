@@ -9,8 +9,8 @@ graph TD
     LB[Load balancer<br/>VIP on 6443] --> CP1[Control plane node 1<br/>API kube-apiserver]
     LB --> CP2[Control plane node 2]
     LB --> CP3[Control plane node 3]
-    subgraph ControlPlane
-        CP1 --> ETCD[(etcd<br/>stacked on CP nodes)]
+    subgraph "ControlPlane"
+        CP1 --> ETCD["(etcd<br/>stacked on CP nodes)"]
         CP2 --> ETCD
         CP3 --> ETCD
     end

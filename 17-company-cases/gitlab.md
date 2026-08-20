@@ -28,7 +28,7 @@ graph TD
     Ingress --> Pods[App pods<br/>Rails + Sidekiq + Gitaly]
     Ingress --> Runners[GitLab Runner pods<br/>on-demand via K8s executor]
     Pods --> Gitaly[Gitaly storage<br/>on Persistent Disk]
-    subgraph GKE
+    subgraph "GKE"
         ACM[Anthos Config Management<br/>reconciles Git] --> Pods
     end
 ```

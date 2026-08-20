@@ -21,8 +21,8 @@ ReplicaSet is the **enforcement** layer beneath Deployments.
 
 ```mermaid
 graph TD
-    A[ReplicaSet<br/>replicas: 3\nselector: app=nginx] --> B[Pod 1, Pod 2, Pod 3]
-    A --> C[ReplicaSet<br/>Controller\nwatches &amp; replaces]
+    A[ReplicaSet<br/>replicas: 3<br/>selector: app=nginx] --> B[Pod 1, Pod 2, Pod 3]
+    A --> C[ReplicaSet<br/>Controller<br/>watches &amp; replaces]
     C --> D{Count == desired?}
     D -->|No| E[Create / Delete Pod]
 ```

@@ -28,9 +28,9 @@ graph TD
     LB --> Ingress[GKE Ingress<br/>GCLB]
     Ingress --> Checkout[Checkout pods]
     Ingress --> Rec[Recommendation pods<br/>ML]
-    Rec --> BQ[(BigQuery<br/>user embeddings)]
-    Checkout --> DB[(Spanner / Redis)]
-    subgraph GKE
+    Rec --> BQ["(BigQuery<br/>user embeddings)"]
+    Checkout --> DB["(Spanner / Redis)"]
+    subgraph "GKE"
         WI[Workload Identity<br/>KSA->GSA]
         Rec --> WI
         WI --> BQ

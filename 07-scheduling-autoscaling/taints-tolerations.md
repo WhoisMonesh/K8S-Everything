@@ -21,7 +21,7 @@ Taints and tolerations **repel/attract** — they work together so you can **ded
 
 ```mermaid
 graph TD
-    A[Node: tainted<br/>dedicated=ml:NoSchedule] --> B[Scheduler:<br/>cannot schedule\nunless tolerated]
+    A[Node: tainted<br/>dedicated=ml:NoSchedule] --> B[Scheduler:<br/>cannot schedule<br/>unless tolerated]
     C[Pod: tolerations:] --> B
     C --> D{tolerates key/effect?}
     D -->|Yes| E[Eligible to be scheduled]

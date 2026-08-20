@@ -24,7 +24,7 @@ graph TD
     A --> C[Pod 1]
     A --> D[Pod 2]
     A --> E[Pod 3]
-    B --> F{Disruption\nrequest?}
+    B --> F{Disruption<br/>request?}
     F -->|Pod 1 drain| G[Evicted? 3-1=2 >= 2 → YES]
     F -->|Pod 2 drain| H[Evicted? 3-2=1 < 2 → NO]
     C --> I[Running]
@@ -74,7 +74,7 @@ spec:
 flowchart LR
     A[Drain Node] --> B[Eviction API call]
     B --> C[PDB admission webhook]
-    C --> D{Would minAvailable\nbe violated?}
+    C --> D{Would minAvailable<br/>be violated?}
     D -->|No| E[Allow eviction]
     D -->|Yes| F[Reject eviction]
     E --> G[Pod terminated]

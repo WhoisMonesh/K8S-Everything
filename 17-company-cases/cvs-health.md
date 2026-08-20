@@ -26,9 +26,9 @@ graph TD
     Member --> LB[NLB, private]
     LB --> Ingress[EKS Ingress<br/>private]
     Ingress --> Claims[Claims service pods]
-    Claims --> Cache[(Redis)]
-    Claims --> DB[(Aurora<br/>encrypted)]
-    subgraph EKS
+    Claims --> Cache["(Redis)"]
+    Claims --> DB["(Aurora<br/>encrypted)"]
+    subgraph "EKS"
         HPA[HPA on claims QPS]
         Claims --> HPA
         NET[NetworkPolicy<br/>deny-by-default]

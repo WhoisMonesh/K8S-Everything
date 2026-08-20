@@ -16,11 +16,11 @@
 
 ```mermaid
 graph TD
-    subgraph GCP
+    subgraph "GCP"
         CP[GKE Control Plane<br/>managed]
         WI[Workload Identity<br/>KSA -> GSA]
         CP --> WI
-        subgraph NodePool
+        subgraph "NodePool"
             N1[N1<br/>containerd + kubelet]
             N1 --> Pod1[Pod]
             N1 --> Pod2[Pod]

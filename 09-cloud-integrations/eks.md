@@ -16,7 +16,7 @@
 
 ```mermaid
 graph TD
-    subgraph AWS Region
+    subgraph "AWS" Region
         CP[EKS Control Plane<br/>API + etcd<br/>3 AZ HA]
         OIDC[OIDC Provider<br/>oidc.eks.amazonaws.com]
         OIDC --> CP
