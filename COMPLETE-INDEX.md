@@ -15,27 +15,27 @@
 | # | Category | Directory | Documents |
 |---|----------|-----------|-----------|
 | 1 | Core Concepts | [01-core-concepts](01-core-concepts) | [README](01-core-concepts/README.md) + 16 docs |
-| 2 | Architecture | [02-architecture](02-architecture) | [README](02-architecture/README.md) + 11 docs |
+| 2 | Architecture | [02-architecture](02-architecture) | [README](02-architecture/README.md) + 12 docs |
 | 3 | Workloads | [03-workloads](03-workloads) | [README](03-workloads/README.md) + 14 docs |
 | 4 | Networking | [04-networking](04-networking) | [README](04-networking/README.md) + 14 docs |
 | 5 | Storage | [05-storage](05-storage) | [README](05-storage/README.md) + 5 docs |
-| 6 | Security | [06-security](06-security) | [README](06-security/README.md) + 16 docs |
+| 6 | Security | [06-security](06-security) | [README](06-security/README.md) + 17 docs |
 | 7 | Scheduling & Autoscaling | [07-scheduling-autoscaling](07-scheduling-autoscaling) | [README](07-scheduling-autoscaling/README.md) + 11 docs |
-| 8 | Cluster Operations | [08-cluster-operations](08-cluster-operations) | [README](08-cluster-operations/README.md) + 9 docs |
+| 8 | Cluster Operations | [08-cluster-operations](08-cluster-operations) | [README](08-cluster-operations/README.md) + 11 docs |
 | 9 | Cloud Integrations | [09-cloud-integrations](09-cloud-integrations) | [README](09-cloud-integrations/README.md) + 7 docs |
-| 10 | Package Management | [10-package-management](10-package-management) | [README](10-package-management/README.md) + 5 docs |
+| 10 | Package Management | [10-package-management](10-package-management) | [README](10-package-management/README.md) + 7 docs |
 | 11 | CI/CD & GitOps | [11-ci-cd-gitops](11-ci-cd-gitops) | [README](11-ci-cd-gitops/README.md) + 4 docs |
-| 12 | Service Mesh | [12-service-mesh](12-service-mesh) | [README](12-service-mesh/README.md) + 4 docs |
+| 12 | Service Mesh | [12-service-mesh](12-service-mesh) | [README](12-service-mesh/README.md) + 5 docs |
 | 13 | Observability | [13-observability](13-observability) | [README](13-observability/README.md) + 6 docs |
 | 14 | Troubleshooting | [14-troubleshooting](14-troubleshooting) | [README](14-troubleshooting/README.md) + 4 docs + [incidents/](14-troubleshooting/incidents) (49 case studies + README) |
 | 15 | Advanced Patterns | [15-advanced-patterns](15-advanced-patterns) | [README](15-advanced-patterns/README.md) + 11 docs |
-| 16 | Interview Prep | [16-interview-prep](16-interview-prep) | [README](16-interview-prep/README.md) + 7 docs |
+| 16 | Interview Prep | [16-interview-prep](16-interview-prep) | [README](16-interview-prep/README.md) + 10 docs |
 | 17 | Company Cases | [17-company-cases](17-company-cases) | [README](17-company-cases/README.md) + 31 docs |
 | 18 | Learning & Reference | [docs](docs) | [README](docs/README.md) + 5 docs |
 | 19 | Cheat Sheets | [cheat-sheets](cheat-sheets) | [README](cheat-sheets/README.md) + 6 docs |
 | 20 | Examples | [examples](examples) | [README](examples/README.md) + 28 YAML manifests across common-patterns, scheduling, security, storage, monitoring, ci-cd, advanced |
 
-**Total: 20 categories, 301 documents, ~270000 words.**
+**Total: 20 categories, 319 documents, ~280000 words.**
 
 ---
 
@@ -75,6 +75,7 @@
 | 9 | Container Runtimes | [container-runtimes.md](02-architecture/container-runtimes.md) |
 | 10 | CNCF Landscape | [cncf-landscape.md](02-architecture/cncf-landscape.md) |
 | 11 | API Priority and Fairness | [api-priority-fairness.md](02-architecture/api-priority-fairness.md) |
+| 12 | etcd vs Consul vs ZooKeeper | [comparison-etcd-consul-zookeeper.md](02-architecture/comparison-etcd-consul-zookeeper.md) |
 
 ## 3. Workloads (03-workloads)
 
@@ -143,6 +144,7 @@
 | 13 | External Secrets Operator | [external-secrets.md](06-security/external-secrets.md) |
 | 14 | Falco | [falco.md](06-security/falco.md) |
 | 15 | Sealed Secrets | [sealed-secrets.md](06-security/sealed-secrets.md) |
+| 16 | OPA vs Kyverno vs Kubewarden | [comparison-opa-kyverno-kubewarden.md](06-security/comparison-opa-kyverno-kubewarden.md) |
 
 ## 7. Scheduling & Autoscaling (07-scheduling-autoscaling)
 
@@ -173,6 +175,8 @@
 | 7 | FinOps (cost optimization) | [finops.md](08-cluster-operations/finops.md) |
 | 8 | Backup & DR Runbook | [backup-disaster-recovery.md](08-cluster-operations/backup-disaster-recovery.md) |
 | 9 | Cluster API | [cluster-api.md](08-cluster-operations/cluster-api.md) |
+| 10 | Migration: Bare-Metal to Cloud | [migration-bare-metal-to-cloud.md](08-cluster-operations/migration-bare-metal-to-cloud.md) |
+| 11 | Migration: Self-Managed to Managed | [migration-self-managed-to-managed.md](08-cluster-operations/migration-self-managed-to-managed.md) |
 
 ## 9. Package Management (10-package-management)
 
@@ -183,6 +187,8 @@
 | 3 | Kustomize | [kustomize.md](10-package-management/kustomize.md) |
 | 4 | OCI Artifacts | [oci.md](10-package-management/oci.md) |
 | 5 | Carvel (kapp + ytt) | [kapp-ytt.md](10-package-management/kapp-ytt.md) |
+| 6 | Helm vs Kustomize vs Carvel | [comparison-helm-kustomize-carvel.md](10-package-management/comparison-helm-kustomize-carvel.md) |
+| 7 | Migration: Helm v2 to v3 | [migration-helm-v2-to-v3.md](10-package-management/migration-helm-v2-to-v3.md) |
 
 ## 10. CI/CD & GitOps (11-ci-cd-gitops)
 
@@ -209,6 +215,7 @@
 | 2 | Istio (control plane, VirtualService, PeerAuthentication) | [istio.md](12-service-mesh/istio.md) |
 | 3 | Linkerd (lightweight mesh, identity, policy) | [linkerd.md](12-service-mesh/linkerd.md) |
 | 4 | Multi-Cluster Federation | [multicluster.md](12-service-mesh/multicluster.md) |
+| 5 | Istio vs Linkerd vs Cilium | [comparison-istio-linkerd-cilium.md](12-service-mesh/comparison-istio-linkerd-cilium.md) |
 
 ## 12. Observability (13-observability)
 
@@ -298,8 +305,10 @@
 | 5 | CKA Practice Tests | [cka-practice.md](16-interview-prep/cka-practice.md) |
 | 6 | Exam Day Checklist | [exam-checklist.md](16-interview-prep/exam-checklist.md) |
 | 7 | CKA/CKAD/CKS Exam Walkthrough (domain→command map) | [exam-walkthrough.md](16-interview-prep/exam-walkthrough.md) |
-| 7 | Debugging Commands | [debugging-commands.md](16-interview-prep/debugging-commands.md) |
-| 8 | Conceptual Interview Questions | (inline Q&A in each certification doc) |
+| 8 | Debugging Commands | [debugging-commands.md](16-interview-prep/debugging-commands.md) |
+| 9 | Interview Questions (90 Q&A) | [interview-questions.md](16-interview-prep/interview-questions.md) |
+| 10 | Job-Ready Checklist | [job-ready-checklist.md](16-interview-prep/job-ready-checklist.md) |
+| 11 | Conceptual Interview Questions | (inline Q&A in each certification doc) |
 
 ## 15. Reference (top-level)
 

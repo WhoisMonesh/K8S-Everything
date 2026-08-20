@@ -1,79 +1,146 @@
 # Kubernetes Interview Questions
 
-> **Category:** Interview Preparation
-
-These are the conceptual questions most often asked of Kubernetes engineers, SREs, and platform teams. Each maps to a doc in this repo so you can drill into the "why".
+> **Category:** Interview Prep
+> Common Kubernetes interview questions with answers.
 
 ## Core Concepts
 
-**Q1: What is the difference between a Pod, a Deployment, and a ReplicaSet?**
-A: A **Pod** is the smallest unit (one or more containers sharing a network namespace). A **ReplicaSet** is a controller whose *only* job is to keep N copies of a Pod-template alive (it creates/terminates Pods). A **Deployment** is a higher-level controller that manages a ReplicaSet — it provides the *rollout* semantics (rolling updates, pause, rollback) on top of the ReplicaSet's "maintain N replicas". Most workloads use a Deployment, which owns a ReplicaSet, which owns Pods.
+| # | Question | Answer |
+|---|----------|--------|
+| 1 | What is a Pod? | Smallest deployable unit; one or more containers sharing network/Storage. |
+| 2 | What is a Service? | Stable network endpoint (ClusterIP, NodePort, LoadBalancer) mapping to Pods. |
+| 3 | What is a Deployment? | Manages ReplicaSets; declarative updates, rollbacks, scaling. |
+| 4 | What is a Namespace? | Virtual cluster within physical cluster; isolates resources. |
+| 5 | What is a ConfigMap? | Stores non-sensitive config data as key-value pairs. |
+| 6 | What is a Secret? | Stores sensitive data (passwords, tokens) encoded in base64. |
+| 7 | What is a PV/PVC? | PersistentVolume (cluster storage) and PersistentVolumeClaim (request for storage). |
+| 8 | What is a DaemonSet? | Ensures one Pod runs on every (or selected) node. |
+| 9 | What is a StatefulSet? | For stateful workloads; stable network identity, persistent storage. |
+| 10 | What is a Job? | Runs Pods to completion (batch processing). |
 
-**Q2: What does a Pod's `spec.restartPolicy` actually do?**
-A: `restartPolicy` controls what the **kubelet** does if a container in the Pod exits. `Always` (default for Deployments) restarts on any exit. `OnFailure` restarts only when the exit code is non-zero (typical for Jobs). `Never` means never restart (one-shot). It does NOT cross Node boundaries — if the Node dies, the kubelet's state is lost and the Deployment/ReplicaSet schedules a new Pod elsewhere.
+## Architecture
 
-**Q3: What is the difference between a Service and an Ingress?**
-A: A **Service** is a logical network endpoint (ClusterIP + selector → Pod IPs), giving Pods a stable address and basic load balancing inside the cluster. An **Ingress** is an L7 routing rule that sits *on top* of Services — it routes HTTP(S) by host/path to (usually) Services. You need an **Ingress Controller** (NGINX, Traefik) to actually implement it. Think: Service = TCP load balancer; Ingress = HTTP virtual-host router.
-
-## Scheduling & Controllers
-
-**Q4: When does the scheduler make a decision, and what can block it?**
-A: The scheduler only acts on **unscheduled** Pods (`spec.nodeName` empty). It filters Nodes by feasibility (resource, nodeSelector, taints/tolerations, affinity) then scores them. It's blocked if no Node satisfies the constraints — that shows up as `Pending` + a `FailedScheduling` event. **Note:** `kube-scheduler` only *places* pods; `kube-controller-manager` (replicaset/node/controller etc.) *reacts* to changes.
-
-**Q5: Explain the difference between `requests` and `limits`.**
-A: `requests` = the *guaranteed* CPU/Mem the scheduler uses to place a Pod (Node must have that much free). `limits` = a hard *ceiling*. For CPU, a container can use the node's CPU if the core is idle even past its limit, but **is throttled** if it hits `cpu.cfs_quota_us`. For memory, hitting the limit triggers an **OOMKill** (exit 137) — no throttling, just killed. Setting `limit >= request` is required; `request == limit` yields QoS `Guaranteed`.
-
-**Q6: What happens to a Pod whose Node is cordoned + drained?**
-A: Cordon (`SchedulingDisabled`) stops new Pods landing there. Drain evicts the existing Pods (respecting PodDisruptionBudgets) — they get rescheduled on other Nodes. Pods that are `hostNetwork`/DaemonSet or lack a PDB get evicted anyway; `daemonset.maxUnavailable` controls how many roll at once.
-
-## Storage
-
-**Q7: What is the difference between `emptyDir`, `hostPath`, and a `PersistentVolume`?**
-A: `emptyDir` = **ephemeral** storage tied to the Pod's life (gone on restart). `hostPath` = a directory on the **Node's filesystem** (survives Pod restart but NOT Node loss, and is node-locked). A `PersistentVolume` is a **cluster-managed** storage abstraction, usually backed by network storage (EBS/PD/NFS) — it decouples the Pod from where the data lives, so it survives both Pod and Node loss.
-
-**Q8: How does a `StorageClass` enable dynamic provisioning?**
-A: When you create a PVC that references a StorageClass (or the SC is the namespace default), the **in-tree/external controller** watches for unbound PVCs. It reads the StorageClass's `provisioner` (e.g., `ebs.csi.aws.com`, `pd.csi.google.com`) and `parameters` (size, type, fsType), **creates** the backing volume on the cloud/storage provider, then binds a fresh PV to the PVC — no manual PV needed.
-
-## Security
-
-**Q9: How does RBAC grant a Pod permission to read a ConfigMap?**
-A: The Pod runs under a ServiceAccount. The API server checks whether a `Role`/`ClusterRole` with `get` on `configmaps` is bound to that SA (via `RoleBinding`/`ClusterBinding`) in that namespace. If yes, the request is allowed; if no, `403 Forbidden`. The binding's `subject` must reference the exact SA namespace/name.
-
-**Q10: Are Kubernetes Secrets encrypted by default?**
-A: **No.** Secrets are stored **base64-encoded** in etcd — that's encoding (trivially reversible), not encryption. If an attacker exfiltrates etcd, Secrets are readable plaintext. Encryption at rest (`EncryptionConfiguration` + `--encryption-provider-config` on the API server) is opt-in; otherwise a stolen etcd backup exposes the cluster's credentials.
+| # | Question | Answer |
+|---|----------|--------|
+| 11 | What is the control plane? | API server, etcd, scheduler, controller-manager. |
+| 12 | What is etcd? | Distributed key-value store; single source of truth for cluster state. |
+| 13 | What does kubelet do? | Agent on each node; manages Pods and containers. |
+| 14 | What does kube-proxy do? | Maintains network rules for Services (iptables/IPVS). |
+| 15 | What is CNI? | Container Network Interface; plugin standard for pod networking. |
+| 16 | What is CSI? | Container Storage Interface; plugin standard for storage. |
+| 17 | What is the API server? | Front-end for control plane; validates and processes REST calls. |
+| 18 | What is the scheduler? | Assigns Pods to nodes based on constraints and resources. |
+| 19 | What is a controller? | Control loop; watches state, makes changes to reach desired state. |
+| 20 | What is a CRD? | Custom Resource Definition; extends K8s API with custom resources. |
 
 ## Networking
 
-**Q11: How does a ClusterIP Service load-balance?**
-A: The kubelet runs **kube-proxy** on each Node, which translates every Service (ClusterIP + endpoints) into **iptables/IPVS** rules. A SYN to the ClusterIP is **DNAT'd** (in `nat PREROUTING`/`OUTPUT`) to a random backing Pod IP. With IPVS it's a real LB algorithm (`rr`, `lc`, `wlc`); with iptables it's a probability-per-endpoint chain. There's no separate load-balancer VM unless you set `type: LoadBalancer`.
+| # | Question | Answer |
+|---|----------|--------|
+| 21 | What are the 4 types of Services? | ClusterIP, NodePort, LoadBalancer, ExternalName. |
+| 22 | What is ClusterIP? | Internal virtual IP; only accessible within cluster. |
+| 23 | What is NodePort? | Exposes service on each node's IP at a static port (30000-32767). |
+| 24 | What is LoadBalancer? | Provisions external load balancer (cloud provider). |
+| 25 | What is Ingress? | HTTP/HTTPS routing rules via Ingress Controller. |
+| 26 | What is CoreDNS? | DNS server for service discovery. |
+| 27 | What is a NetworkPolicy? | Firewall rules for pod-to-pod traffic. |
+| 28 | How does service discovery work? | DNS: `<service>.<namespace>.svc.cluster.local`. |
+| 29 | What is EndpointSlice? | Scalable endpoint tracking (replaces Endpoints). |
+| 30 | What is the difference between Ingress and Gateway API? | Gateway API is next-gen; supports TCP/UDP, weighted routing. |
 
-**Q12: Can a `hostNetwork: true` Pod and a CNI coexist?**
-A: Yes — a host-network Pod **shares the host network namespace** (no CNI veth, `hostNetwork: true`), so it binds the host's ports directly. A separate CNI Pod gets a veth in a netns and a Pod IP. They share the Node's routing table, so don't bind the same port. Host-network is common for Ingress/controllers/DAemons that must bind host ports.
+## Scheduling & Autoscaling
 
-## Observability
+| # | Question | Answer |
+|---|----------|--------|
+| 31 | What are taints and tolerations? | Taints repel Pods; tolerations allow Pods on tainted nodes. |
+| 32 | What is node affinity? | Rules that attract Pods to specific nodes. |
+| 33 | What is pod affinity? | Rules that co-locate Pods on same node/zone. |
+| 34 | What is HPA? | Horizontal Pod Autoscaler; scales pod count based on metrics. |
+| 35 | What is VPA? | Vertical Pod Autoscaler; right-sizes resource requests. |
+| 36 | What is Cluster Autoscaler? | Adds/removes nodes based on pending pods or utilization. |
+| 37 | What is KEDA? | Kubernetes Event-Driven Autoscaling; scales based on external events. |
+| 38 | What are resource requests? | Guaranteed resources reserved for a container. |
+| 39 | What are resource limits? | Maximum resources a container can use. |
+| 40 | What is a PriorityClass? | Defines priority for pod scheduling and preemption. |
 
-**Q13: What is the difference between a metric and a log?**
-A: A **metric** is an aggregated **numeric** time-series (e.g. `rate(errors[5m]) = 0.2/sec`) — lossy, queryable over windows, what you alert on. A **log** is a discrete **text/JSON event** (e.g. `ERROR connection refused to db:5432`) — lossless, you search/filter lines for debugging. Metrics tell you *something's wrong*; logs tell you *what*.
+## Security
 
-**Q14: What is a histogram, and why are histogram buckets important for alerts?**
-A: A histogram buckets observations into ranges (`le` boundaries like 0.1s, 0.5s, 1s). With buckets you can compute **any quantile** in any window at query time, e.g. `histogram_quantile(0.99, rate(latency_bucket[5m]))`. Without a histogram (just an average/gauge), a 50th-percentile "looks fine" while your tail latency burns SLA.
+| # | Question | Answer |
+|---|----------|--------|
+| 41 | What is RBAC? | Role-Based Access Control; controls who can do what. |
+| 42 | What is a ServiceAccount? | Identity for workloads (Pods) to authenticate to API. |
+| 43 | What is Pod Security Admission? | Admission controller enforcing Pod Security Standards. |
+| 44 | What are the 3 Pod Security Standards? | Privileged, Baseline, Restricted. |
+| 45 | What is an admission controller? | Intercepts requests to API server for validation/mutation. |
+| 46 | What is OPA Gatekeeper? | Policy engine for Kubernetes admission control. |
+| 47 | What is Kyverno? | Kubernetes-native policy engine. |
+| 48 | What is network segmentation? | Isolating network traffic using NetworkPolicies. |
+| 49 | How do you encrypt secrets at rest? | Enable KMS provider or use etcd encryption config. |
+| 50 | What is mTLS? | Mutual TLS; both client and server authenticate via certificates. |
+
+## Storage
+
+| # | Question | Answer |
+|---|----------|--------|
+| 51 | What is a PersistentVolume? | Cluster storage resource (NFS, iSCSI, cloud disk). |
+| 52 | What is a PersistentVolumeClaim? | Request for storage by a user/Pod. |
+| 53 | What is dynamic provisioning? | Automatic PV creation when PVC is created. |
+| 54 | What is a StorageClass? | Defines type of storage (SSD, HDD, etc.). |
+| 55 | What is a volume snapshot? | Point-in-time copy of a PersistentVolume. |
+| 56 | What is CSI? | Container Storage Interface; plugin for storage drivers. |
+| 57 | What is ReadWriteOnce? | Volume can be mounted by one node read-write. |
+| 58 | What is ReadOnlyMany? | Volume can be mounted by many nodes read-only. |
+| 59 | What is ReadWriteMany? | Volume can be mounted by many nodes read-write. |
+| 60 | What is reclaim policy? | What happens to PV when PVC is deleted (Retain, Delete, Recycle). |
+
+## Operations
+
+| # | Question | Answer |
+|---|----------|--------|
+| 61 | How do you backup etcd? | `etcdctl snapshot save` with certs. |
+| 62 | How do you upgrade a cluster? | Control plane first, then worker nodes (drain → upgrade → uncordon). |
+| 63 | What is a Pod Disruption Budget? | Limits voluntary disruptions during maintenance. |
+| 64 | How do you debug a CrashLoopBackOff pod? | `kubectl logs --previous`, check events, exec into pod. |
+| 65 | How do you scale a deployment? | `kubectl scale deployment <name> --replicas=N`. |
+| 66 | How do you rollback a deployment? | `kubectl rollout undo deployment <name>`. |
+| 67 | How do you check resource usage? | `kubectl top nodes`, `kubectl top pods`. |
+| 68 | How do you get pod logs? | `kubectl logs <pod>`, `kubectl logs -f <pod>` (follow). |
+| 69 | How do you exec into a pod? | `kubectl exec -it <pod> -- sh`. |
+| 70 | How do you port-forward? | `kubectl port-forward <pod> 8080:80`. |
 
 ## Service Mesh & Advanced
 
-**Q15: What does a sidecar Envoy proxy actually intercept in service-to-service calls?**
-A: With iptables redirection (or eBPF in Cilium), all `podIP:port` traffic is redirected to the sidecar (`127.0.0.1:15001`), so the app sends to `localhost` and the proxy does mutual TLS + routing + metrics transparently. The app sees plain HTTP on localhost; mTLS happens between proxies. Disable via the `SERVICE_MESH`... / `sidecar.istio.io/inject: "false"` annotation on the Pod.
+| # | Question | Answer |
+|---|----------|--------|
+| 71 | What is a service mesh? | Layer-7 network (Istio, Linkerd); mTLS, traffic management. |
+| 72 | What is a sidecar? | Helper container in a pod (e.g., Envoy proxy). |
+| 73 | What is Istio? | Most popular service mesh; Istiod control plane + Envoy data plane. |
+| 74 | What is VirtualService? | Istio CRD for traffic routing rules. |
+| 75 | What is DestinationRule? | Istio CRD for load balancing, circuit breaking. |
+| 76 | What is Gateway API? | Next-gen Ingress (K8s SIG); supports TCP/UDP, weighted routing. |
+| 77 | What is Cilium? | eBPF-based networking, security, and observability. |
+| 78 | What is GitOps? | Declarative infrastructure managed via Git (ArgoCD, Flux). |
+| 79 | What is Helm? | Package manager for Kubernetes (charts, releases). |
+| 80 | What is Kustomize? | Template-free way to customize K8s resources. |
 
-**Q16: How does `kubectl apply` differ from `kubectl create`? What is the declarative model?**
-A: `create` POSTs a new object (fails if it exists). `apply` does a **two-way merge**: it computes a patch between what you're sending, the last-applied annotation, and the live state — so it's idempotent and reconciles drift. Declarative means "state your desired end-state, let the controller converge"; imperative is "run this command." The exam uses `apply`/`replace` heavily because it's how controllers + GitOps work.
+## Scenario-Based
 
-**Q17: What happens during a rolling update failure, and how do you recover?**
-A: The Deployment controller applies the new ReplicaSet; old Pods are terminated as new ones become Ready (per `progressDeadlineSeconds`). If the new version never becomes healthy, the rollout **pauses** and the Deployment is marked `Progressing=False`. Recovery: `kubectl rollout undo deployment/<name>` (rollback to the prior ReplicaSet) — the new RS is scaled to 0, the old one back to full.
+| # | Question | Answer |
+|---|----------|--------|
+| 81 | Pod stuck in Pending? | Check events: resource quota, node selectors, PVC binding. |
+| 82 | Pod in CrashLoopBackOff? | Check logs, command args, config mounts, image. |
+| 83 | Service not reachable? | Check endpoints, selector labels, network policy, DNS. |
+| 84 | Node not ready? | Check kubelet, disk pressure, memory pressure, network. |
+| 85 | etcd slow? | Check disk I/O, network latency, compact history. |
+| 86 | How to handle secrets in Git? | Use Sealed Secrets, External Secrets, or SOPS. |
+| 87 | How to do zero-downtime deploy? | Rolling update + PDB + readiness probe + preStop hook. |
+| 88 | How to handle stateful apps? | Use StatefulSet + PVC + headless Service. |
+| 89 | How to secure cluster? | RBAC + NetworkPolicy + PSA + mTLS + audit logging. |
+| 90 | How to monitor cluster? | Prometheus + Grafana + alerting rules. |
 
-**Q18: What is the difference between a liveness and a readiness probe, and why use both?**
-A: **Liveness** tells kubelet "this container is alive?" → if it fails, the container is **restarted**. **Readiness** tells the endpoints controller "should this Pod receive traffic?" → if it fails, the Pod is **removed from Service endpoints** (no new traffic), but kept running. Confusing them = restart storms (a slow warm-up fails liveness) or 502s (a dead Pod stays in endpoints).
+## Related
 
-**Q19: What is a PodDisruptionBudget, and what can you NOT prevent with it?**
-A: A PDB sets `minAvailable`/`maxUnavailable` for voluntary disruptions (drain, upgrade, cluster autoscaler) — it stops the eviction API from taking down too many Pods at once. It does **nothing** for involuntary outages (Node dies, OOM-kill, Spot termination) — those bypass the PDB entirely.
-
-**Q20: How does garbage collection of owned resources work?**
-A: Controllers (ReplicaSet, Job, Deployment, etc.) set an **ownerReference** — a back-pointer to the owning controller. When the owner is deleted, the garbage collector either (foreground, `policy: Foreground`) deletes the children first then the owner, or (orphan / `Background`) deletes the owner then cascades to children. `kubectl delete --cascade=foreground|background|orphan` selects the strategy; orphaning leaves children dangling (they keep running, no owner).
+- [CKA Certification](cka.md)
+- [CKAD Certification](ckad.md)
+- [CKS Certification](cks.md)
+- [Exam Walkthrough](exam-walkthrough.md)
