@@ -1,0 +1,138 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mongodb
+  namespace: litmus
+spec:
+  serviceName: mongodb-headless
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongodb
+  template:
+    metadata:
+      labels:
+        app: mongodb
+    spec:
+      containers:
+        - name: mongodb
+          image: mongo:7.0
+          command:
+            - mongod
+            - --replSet
+            - rs0
+            - --bind_ip_all
+          ports:
+            - containerPort: 27017
+          volumeMounts:
+            - name: mongodb-data
+              mountPath: /data/db
+          readinessProbe:
+            exec:
+              command:
+                - mongosh
+                - --eval
+                - "rs.status().ok == 1 || rs.status().ok == true"
+            initialDelaySeconds: 10
+            periodSeconds: 5
+            timeoutSeconds: 5
+          livenessProbe:
+            exec:
+              command:
+                - mongosh
+                - --eval
+                - "db.adminCommand('ping')"
+            initialDelaySeconds: 15
+            periodSeconds: 10
+            timeoutSeconds: 5
+  volumeClaimTemplates:
+    - metadata:
+        name: mongodb-data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 2Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb-headless
+  namespace: litmus
+spec:
+  clusterIP: None
+  selector:
+    app: mongodb
+  ports:
+    - port: 27017
+      targetPort: 27017
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb-access
+  namespace: litmus
+spec:
+  selector:
+    app: mongodb
+  ports:
+    - port: 27017
+      targetPort: 27017
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: mongodb-init-rs
+  namespace: litmus
+spec:
+  backoffLimit: 10
+  template:
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: init-rs
+          image: mongo:7.0
+          command:
+            - bash
+            - -c
+            - |
+              echo "Waiting for MongoDB..."
+              for i in $(seq 1 60); do
+                if mongosh mongodb://mongodb-0.mongodb-headless.litmus.svc.cluster.local:27017 --eval "db.adminCommand('ping')" --quiet 2>/dev/null; then
+                  echo "MongoDB is up"
+                  break
+                fi
+                echo "Attempt $i: waiting..."
+                sleep 2
+              done
+              echo "Initiating replica set..."
+              mongosh mongodb://mongodb-0.mongodb-headless.litmus.svc.cluster.local:27017 --eval '
+                try {
+                  var s = rs.status();
+                  if (s.ok === 1 || s.ok === true) {
+                    print("Replica set already active");
+                    printjson(s);
+                  }
+                } catch(e) {
+                  print("Initiating replica set...");
+                  var result = rs.initiate({
+                    _id: "rs0",
+                    members: [{
+                      _id: 0,
+                      host: "mongodb-0.mongodb-headless.litmus.svc.cluster.local:27017"
+                    }]
+                  });
+                  printjson(result);
+                }
+              '
+              echo "Waiting for PRIMARY..."
+              for i in $(seq 1 30); do
+                STATE=$(mongosh mongodb://mongodb-0.mongodb-headless.litmus.svc.cluster.local:27017 --eval "rs.status().members[0].stateStr" --quiet 2>/dev/null)
+                echo "State: $STATE"
+                if echo "$STATE" | grep -q "PRIMARY"; then
+                  echo "Replica set ready!"
+                  exit 0
+                fi
+                sleep 2
+              done
+              echo "Done"

@@ -1,0 +1,40 @@
+# Litmus ChaosCenter for Docker Desktop on Mac (ARM)
+# MongoDB deployed separately with official image
+
+# Override image registry
+image:
+  imageRegistryName: docker.io/litmuschaos
+
+# External MongoDB - FULL URI with scheme prefix (critical!)
+adminConfig:
+  VERSION: "3.30.0"
+  SKIP_SSL_VERIFY: "false"
+  DBPASSWORD: "1234"
+  DBUSER: "root"
+  DB_SERVER: "mongodb://mongodb-access.litmus.svc.cluster.local:27017"
+  DB_PORT: ""
+  ADMIN_USERNAME: "admin"
+  ADMIN_PASSWORD: "litmus"
+
+# Disable built-in MongoDB
+mongodb:
+  enabled: false
+
+# Portal Frontend - NodePort
+portal:
+  frontend:
+    replicas: 1
+    service:
+      type: NodePort
+      port: 9091
+      targetPort: 8185
+      nodePort: 30000
+
+# Auth Server
+authServer:
+  enabled: true
+
+# Subscriber
+subscriber:
+  enabled: true
+  agentScope: cluster

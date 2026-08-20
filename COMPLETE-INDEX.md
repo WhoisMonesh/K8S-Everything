@@ -15,15 +15,15 @@
 | # | Category | Directory | Documents |
 |---|----------|-----------|-----------|
 | 1 | Core Concepts | [01-core-concepts](01-core-concepts) | [README](01-core-concepts/README.md) + 16 docs |
-| 2 | Architecture | [02-architecture](02-architecture) | [README](02-architecture/README.md) + 10 docs |
+| 2 | Architecture | [02-architecture](02-architecture) | [README](02-architecture/README.md) + 11 docs |
 | 3 | Workloads | [03-workloads](03-workloads) | [README](03-workloads/README.md) + 14 docs |
-| 4 | Networking | [04-networking](04-networking) | [README](04-networking/README.md) + 13 docs |
+| 4 | Networking | [04-networking](04-networking) | [README](04-networking/README.md) + 14 docs |
 | 5 | Storage | [05-storage](05-storage) | [README](05-storage/README.md) + 5 docs |
-| 6 | Security | [06-security](06-security) | [README](06-security/README.md) + 11 docs |
+| 6 | Security | [06-security](06-security) | [README](06-security/README.md) + 16 docs |
 | 7 | Scheduling & Autoscaling | [07-scheduling-autoscaling](07-scheduling-autoscaling) | [README](07-scheduling-autoscaling/README.md) + 11 docs |
 | 8 | Cluster Operations | [08-cluster-operations](08-cluster-operations) | [README](08-cluster-operations/README.md) + 9 docs |
 | 9 | Cloud Integrations | [09-cloud-integrations](09-cloud-integrations) | [README](09-cloud-integrations/README.md) + 7 docs |
-| 10 | Package Management | [10-package-management](10-package-management) | [README](10-package-management/README.md) + 4 docs |
+| 10 | Package Management | [10-package-management](10-package-management) | [README](10-package-management/README.md) + 5 docs |
 | 11 | CI/CD & GitOps | [11-ci-cd-gitops](11-ci-cd-gitops) | [README](11-ci-cd-gitops/README.md) + 4 docs |
 | 12 | Service Mesh | [12-service-mesh](12-service-mesh) | [README](12-service-mesh/README.md) + 4 docs |
 | 13 | Observability | [13-observability](13-observability) | [README](13-observability/README.md) + 6 docs |
@@ -35,7 +35,7 @@
 | 19 | Cheat Sheets | [cheat-sheets](cheat-sheets) | [README](cheat-sheets/README.md) + 6 docs |
 | 20 | Examples | [examples](examples) | [README](examples/README.md) + 28 YAML manifests across common-patterns, scheduling, security, storage, monitoring, ci-cd, advanced |
 
-**Total: 20 categories, 290 documents, ~260000 words.**
+**Total: 20 categories, 301 documents, ~270000 words.**
 
 ---
 
@@ -74,6 +74,7 @@
 | 8 | kube-proxy | [kube-proxy.md](02-architecture/kube-proxy.md) |
 | 9 | Container Runtimes | [container-runtimes.md](02-architecture/container-runtimes.md) |
 | 10 | CNCF Landscape | [cncf-landscape.md](02-architecture/cncf-landscape.md) |
+| 11 | API Priority and Fairness | [api-priority-fairness.md](02-architecture/api-priority-fairness.md) |
 
 ## 3. Workloads (03-workloads)
 
@@ -111,6 +112,7 @@
 | 11 | Gateway API | [gateway-api.md](04-networking/gateway-api.md) |
 | 12 | Gateway API Implementations | [gateway-api-implementations.md](04-networking/gateway-api-implementations.md) |
 | 13 | Cilium | [cilium.md](04-networking/cilium.md) |
+| 14 | EndpointSlices | [endpoint-slices.md](04-networking/endpoint-slices.md) |
 
 ## 5. Storage (05-storage)
 
@@ -137,6 +139,10 @@
 | 9 | TLS Certificates | [certificates.md](06-security/certificates.md) |
 | 10 | Security Overview | [security.md](06-security/security.md) |
 | 11 | Pod Security Context | [pod-security-context.md](06-security/pod-security-context.md) |
+| 12 | ValidatingAdmissionPolicy | [validating-admission-policy.md](06-security/validating-admission-policy.md) |
+| 13 | External Secrets Operator | [external-secrets.md](06-security/external-secrets.md) |
+| 14 | Falco | [falco.md](06-security/falco.md) |
+| 15 | Sealed Secrets | [sealed-secrets.md](06-security/sealed-secrets.md) |
 
 ## 7. Scheduling & Autoscaling (07-scheduling-autoscaling)
 
@@ -176,6 +182,7 @@
 | 2 | Helm Charts | [helm-charts.md](10-package-management/helm-charts.md) |
 | 3 | Kustomize | [kustomize.md](10-package-management/kustomize.md) |
 | 4 | OCI Artifacts | [oci.md](10-package-management/oci.md) |
+| 5 | Carvel (kapp + ytt) | [kapp-ytt.md](10-package-management/kapp-ytt.md) |
 
 ## 10. CI/CD & GitOps (11-ci-cd-gitops)
 
@@ -344,6 +351,14 @@
 | Security Hardening Guide (defense in depth, RBAC, Network Policies, Pod Security) | [security-hardening-guide.md](docs/security-hardening-guide.md) |
 | Performance Tuning Guide (HPA, networking, storage, monitoring) | [performance-tuning-guide.md](docs/performance-tuning-guide.md) |
 | Advanced YAML Examples (multi-container, init, StatefulSet, DaemonSet, HPA) | [advanced-yaml-examples.md](docs/advanced-yaml-examples.md) |
+| CIS Benchmarks (kube-bench, compliance) | [cis-benchmarks.md](docs/cis-benchmarks.md) |
+
+### Tools
+
+| Tool | File |
+|------|------|
+| k9s (terminal UI) | [tools/k9s.md](docs/tools/k9s.md) |
+| stern (multi-pod log tailer) | [tools/stern.md](docs/tools/stern.md) |
 
 ---
 

@@ -27,7 +27,7 @@
 | 15 | [Interview Prep](16-interview-prep/README.md) | CKA, CKAD, CKS, Questions, Cheatsheets | 5 |
 | 16 | [Reference & Cheatsheets](#reference-documentation) | API groups, versions, companies, certs, cheatsheets, glossary | 6+ |
 
-**Total: ~290 Kubernetes concepts, components, tools, and patterns across 20 topic categories + reference docs.**
+**Total: ~301 Kubernetes concepts, components, tools, and patterns across 20 topic categories + reference docs.**
 
 > 💡 *This repository covers 17 categories with 280+ documents including cloud integrations (EKS/GKE/AKS), advanced patterns (CRDs, operators, WASM), 50 real-world incident case studies, and company-specific Kubernetes deployments.*
 

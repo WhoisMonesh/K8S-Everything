@@ -1,0 +1,165 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChaosEngine
+metadata:
+  name: pod-delete-experiment
+  namespace: litmus-lab
+spec:
+  appinfo:
+    appns: litmus-lab
+    applabel: app=nginx-target
+    appkind: deployment
+  chaosServiceAccount: litmus-admin
+  engineState: active
+  experiments:
+    - name: pod-delete
+      spec:
+        components:
+          env:
+            - name: TOTAL_CHAOS_DURATION
+              value: "30"
+            - name: CHAOS_INTERVAL
+              value: "10"
+            - name: FORCE
+              value: "false"
+---
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChaosEngine
+metadata:
+  name: pod-network-latency
+  namespace: litmus-lab
+spec:
+  appinfo:
+    appns: litmus-lab
+    applabel: app=nginx-target
+    appkind: deployment
+  chaosServiceAccount: litmus-admin
+  engineState: active
+  experiments:
+    - name: pod-network-latency
+      spec:
+        components:
+          env:
+            - name: TOTAL_CHAOS_DURATION
+              value: "60"
+            - name: NETWORK_LATENCY
+              value: "200"
+            - name: JITTER
+              value: "100"
+            - name: CONTAINER_RUNTIME
+              value: "containerd"
+---
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChaosEngine
+metadata:
+  name: pod-cpu-hog
+  namespace: litmus-lab
+spec:
+  appinfo:
+    appns: litmus-lab
+    applabel: app=nginx-target
+    appkind: deployment
+  chaosServiceAccount: litmus-admin
+  engineState: active
+  experiments:
+    - name: pod-cpu-hog
+      spec:
+        components:
+          env:
+            - name: TOTAL_CHAOS_DURATION
+              value: "60"
+            - name: CPU_CORES
+              value: "2"
+---
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChaosEngine
+metadata:
+  name: pod-memory-hog
+  namespace: litmus-lab
+spec:
+  appinfo:
+    appns: litmus-lab
+    applabel: app=nginx-target
+    appkind: deployment
+  chaosServiceAccount: litmus-admin
+  engineState: active
+  experiments:
+    - name: pod-memory-hog
+      spec:
+        components:
+          env:
+            - name: TOTAL_CHAOS_DURATION
+              value: "60"
+            - name: MEMORY_CONSUMPTION
+              value: "250"
+---
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChaosEngine
+metadata:
+  name: pod-network-corruption
+  namespace: litmus-lab
+spec:
+  appinfo:
+    appns: litmus-lab
+    applabel: app=nginx-target
+    appkind: deployment
+  chaosServiceAccount: litmus-admin
+  engineState: active
+  experiments:
+    - name: pod-network-corruption
+      spec:
+        components:
+          env:
+            - name: TOTAL_CHAOS_DURATION
+              value: "60"
+            - name: NETWORK_CORRELATION
+              value: "100"
+            - name: CONTAINER_RUNTIME
+              value: "containerd"
+---
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChaosEngine
+metadata:
+  name: pod-io-stress
+  namespace: litmus-lab
+spec:
+  appinfo:
+    appns: litmus-lab
+    applabel: app=nginx-target
+    appkind: deployment
+  chaosServiceAccount: litmus-admin
+  engineState: active
+  experiments:
+    - name: pod-io-stress
+      spec:
+        components:
+          env:
+            - name: TOTAL_CHAOS_DURATION
+              value: "60"
+            - name: FILE_SIZE
+              value: "500"
+            - name: VOLUME_MOUNT_PATH
+              value: "/"
+---
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChaosEngine
+metadata:
+  name: pod-dns-failure
+  namespace: litmus-lab
+spec:
+  appinfo:
+    appns: litmus-lab
+    applabel: app=nginx-target
+    appkind: deployment
+  chaosServiceAccount: litmus-admin
+  engineState: active
+  experiments:
+    - name: pod-dns-failure
+      spec:
+        components:
+          env:
+            - name: TOTAL_CHAOS_DURATION
+              value: "60"
+            - name: DNS_SERVER
+              value: "8.8.8.8"
+            - name: DNS_HOST
+              value: "www.google.com"
