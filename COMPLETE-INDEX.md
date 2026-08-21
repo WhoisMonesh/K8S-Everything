@@ -17,25 +17,25 @@
 | 1 | Core Concepts | [01-core-concepts](01-core-concepts) | [README](01-core-concepts/README.md) + 16 docs |
 | 2 | Architecture | [02-architecture](02-architecture) | [README](02-architecture/README.md) + 12 docs |
 | 3 | Workloads | [03-workloads](03-workloads) | [README](03-workloads/README.md) + 14 docs |
-| 4 | Networking | [04-networking](04-networking) | [README](04-networking/README.md) + 14 docs |
-| 5 | Storage | [05-storage](05-storage) | [README](05-storage/README.md) + 5 docs |
-| 6 | Security | [06-security](06-security) | [README](06-security/README.md) + 17 docs |
+| 4 | Networking | [04-networking](04-networking) | [README](04-networking/README.md) + 16 docs |
+| 5 | Storage | [05-storage](05-storage) | [README](05-storage/README.md) + 6 docs |
+| 6 | Security | [06-security](06-security) | [README](06-security/README.md) + 18 docs |
 | 7 | Scheduling & Autoscaling | [07-scheduling-autoscaling](07-scheduling-autoscaling) | [README](07-scheduling-autoscaling/README.md) + 11 docs |
-| 8 | Cluster Operations | [08-cluster-operations](08-cluster-operations) | [README](08-cluster-operations/README.md) + 11 docs |
+| 8 | Cluster Operations | [08-cluster-operations](08-cluster-operations) | [README](08-cluster-operations/README.md) + 14 docs |
 | 9 | Cloud Integrations | [09-cloud-integrations](09-cloud-integrations) | [README](09-cloud-integrations/README.md) + 7 docs |
 | 10 | Package Management | [10-package-management](10-package-management) | [README](10-package-management/README.md) + 7 docs |
-| 11 | CI/CD & GitOps | [11-ci-cd-gitops](11-ci-cd-gitops) | [README](11-ci-cd-gitops/README.md) + 4 docs |
+| 11 | CI/CD & GitOps | [11-ci-cd-gitops](11-ci-cd-gitops) | [README](11-ci-cd-gitops/README.md) + 5 docs |
 | 12 | Service Mesh | [12-service-mesh](12-service-mesh) | [README](12-service-mesh/README.md) + 5 docs |
-| 13 | Observability | [13-observability](13-observability) | [README](13-observability/README.md) + 6 docs |
+| 13 | Observability | [13-observability](13-observability) | [README](13-observability/README.md) + 7 docs |
 | 14 | Troubleshooting | [14-troubleshooting](14-troubleshooting) | [README](14-troubleshooting/README.md) + 4 docs + [incidents/](14-troubleshooting/incidents) (49 case studies + README) |
 | 15 | Advanced Patterns | [15-advanced-patterns](15-advanced-patterns) | [README](15-advanced-patterns/README.md) + 11 docs |
-| 16 | Interview Prep | [16-interview-prep](16-interview-prep) | [README](16-interview-prep/README.md) + 10 docs |
+| 16 | Interview Prep | [16-interview-prep](16-interview-prep) | [README](16-interview-prep/README.md) + 13 docs |
 | 17 | Company Cases | [17-company-cases](17-company-cases) | [README](17-company-cases/README.md) + 31 docs |
 | 18 | Learning & Reference | [docs](docs) | [README](docs/README.md) + 5 docs |
 | 19 | Cheat Sheets | [cheat-sheets](cheat-sheets) | [README](cheat-sheets/README.md) + 6 docs |
 | 20 | Examples | [examples](examples) | [README](examples/README.md) + 28 YAML manifests across common-patterns, scheduling, security, storage, monitoring, ci-cd, advanced |
 
-**Total: 20 categories, 319 documents, ~280000 words.**
+**Total: 20 categories, 341 documents, ~300000 words.**
 
 ---
 
@@ -114,6 +114,8 @@
 | 12 | Gateway API Implementations | [gateway-api-implementations.md](04-networking/gateway-api-implementations.md) |
 | 13 | Cilium | [cilium.md](04-networking/cilium.md) |
 | 14 | EndpointSlices | [endpoint-slices.md](04-networking/endpoint-slices.md) |
+| 15 | Calico vs Cilium vs Flannel | [comparison-calico-cilium-flannel.md](04-networking/comparison-calico-cilium-flannel.md) |
+| 16 | NGINX vs Traefik vs HAProxy | [comparison-ingress-controllers.md](04-networking/comparison-ingress-controllers.md) |
 
 ## 5. Storage (05-storage)
 
@@ -124,6 +126,7 @@
 | 3 | StorageClass | [storage-classes.md](05-storage/storage-classes.md) |
 | 4 | Inline Volumes | [inline-volumes.md](05-storage/inline-volumes.md) |
 | 5 | Volume Snapshots | [volume-snapshots.md](05-storage/volume-snapshots.md) |
+| 6 | Velero vs Kasten vs Stash | [comparison-backup-solutions.md](05-storage/comparison-backup-solutions.md) |
 
 ## 6. Security (06-security)
 
@@ -145,6 +148,7 @@
 | 14 | Falco | [falco.md](06-security/falco.md) |
 | 15 | Sealed Secrets | [sealed-secrets.md](06-security/sealed-secrets.md) |
 | 16 | OPA vs Kyverno vs Kubewarden | [comparison-opa-kyverno-kubewarden.md](06-security/comparison-opa-kyverno-kubewarden.md) |
+| 17 | Migration: PSP to PSA | [migration-psp-to-psa.md](06-security/migration-psp-to-psa.md) |
 
 ## 7. Scheduling & Autoscaling (07-scheduling-autoscaling)
 
@@ -177,6 +181,11 @@
 | 9 | Cluster API | [cluster-api.md](08-cluster-operations/cluster-api.md) |
 | 10 | Migration: Bare-Metal to Cloud | [migration-bare-metal-to-cloud.md](08-cluster-operations/migration-bare-metal-to-cloud.md) |
 | 11 | Migration: Self-Managed to Managed | [migration-self-managed-to-managed.md](08-cluster-operations/migration-self-managed-to-managed.md) |
+| 12 | Migration: Docker to Containerd | [migration-docker-to-containerd.md](08-cluster-operations/migration-docker-to-containerd.md) |
+| 13 | Migration: kubeadm to Managed | [migration-kubeadm-to-managed.md](08-cluster-operations/migration-kubeadm-to-managed.md) |
+| 14 | Cluster Upgrade Playbook | [cluster-upgrade-playbook.md](08-cluster-operations/cluster-upgrade-playbook.md) |
+| 15 | Disaster Recovery Runbook | [disaster-recovery-runbook.md](08-cluster-operations/disaster-recovery-runbook.md) |
+| 16 | Production Readiness Checklist | [production-readiness-checklist.md](08-cluster-operations/production-readiness-checklist.md) |
 
 ## 9. Package Management (10-package-management)
 
@@ -198,6 +207,7 @@
 | 2 | Argo CD | [argo-cd.md](11-ci-cd-gitops/argo-cd.md) |
 | 3 | Flux | [flux.md](11-ci-cd-gitops/flux.md) |
 | 4 | Tekton | [tekton.md](11-ci-cd-gitops/tekton.md) |
+| 5 | ArgoCD vs Flux vs JayeX | [comparison-argocd-flux-jenkinsx.md](11-ci-cd-gitops/comparison-argocd-flux-jenkinsx.md) |
 
 ## 10b. Supply Chain Security (11-supply-chain)
 
@@ -227,6 +237,7 @@
 | 4 | Logging (Fluent Bit, Loki, Elasticsearch, structured logs) | [logging.md](13-observability/logging.md) |
 | 5 | Observability Overview | [observability.md](13-observability/observability.md) |
 | 6 | Distributed Tracing | [tracing.md](13-observability/tracing.md) |
+| 7 | Prometheus vs Datadog vs New Relic | [comparison-prometheus-datadog.md](13-observability/comparison-prometheus-datadog.md) |
 
 ## 13. Troubleshooting (14-troubleshooting)
 
@@ -308,7 +319,10 @@
 | 8 | Debugging Commands | [debugging-commands.md](16-interview-prep/debugging-commands.md) |
 | 9 | Interview Questions (90 Q&A) | [interview-questions.md](16-interview-prep/interview-questions.md) |
 | 10 | Job-Ready Checklist | [job-ready-checklist.md](16-interview-prep/job-ready-checklist.md) |
-| 11 | Conceptual Interview Questions | (inline Q&A in each certification doc) |
+| 11 | System Design Questions | [system-design-questions.md](16-interview-prep/system-design-questions.md) |
+| 12 | Troubleshooting Scenarios | [troubleshooting-scenarios.md](16-interview-prep/troubleshooting-scenarios.md) |
+| 13 | Salary Negotiation Tips | [salary-negotiation-tips.md](16-interview-prep/salary-negotiation-tips.md) |
+| 14 | Conceptual Interview Questions | (inline Q&A in each certification doc) |
 
 ## 15. Reference (top-level)
 
